@@ -1,3 +1,3 @@
 # Sergio y Kathe
 
-Sitio web de matrimonio..
+Sitio web de matrimonio...
