@@ -26,7 +26,7 @@ const whenExternalScripts = (items = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: 'https://www.sergioykathe.com',
+  site: 'https://matrimonio.xergioalex.com',
   output: 'static',
   build: {
     assets: 'assets',
