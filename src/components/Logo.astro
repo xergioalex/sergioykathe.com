@@ -1,0 +1,13 @@
+---
+import Image from '~/components/common/Image.astro';
+
+const weddingLogo = '~/assets/images/logos/wedding-logo.png';
+const weddingLogoDark = '~/assets/images/logos/wedding-logo-dark.png';
+---
+
+<span
+  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+>
+  <Image src={weddingLogo} alt="Sergio y Kathe" width={40} class="mx-auto hidden dark:block" />
+  <Image src={weddingLogoDark} alt="Sergio y Kathe" width={40} class="mx-auto dark:hidden" />
+</span>

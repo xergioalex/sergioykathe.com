@@ -1,0 +1,26 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Quiénes somos"
+    image={{
+      src: '~/assets/images/sergioykathe-team.jpg',
+      alt: 'Caos Image',
+    }}
+  >
+    <Fragment slot="subtitle">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+      </p>
+    </Fragment>
+  </Hero>
+</Layout>
