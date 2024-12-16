@@ -87,4 +87,3 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
       - name: Step 1 - 🧪 Run tests
         run: npm run test
-
