@@ -24,9 +24,9 @@ export interface Post {
   image?: ImageMetadata | string;
 
   /**  */
-  category?: string;
+  category?: Taxonomy;
   /**  */
-  tags?: Array<string>;
+  tags?: Taxonomy[];
   /**  */
   author?: string;
 
@@ -42,34 +42,11 @@ export interface Post {
 
   /**  */
   readingTime?: number;
-
-  /**  */
-  venue?: string;
 }
 
-export interface Event {
-  id: number;
-  name: string;
-  local_date: string;
-  local_time: string;
-  venue: {
-    name: string;
-    city: string;
-    state: string;
-  };
-  yes_rsvp_count: number;
-  link: string;
-  featured_photo: {
-    photo_link: string;
-  };
-  description: string;
-  name: string;
-  group: {
-    name: string;
-  };
-  publishDate: Date;
-  author: string;
-  time: Date;
+export interface Taxonomy {
+  slug: string;
+  title: string;
 }
 
 export interface MetaData {
@@ -113,35 +90,7 @@ export interface MetaDataTwitter {
 
 export interface Image {
   src: string;
-  url?: string;
   alt?: string;
-}
-
-export interface Collaborator {
-  image: string;
-  name: string;
-  socialLink?: string;
-}
-
-export interface Community {
-  image: string;
-  name: string;
-  socialLink?: string;
-}
-
-export interface Speaker {
-  image: string;
-  name: string;
-  socialLinks?: Array<SocialIconLink>;
-}
-
-export interface Brand {
-  [key: string]: Array<Image>;
-}
-
-export interface SocialIconLink {
-  icon: string;
-  href: string;
 }
 
 export interface Video {
@@ -190,10 +139,6 @@ export interface Item {
   classes?: Record<string, string>;
   callToAction?: CallToAction;
   image?: Image;
-  footerImage?: object;
-  footerSubtitle?: string;
-  footerDescription?: string;
-  footerSocialLinks?: Array<SocialIconLink>;
 }
 
 export interface Price {
@@ -214,7 +159,6 @@ export interface Testimonial {
   name?: string;
   job?: string;
   image?: string | unknown;
-  socialLinks?: Array<SocialIconLink>;
 }
 
 export interface Input {
@@ -269,12 +213,10 @@ export interface Form {
 }
 
 // WIDGETS
-export interface Hero extends Omit<Headline, 'classes'>, Widget {
+export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' | 'classes'> {
   content?: string;
+  actions?: string | CallToAction[];
   image?: string | unknown;
-  callToAction1?: CallToAction;
-  callToAction2?: CallToAction;
-  isReversed?: boolean;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
@@ -296,21 +238,7 @@ export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
 
 export interface Brands extends Omit<Headline, 'classes'>, Widget {
   icons?: Array<string>;
-  brands?: Brand;
-}
-
-export interface Collaborators extends Omit<Headline, 'classes'>, Widget {
-  icons?: Array<string>;
-  collaborators?: Array<Collaborator>;
-}
-
-export interface Communities extends Omit<Headline, 'classes'>, Widget {
-  communities?: Array<Community>;
-}
-
-export interface Speakers extends Omit<Headline, 'classes'>, Widget {
-  icons?: Array<string>;
-  speakers?: Array<Speaker>;
+  images?: Array<Image>;
 }
 
 export interface Features extends Omit<Headline, 'classes'>, Widget {
@@ -324,8 +252,6 @@ export interface Features extends Omit<Headline, 'classes'>, Widget {
   isReversed?: boolean;
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
-  footerImage?: object;
-  footerName?: string;
 }
 
 export interface Faqs extends Omit<Headline, 'classes'>, Widget {

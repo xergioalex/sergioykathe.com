@@ -1,7 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Image from '~/components/common/Image.astro';
 import type { Brands as Props } from '~/types';
+
+import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 const {
@@ -9,45 +10,29 @@ const {
   subtitle = '',
   tagline = '',
   icons = [],
-  brands = [],
+  images = [],
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
-
-const logoSize = {
-  gold: 250,
-  silver: 200,
-  bronze: 100,
-};
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
-  {
-    Object.entries(brands).map(([type, group]) => (
-      <div class="flex flex-wrap justify-center gap-x-3 sm:gap-x-6 lg:gap-x-12">
-        {icons &&
-          icons.map((icon) => <Icon name={icon} class="py-3 lg:py-5 w-12 h-auto mx-auto sm:mx-0 text-gray-500" />)}
-        {group &&
-          group.map(
-            (item) =>
-              item.src && (
-                <div class="flex justify-center items-center col-span-1 my-2 lg:my-4 p-8 rounded-md dark:bg-gray-200 w-500">
-                  <a href={item.url} target="_blank">
-                    <Image
-                      src={`~/assets/images/sponsors/${item.src}`}
-                      alt={item.alt || ''}
-                      loading="lazy"
-                      width={logoSize[type || 'gold']}
-                    />
-                  </a>
-                </div>
-              )
-          )}
-      </div>
-    ))
-  }
+  <div class="flex flex-wrap justify-center gap-x-6 sm:gap-x-12 lg:gap-x-24">
+    {icons && icons.map((icon) => <Icon name={icon} class="py-3 lg:py-5 w-12 h-auto mx-auto sm:mx-0 text-gray-500" />)}
+    {
+      images &&
+        images.map(
+          (image) =>
+            image.src && (
+              <div class="flex justify-center col-span-1 my-2 lg:my-4 py-1 px-3 rounded-md dark:bg-gray-200">
+                <Image src={image.src} alt={image.alt || ''} class="max-h-12" width={120} height={48} layout="fixed" />
+              </div>
+            )
+        )
+    }
+  </div>
 </WidgetWrapper>
