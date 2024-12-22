@@ -1,6 +1,6 @@
 {
   "name": "@onwidget/astrowind",
-  "version": "1.0.0-beta.49",
+  "version": "1.0.0",
   "description": "AstroWind: A free template using Astro 5.0 and Tailwind CSS. Astro starter theme.",
   "type": "module",
   "scripts": {
@@ -12,13 +12,13 @@
     "astro": "astro",
     "astro:check": "astro check",
     "eslint:check": "eslint \"src/**/*.{js,ts,astro,svelte}\" --ignore-pattern \"dist/**\"",
-		"eslint:fix": "eslint \"src/**/*.{js,ts,astro,svelte}\" --fix --ignore-pattern \"dist/**\"",
-		"prettier:check": "prettier --c --ignore-path .gitignore '**/*.{astro,svelte,css,html,js,ts,md,yaml,yml}' '!package.json' '!**/devcontainer.json'",
-		"prettier:fix": "prettier --write --ignore-path .gitignore '**/*.{astro,svelte,css,html,js,ts,md,yaml,yml}' '!package.json' '!**/devcontainer.json'",
-		"ncu:check": "ncu",
-		"ncu:upgrade": "ncu -u",
+    "eslint:fix": "eslint \"src/**/*.{js,ts,astro,svelte}\" --fix --ignore-pattern \"dist/**\"",
+    "prettier:check": "prettier --c --ignore-path .gitignore '**/*.{astro,svelte,css,html,js,ts,md,yaml,yml}' '!package.json' '!**/devcontainer.json'",
+    "prettier:fix": "prettier --write --ignore-path .gitignore '**/*.{astro,svelte,css,html,js,ts,md,yaml,yml}' '!package.json' '!**/devcontainer.json'",
+    "ncu:check": "ncu",
+    "ncu:upgrade": "ncu -u",
     "test": "echo 'Running tests...'",
-		"release": "npm version patch -m \"[🤖 SysPrompt] New release to v%s launched 🚀\""
+    "release": "npm version patch -m \"[🤖 SysPrompt] New release to v%s launched 🚀\""
   },
   "dependencies": {
     "@astrojs/rss": "4.0.10",
