@@ -1,4 +1,5 @@
 ---
+import { APP_BLOG } from 'astrowind:config';
 import type { Post } from '~/types';
 
 import Image from '~/components/common/Image.astro';
@@ -6,56 +7,65 @@ import Image from '~/components/common/Image.astro';
 import { findImage } from '~/utils/images';
 import { getPermalink } from '~/utils/permalinks';
 
-import '~/assets/styles/blog/BlogCard.css';
-
 export interface Props {
   post: Post;
 }
 
 const { post } = Astro.props;
 const image = await findImage(post.image);
+
+const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
-<article class="transition max-w-7xl grid gap-6 md:gap-8 mb-auto h-full">
-  <div
-    class="blog-card dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[#ffffff29]
-    bg-white dark:bg-slate-900 flex flex-col justify-between"
-  >
-    <a href={getPermalink(post.permalink, 'post')} class="block">
-      {
-        image && (
+<article
+  class="mb-6 transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+>
+  <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6">
+    {
+      image &&
+        (link ? (
+          <a href={link}>
+            <Image
+              src={image}
+              class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+              widths={[400, 900]}
+              width={400}
+              sizes="(max-width: 900px) 400px, 900px"
+              alt={post.title}
+              aspectRatio="16:9"
+              layout="cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        ) : (
           <Image
-            src={image || 'https://via.placeholder.com/400'}
-            alt="Article Image"
             src={image}
-            class="w-full md:h-fit rounded shadow-lg bg-gray-400 dark:bg-slate-700"
+            class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
             width={400}
-            height={275}
             sizes="(max-width: 900px) 400px, 900px"
             alt={post.title}
             aspectRatio="16:9"
-            layout="responsive"
+            layout="cover"
             loading="lazy"
             decoding="async"
           />
-        )
-      }
-      <div class="p-6">
-        <div class="flex flex-wrap mb-2">
-          {post.tags && post.tags.map((tag) => <code class="tag">{tag}</code>)}
-        </div>
-        <h2 class="text-2xl font-bold mb-2">{post.title}</h2>
-        <p class="text-gray-400 mb-4 text-long line-clamp-3">{post.excerpt}</p>
-      </div>
-    </a>
-    <div class="flex items-center justify-between p-6">
-      <div class="flex items-center">
-        <a href="#" class="tooltip">
-          <span class="text-gray-700 dark:text-gray-300">Por <i>{post.author}</i></span>
-        </a>
-      </div>
-      <p class="read-time">{post.readingTime} min read</p>
-    </div>
+        ))
+    }
   </div>
+
+  <h3 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
+    {
+      link ? (
+        <a class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={link}>
+          {post.title}
+        </a>
+      ) : (
+        post.title
+      )
+    }
+  </h3>
+
+  <p class="text-muted dark:text-slate-400 text-lg">{post.excerpt}</p>
 </article>

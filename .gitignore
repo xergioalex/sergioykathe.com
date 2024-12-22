@@ -22,7 +22,3 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 .astro
-.env
-.devcontainer
-src/data/*
-notification_release_script.sh
