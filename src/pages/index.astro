@@ -10,6 +10,7 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import WeddingCountdown from '~/components/widgets/WeddingCountdown.astro';
+import Counter from '../components/Counter.svelte';
 
 const metadata = {
   title: 'Personal Homepage Demo',
@@ -55,6 +56,8 @@ const metadata = {
       alt: 'Niños contando una historia. Demostración de página de aterrizaje de ventas de formato largo',
     }}
   />
+
+  <Counter client:load />
 
   <WeddingCountdown title="Faltan" isDark={true} />
 
