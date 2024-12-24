@@ -10,6 +10,7 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import WeddingCountdown from '~/components/widgets/WeddingCountdown.astro';
+import Counter from '../components/Counter.svelte';
 
 const metadata = {
   title: 'Personal Homepage Demo',
@@ -56,16 +57,9 @@ const metadata = {
     }}
   />
 
-  <WeddingCountdown
-    title="Faltan"
-    stats={[
-      { title: 'Días', amount: '45' },
-      { title: 'Horas', amount: '12' },
-      { title: 'Minutos', amount: '30' },
-      { title: 'Segundos', amount: '10' },
-    ]}
-    isDark={true}
-  />
+  <Counter client:load />
+
+  <WeddingCountdown title="Faltan" isDark={true} />
 
   <!-- Content Widget **************** -->
 
