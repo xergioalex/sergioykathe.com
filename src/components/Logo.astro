@@ -1,9 +1,13 @@
 ---
 import { SITE } from 'astrowind:config';
+import Image from '~/components/common/Image.astro';
+
+const weddingLogo = '~/assets/images/wedding-logo.png';
 ---
 
 <span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white inline-flex items-center"
 >
-  🚀 {SITE?.name}
+  <Image src={weddingLogo} alt="Wedding Logo" width={25} class="inline" />
+  <span class="inline ml-2">{SITE?.name}</span>
 </span>
