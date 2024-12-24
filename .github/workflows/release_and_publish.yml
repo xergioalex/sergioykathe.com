@@ -89,7 +89,7 @@ jobs:
           git config user.email "sergioykathe@gmail.com"
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.12.0'
+          node-version: '20.18.1'
       - name: Step 3 - Verify the existence of 'ghpages' branch
         run: |
           git fetch origin
@@ -144,7 +144,7 @@ jobs:
           token: ${{ secrets.AUTOMATION_GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.12.0'
+          node-version: '20.18.1'
           registry-url: https://registry.npmjs.org/
       - name: Step 0 - 📁 Cache node modules
         uses: actions/cache@v4
