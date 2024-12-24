@@ -132,6 +132,12 @@ export interface Stat {
   icon?: string;
 }
 
+export interface Stat {
+  amount?: number | string;
+  title?: string;
+  icon?: string;
+}
+
 export interface Item {
   title?: string;
   description?: string;
