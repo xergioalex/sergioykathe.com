@@ -12,10 +12,10 @@ export default {
         accent: 'var(--aw-color-accent)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
-        'redwine': {
-          light: '#800000',      // redwine más claro
-          DEFAULT: '#4A0404',    // redwine base
-          dark: '#2B0000',       // redwine más oscuro
+        redwine: {
+          light: '#800000', // redwine más claro
+          DEFAULT: '#4A0404', // redwine base
+          dark: '#2B0000', // redwine más oscuro
         },
       },
       fontFamily: {
