@@ -18,6 +18,14 @@ function setup() {
 }
 
 function check() {
+  print.success "Running astro checks..."
+	npm run astro:check
+	if [ $? != 0 ]; then
+    echo ''
+		print.error "⚠️ Astro checks failed, skipping astro checks..."
+		return 1
+	fi
+
 	print.success "Running eslint checks..."
 	npm run eslint:check
 	if [ $? != 0 ]; then
@@ -31,7 +39,15 @@ function check() {
 }
 
 function fix() {
-	print.success "Running eslint checks && apply automatic fixes..."
+  print.success "Running astro checks..."
+	npm run astro:check
+	if [ $? != 0 ]; then
+    echo ''
+		print.error "⚠️ Astro checks failed, skipping astro checks..."
+		return 1
+	fi
+
+  print.success "Running eslint checks && apply automatic fixes..."
 	npm run eslint:fix
 	if [ $? != 0 ]; then
     echo ''
