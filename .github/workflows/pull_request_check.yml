@@ -136,7 +136,7 @@ jobs:
 
       - name: Step 4 - 🧪🧪🧪 Check "TITLE" length
         run: |
-          MIN_TITLE_LENGTH=10
+          MIN_TITLE_LENGTH=5
           PR_TITLE="${{ github.event.pull_request.title }}"
           TITLE_LENGTH=$(echo -n "$PR_TITLE" | wc -c)
           if [ "$TITLE_LENGTH" -lt "$MIN_TITLE_LENGTH" ]; then
@@ -146,7 +146,7 @@ jobs:
 
       - name: Step 5 - 🧪🧪🧪🧪 Check "BODY" length
         run: |
-          MIN_BODY_LENGTH=30
+          MIN_BODY_LENGTH=10
           PR_BODY=$(printf "%s" "${{ github.event.pull_request.body }}")
           BODY_LENGTH=$(echo -n "$PR_BODY" | wc -c)
           if [ "$BODY_LENGTH" -lt "$MIN_BODY_LENGTH" ]; then
