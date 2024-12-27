@@ -72,7 +72,10 @@
     if (mapElement && isOpen && window.google) {
       const map = new window.google.maps.Map(mapElement, {
         center: { lat: currentLocation.coordinates.lat, lng: currentLocation.coordinates.lng },
-        zoom: 15,
+        zoom: 18,
+        mapTypeControl: false,
+        fullscreenControl: false,
+        streetViewControl: false,
       });
 
       new window.google.maps.Marker({
@@ -80,6 +83,30 @@
         map,
         title: currentLocation.title,
       });
+
+      const centerDiv = document.createElement('div');
+      const controlButton = document.createElement('button');
+      controlButton.style.backgroundColor = '#fff';
+      controlButton.style.border = '2px solid #fff';
+      controlButton.style.borderRadius = '3px';
+      controlButton.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+      controlButton.style.color = 'rgb(25,25,25)';
+      controlButton.style.cursor = 'pointer';
+      controlButton.style.fontFamily = 'Roboto,Arial,sans-serif';
+      controlButton.style.fontSize = '16px';
+      controlButton.style.lineHeight = '38px';
+      controlButton.style.margin = '8px 0 22px 12px';
+      controlButton.style.padding = '0 5px';
+      controlButton.style.textAlign = 'center';
+      controlButton.textContent = 'Abrir en Google Maps';
+
+      controlButton.addEventListener('click', () => {
+        window.open(getGoogleMapsUrl(currentLocation), '_blank');
+      });
+
+      centerDiv.appendChild(controlButton);
+
+      map.controls[window.google.maps.ControlPosition.TOP_LEFT].push(centerDiv);
     }
   }
 
@@ -97,6 +124,11 @@
     if (event.key === 'Escape') {
       closeModal();
     }
+  }
+
+  function getGoogleMapsUrl(location: (typeof events)[0]) {
+    const { lat, lng } = location.coordinates;
+    return `https://www.google.com/maps?q=${lat},${lng}`;
   }
 </script>
 
