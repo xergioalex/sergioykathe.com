@@ -82,16 +82,6 @@ export default defineConfig({
     }),
   ],
 
-<<<<<<< HEAD
-  image: {
-    domains: ['cdn.pixabay.com'],
-    service: {
-      entrypoint: 'astro/assets/services/sharp',
-    },
-  },
-
-=======
->>>>>>> main
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
