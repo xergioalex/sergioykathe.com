@@ -50,12 +50,12 @@ const galleries = [
           <h3 class="text-2xl font-script text-primary text-center mb-4">{gallery.title}</h3>
           <div class="flex flex-col items-center gap-4">
             <div class="bg-white p-4 rounded-lg shadow-md">
-              <img
+              <Image
                 src={gallery.qrImage}
                 alt={`Código QR para ${gallery.title}`}
                 class="w-48 h-48 mx-auto"
-                width="192"
-                height="192"
+                width={192}
+                height={192}
               />
               <p class="text-sm text-center mt-2 text-muted">Escanea para subir fotos</p>
             </div>
