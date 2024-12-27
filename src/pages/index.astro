@@ -10,8 +10,8 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import WeddingCountdown from '~/components/widgets/WeddingCountdown.astro';
-import Counter from '../components/Counter.svelte';
 import WeddingEvents from '~/components/widgets/WeddingEvents.astro';
+import WeddingPhotoGallery from '~/components/widgets/WeddingPhotoGallery.astro';
 
 const metadata = {
   title: 'Personal Homepage Demo',
@@ -49,10 +49,10 @@ const metadata = {
     tagline="Invitación de Boda"
     title="Únete a Nuestra Historia"
     subtitle="Celebra con nosotros un día lleno de amor y felicidad mientras unimos nuestras vidas para siempre."
-    content=`<b>Acompáñanos el 22 de marzo de 2025</b>`
+    content=`<b>Acompáñanos el 22 de Marzo de 2025</b>`
     actions={[
       { variant: 'primary', text: 'Confirmar Asistencia', href: '#', icon: 'tabler:square-rounded-arrow-right' },
-      { text: 'Más Información', href: '#' },
+      { text: 'Más Información', href: '#events' },
     ]}
     image={{
       src: '~/assets/images/wedding-hero.png',
@@ -62,9 +62,9 @@ const metadata = {
 
   <WeddingEvents id="events" title="CEREMONIA & FIESTA" subtitle="NUESTRA BODA" isDark={false} />
 
-  <WeddingCountdown title="Faltan" isDark={true} />
+  <WeddingCountdown title="Te esperamos en" isDark={true} />
 
-  <Counter client:load />
+  <WeddingPhotoGallery id="photos" isDark={false} />
 
   <!-- Content Widget **************** -->
 
