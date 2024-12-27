@@ -1,17 +1,10 @@
 ---
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
-<<<<<<< HEAD
-import { Icon } from 'astro-icon/components';
-import MapModal from './MapModal.svelte';
-import Button from '~/components/ui/Button.astro';
-=======
-// import Image from '~/components/common/Image.astro';
 import { Icon } from 'astro-icon/components';
 import MapModal from './MapModal.svelte';
 import Button from '~/components/ui/Button.astro';
 import { BASE_PATH } from '~/utils/constants';
 const weddingInvitation = `${BASE_PATH}/assets/images/wedding-invitation.gif`;
->>>>>>> main
 
 const { title, subtitle, id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
 
@@ -79,17 +72,7 @@ const events = [
     <!-- Imagen Central -->
     <div class="flex flex-col items-center justify-center">
       <div class="relative w-64 h-64">
-<<<<<<< HEAD
-        <img
-          src="/src/assets/images/wedding-invitation.gif"
-          alt="Wedding Logo"
-          width="256"
-          height="256"
-          class="inline"
-        />
-=======
         <img src={weddingInvitation} alt="Wedding Logo" width="256" height="256" class="inline" />
->>>>>>> main
       </div>
     </div>
 
