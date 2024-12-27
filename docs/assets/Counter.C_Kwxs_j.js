@@ -1,0 +1,1 @@
+import"./legacy.SPaBVMvM.js";import{t as r,e as c,a as l,b as i,s as m,g as a,c as p,r as u,d as f,m as b}from"./render.D6AtexMq.js";var v=i('<button class="svelte-bfpzty"> </button>');function g(s){let t=b(0);var e=v(),i=p(e);u(e),r((()=>f(i,`Clicks: ${a(t)??""}`))),c("click",e,(function(){m(t,a(t)+1)})),l(s,e)}export{g as default};
