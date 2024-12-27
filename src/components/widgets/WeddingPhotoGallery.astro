@@ -1,7 +1,6 @@
 ---
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Headline from '../ui/Headline.astro';
-import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import { Icon } from 'astro-icon/components';
 
@@ -18,13 +17,13 @@ const galleries = [
   {
     title: 'Ceremonia Principal',
     description: 'Comparte tus fotos de la ceremonia en la Iglesia San José',
-    qrImage: '~/assets/images/qr-ceremony.png',
+    qrImage: '/assets/images/qr-ceremony.png',
     url: 'https://photos.app.goo.gl/QEKZDpfgKj2Dzg6y6',
   },
   {
     title: 'Fiesta de Boda',
     description: 'Comparte tus fotos de la celebración en la Finca San Francisco',
-    qrImage: '~/assets/images/qr-party.png',
+    qrImage: '/assets/images/qr-party.png',
     url: 'https://photos.app.goo.gl/oPPhptEvqH9osuYJ7',
   },
 ];
@@ -50,12 +49,12 @@ const galleries = [
           <h3 class="text-2xl font-script text-primary text-center mb-4">{gallery.title}</h3>
           <div class="flex flex-col items-center gap-4">
             <div class="bg-white p-4 rounded-lg shadow-md">
-              <Image
+              <img
                 src={gallery.qrImage}
                 alt={`Código QR para ${gallery.title}`}
                 class="w-48 h-48 mx-auto"
-                width={192}
-                height={192}
+                width="192"
+                height="192"
               />
               <p class="text-sm text-center mt-2 text-muted">Escanea para subir fotos</p>
             </div>
