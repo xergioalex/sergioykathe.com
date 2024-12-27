@@ -33,7 +33,7 @@ const events = [
   },
 ];
 
-const createGoogleCalendarUrl = (event: typeof events[0]) => {
+const createGoogleCalendarUrl = (event: (typeof events)[0]) => {
   const text = `Boda de Sergio y Kathe - ${event.title}`;
   const dates = event.title.includes('Ceremonia')
     ? '20250322T163000/20250322T183000' // 4:30 PM - 6:30 PM for the ceremony
