@@ -83,7 +83,6 @@
       new window.google.maps.Marker({
         position: { lat: currentLocation.coordinates.lat, lng: currentLocation.coordinates.lng },
         map,
-        zoom: 18,
         title: currentLocation.title,
       });
 

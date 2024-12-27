@@ -3,6 +3,8 @@ import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import { Icon } from 'astro-icon/components';
 import MapModal from './MapModal.svelte';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Button from '~/components/ui/Button.astro';
 
 const weddingInvitation = '~/assets/images/wedding-invitation.gif';
 
@@ -56,14 +58,11 @@ const events = [
       </div>
       <div class="text-lg md:text-xl font-medium my-4 whitespace-pre-line">{events[0].location}</div>
       <p class="text-muted mb-4">{events[0].description}</p>
-      <div class="flex flex-col gap-2">
-        <button
-          class="text-primary hover:underline inline-flex items-center justify-center gap-1"
-          onclick="window.openMap(0)"
-        >
-          <Icon name="tabler:map-pin" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+      <div>
+        <Button variant="primary" onclick="window.openMap(0)">
+          <Icon name="tabler:map-pin" class="w-3.5 h-3.5 inline-block -mt-0.5 mr-1 dark:text-gray-400" />
           ABRIR MAPA
-        </button>
+        </Button>
       </div>
     </div>
 
@@ -72,9 +71,11 @@ const events = [
       <div class="relative w-64 h-64">
         <Image src={weddingInvitation} alt="Wedding Logo" width={256} class="inline" />
       </div>
-      <a href="#" class="btn bg-primary text-white hover:bg-primary-dark px-8 py-3 rounded-full mt-8 transition-colors">
-        RSVP
-      </a>
+      <div class="mt-8">
+        <Button variant="primary">
+          CONFIRMAR ASISTENCIA
+        </Button>
+      </div>
     </div>
 
     <!-- Fiesta -->
@@ -85,14 +86,11 @@ const events = [
       </div>
       <div class="text-lg md:text-xl font-medium my-4 whitespace-pre-line">{events[1].location}</div>
       <p class="text-muted mb-4">{events[1].description}</p>
-      <div class="flex flex-col gap-2">
-        <button
-          class="text-primary hover:underline inline-flex items-center justify-center gap-1"
-          onclick="window.openMap(1)"
-        >
-          <Icon name="tabler:map-pin" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+      <div>
+        <Button variant="primary" onclick="window.openMap(1)">
+          <Icon name="tabler:map-pin" class="w-3.5 h-3.5 inline-block -mt-0.5 mr-1 dark:text-gray-400" />
           ABRIR MAPA
-        </button>
+        </Button>
       </div>
     </div>
   </div>
