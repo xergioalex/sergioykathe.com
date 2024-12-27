@@ -16,9 +16,9 @@ const events = [
     description:
       'Únete a nosotros para celebrar nuestro amor y compromiso ante los ojos de Dios en un entorno sagrado y lleno de bendiciones.',
     coordinates: {
-      lat: 4.6097100,  // Reemplaza con las coordenadas reales
-      lng: -74.0817500
-    }
+      lat: 4.60971, // Reemplaza con las coordenadas reales
+      lng: -74.08175,
+    },
   },
   {
     title: 'Fiesta de Boda',
@@ -27,9 +27,9 @@ const events = [
     description:
       'Acompáñanos en una velada encantadora llena de melodías vibrantes y una alegría contagiosa para festejar nuestra unión eterna. ¡Será una noche inolvidable!',
     coordinates: {
-      lat: 4.6097100,  // Reemplaza con las coordenadas reales
-      lng: -74.0817500
-    }
+      lat: 4.60971, // Reemplaza con las coordenadas reales
+      lng: -74.08175,
+    },
   },
 ];
 ---
@@ -113,8 +113,8 @@ const events = [
     document.dispatchEvent(
       new CustomEvent('openMap', {
         detail: {
-          index: index
-        }
+          index: index,
+        },
       })
     );
   };
