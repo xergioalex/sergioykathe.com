@@ -49,10 +49,14 @@
       <div
         class="w-1/4 px-2 mb-4 text-center md:border-r md:last:border-none dark:md:border-slate-500 intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade intersect-quarter"
       >
-        <div class="font-heading text-primary text-2xl sm:text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
+        <div
+          class="font-heading text-primary text-2xl sm:text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl"
+        >
           {amount || '0'}
         </div>
-        <div class="text-xs sm:text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-100 lg:text-base">
+        <div
+          class="text-xs sm:text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-100 lg:text-base"
+        >
           {title}
         </div>
       </div>
