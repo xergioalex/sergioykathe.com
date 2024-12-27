@@ -6,8 +6,8 @@ import Button from '~/components/ui/Button.astro';
 import { Icon } from 'astro-icon/components';
 
 const {
-  title = "Comparte tus Fotos",
-  subtitle = "Galería del Evento",
+  title = 'Comparte tus Fotos',
+  subtitle = 'Galería del Evento',
   id,
   isDark = false,
   classes = {},
@@ -16,17 +16,17 @@ const {
 
 const galleries = [
   {
-    title: "Ceremonia Principal",
-    description: "Comparte tus fotos de la ceremonia en la Iglesia San José",
-    qrImage: "~/assets/images/qr-ceremony.png",
-    url: "https://photos.app.goo.gl/QEKZDpfgKj2Dzg6y6"
+    title: 'Ceremonia Principal',
+    description: 'Comparte tus fotos de la ceremonia en la Iglesia San José',
+    qrImage: '~/assets/images/qr-ceremony.png',
+    url: 'https://photos.app.goo.gl/QEKZDpfgKj2Dzg6y6',
   },
   {
-    title: "Fiesta de Boda",
-    description: "Comparte tus fotos de la celebración en la Finca San Francisco",
-    qrImage: "~/assets/images/qr-party.png",
-    url: "https://photos.app.goo.gl/oPPhptEvqH9osuYJ7"
-  }
+    title: 'Fiesta de Boda',
+    description: 'Comparte tus fotos de la celebración en la Finca San Francisco',
+    qrImage: '~/assets/images/qr-party.png',
+    url: 'https://photos.app.goo.gl/oPPhptEvqH9osuYJ7',
+  },
 ];
 ---
 
@@ -59,9 +59,7 @@ const galleries = [
               />
               <p class="text-sm text-center mt-2 text-muted">Escanea para subir fotos</p>
             </div>
-            <p class="text-muted dark:text-slate-400 text-center">
-              {gallery.description}
-            </p>
+            <p class="text-muted dark:text-slate-400 text-center">{gallery.description}</p>
             <Button variant="primary" href={gallery.url} target="_blank">
               <Icon name="tabler:camera" class="w-5 h-5 mr-2" />
               Subir Fotos
