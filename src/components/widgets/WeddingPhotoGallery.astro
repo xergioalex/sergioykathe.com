@@ -1,0 +1,85 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Headline from '../ui/Headline.astro';
+import Image from '~/components/common/Image.astro';
+import Button from '~/components/ui/Button.astro';
+import { Icon } from 'astro-icon/components';
+
+const {
+  title = "Comparte tus Fotos",
+  subtitle = "Galería del Evento",
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+const galleries = [
+  {
+    title: "Ceremonia Principal",
+    description: "Comparte tus fotos de la ceremonia en la Iglesia San José",
+    qrImage: "~/assets/images/qr-ceremony.png",
+    url: "https://photos.app.goo.gl/QEKZDpfgKj2Dzg6y6"
+  },
+  {
+    title: "Fiesta de Boda",
+    description: "Comparte tus fotos de la celebración en la Finca San Francisco",
+    qrImage: "~/assets/images/qr-party.png",
+    url: "https://photos.app.goo.gl/oPPhptEvqH9osuYJ7"
+  }
+];
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="text-center">
+    <Headline
+      title={title}
+      subtitle={subtitle}
+      classes={{
+        container: 'mb-12 md:mb-16',
+        title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+        subtitle: 'text-xl text-primary dark:text-slate-400',
+      }}
+    />
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 mx-auto max-w-6xl">
+    {
+      galleries.map((gallery) => (
+        <div class="bg-white dark:bg-slate-900 rounded-lg shadow-md p-6">
+          <h3 class="text-2xl font-script text-primary text-center mb-4">{gallery.title}</h3>
+          <div class="flex flex-col items-center gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <Image
+                src={gallery.qrImage}
+                alt={`Código QR para ${gallery.title}`}
+                class="w-48 h-48 mx-auto"
+                width={192}
+                height={192}
+              />
+              <p class="text-sm text-center mt-2 text-muted">Escanea para subir fotos</p>
+            </div>
+            <p class="text-muted dark:text-slate-400 text-center">
+              {gallery.description}
+            </p>
+            <Button variant="primary" href={gallery.url} target="_blank">
+              <Icon name="tabler:camera" class="w-5 h-5 mr-2" />
+              Subir Fotos
+            </Button>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="mt-12 text-center">
+    <div class="flex items-center justify-center gap-2 mb-4">
+      <div class="h-0.5 w-12 bg-primary"></div>
+      <Icon name="tabler:camera" class="w-6 h-6 text-primary" />
+      <div class="h-0.5 w-12 bg-primary"></div>
+    </div>
+    <p class="text-sm text-muted dark:text-slate-400">
+      Las fotos compartidas estarán disponibles para todos los invitados
+    </p>
+  </div>
+</WidgetWrapper>
