@@ -5,7 +5,7 @@
     { title: 'Días', amount: '0' },
     { title: 'Horas', amount: '0' },
     { title: 'Minutos', amount: '0' },
-    { title: 'Segundos', amount: '0' }
+    { title: 'Segundos', amount: '0' },
   ];
 
   const weddingDate = new Date('2025-03-22T00:00:00');
@@ -24,7 +24,7 @@
       { title: 'Días', amount: days.toString() },
       { title: 'Horas', amount: hours.toString() },
       { title: 'Minutos', amount: minutes.toString() },
-      { title: 'Segundos', amount: seconds.toString() }
+      { title: 'Segundos', amount: seconds.toString() },
     ];
   }
 
@@ -40,7 +40,9 @@
 
 <div class="flex flex-wrap justify-center -m-4 text-center">
   {#each dateItems as { amount, title }}
-    <div class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center md:border-r md:last:border-none dark:md:border-slate-500 intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade intersect-quarter">
+    <div
+      class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center md:border-r md:last:border-none dark:md:border-slate-500 intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade intersect-quarter"
+    >
       {#if amount}
         <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
           {amount}
@@ -53,4 +55,4 @@
       {/if}
     </div>
   {/each}
-</div> 
+</div>

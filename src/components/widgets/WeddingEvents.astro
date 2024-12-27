@@ -5,28 +5,23 @@ import { Icon } from 'astro-icon/components';
 
 const weddingInvitation = '~/assets/images/wedding-invitation.gif';
 
-const {
-  title,
-  subtitle,
-  id,
-  isDark = false,
-  classes = {},
-  bg = await Astro.slots.render('bg'),
-} = Astro.props;
+const { title, subtitle, id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
 
 const events = [
   {
     title: 'Ceremonia Principal',
     time: '4:30 pm',
     location: 'Iglesia San José',
-    description: 'Únete a nosotros para celebrar nuestro amor y compromiso ante los ojos de Dios en un entorno sagrado y lleno de bendiciones.',
+    description:
+      'Únete a nosotros para celebrar nuestro amor y compromiso ante los ojos de Dios en un entorno sagrado y lleno de bendiciones.',
   },
   {
     title: 'Fiesta de Boda',
     time: '7:30 pm',
     location: 'Finca San Francisco',
-    description: 'Acompáñanos en una velada encantadora llena de melodías vibrantes y una alegría contagiosa para festejar nuestra unión eterna. ¡Será una noche inolvidable!',
-  }
+    description:
+      'Acompáñanos en una velada encantadora llena de melodías vibrantes y una alegría contagiosa para festejar nuestra unión eterna. ¡Será una noche inolvidable!',
+  },
 ];
 ---
 
