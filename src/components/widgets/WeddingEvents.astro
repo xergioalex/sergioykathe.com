@@ -1,0 +1,89 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
+
+const weddingInvitation = '~/assets/images/wedding-invitation.gif';
+
+const {
+  title,
+  subtitle,
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+const events = [
+  {
+    title: 'Ceremonia Principal',
+    time: '4:30 pm',
+    location: 'Iglesia San José',
+    description: 'Únete a nosotros para celebrar nuestro amor y compromiso ante los ojos de Dios en un entorno sagrado y lleno de bendiciones.',
+  },
+  {
+    title: 'Fiesta de Boda',
+    time: '7:30 pm',
+    location: 'Finca San Francisco',
+    description: 'Acompáñanos en una velada encantadora llena de melodías vibrantes y una alegría contagiosa para festejar nuestra unión eterna. ¡Será una noche inolvidable!',
+  }
+];
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="text-center">
+    <p class="text-base text-primary font-semibold tracking-wide uppercase">{title}</p>
+    <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">{subtitle}</h2>
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center justify-center gap-2 mb-8">
+        <div class="h-0.5 w-12 bg-primary"></div>
+        <span class="text-primary">❤️</span>
+        <div class="h-0.5 w-12 bg-primary"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mt-8">
+    <!-- Ceremonia -->
+    <div class="text-center max-w-md mx-auto">
+      <h3 class="text-2xl md:text-3xl font-script text-primary mb-4">{events[0].title}</h3>
+      <div class="inline-block bg-white rounded-full px-6 py-2 shadow-md">
+        <div class="text-xl md:text-2xl font-bold mb-0">{events[0].time}</div>
+      </div>
+      <div class="text-lg md:text-xl font-medium my-4 whitespace-pre-line">{events[0].location}</div>
+      <p class="text-muted mb-4">{events[0].description}</p>
+      <div class="flex flex-col gap-2">
+        <a href="#" class="text-primary hover:underline inline-flex items-center justify-center gap-1">
+          <Icon name="tabler:map-pin" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+          ABRIR MAPA
+        </a>
+      </div>
+    </div>
+
+    <!-- Imagen Central -->
+    <div class="flex flex-col items-center justify-center">
+      <div class="relative w-64 h-64">
+        <Image src={weddingInvitation} alt="Wedding Logo" width={256} class="inline" />
+      </div>
+      <a href="#" class="btn bg-primary text-white hover:bg-primary-dark px-8 py-3 rounded-full mt-8 transition-colors">
+        RSVP
+      </a>
+    </div>
+
+    <!-- Fiesta -->
+    <div class="text-center max-w-md mx-auto">
+      <h3 class="text-2xl md:text-3xl font-script text-primary mb-4">{events[1].title}</h3>
+      <div class="inline-block bg-white rounded-full px-6 py-2 shadow-md">
+        <div class="text-xl md:text-2xl font-bold mb-0">{events[1].time}</div>
+      </div>
+      <div class="text-lg md:text-xl font-medium my-4 whitespace-pre-line">{events[1].location}</div>
+      <p class="text-muted mb-4">{events[1].description}</p>
+      <div class="flex flex-col gap-2">
+        <a href="#" class="text-primary hover:underline inline-flex items-center justify-center gap-1">
+          <Icon name="tabler:map-pin" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+          ABRIR MAPA
+        </a>
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>
