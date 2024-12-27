@@ -1,7 +1,7 @@
 {
-  "name": "@onwidget/astrowind",
+  "name": "sergioykathe.com",
   "version": "1.0.17",
-  "description": "AstroWind: A free template using Astro 5.0 and Tailwind CSS. Astro starter theme.",
+  "description": "Sitio web de boda de Sergio y Kathe",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
