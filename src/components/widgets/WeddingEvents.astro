@@ -3,7 +3,6 @@ import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import { Icon } from 'astro-icon/components';
 import MapModal from './MapModal.svelte';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Button from '~/components/ui/Button.astro';
 
 const weddingInvitation = '~/assets/images/wedding-invitation.gif';
@@ -72,9 +71,7 @@ const events = [
         <Image src={weddingInvitation} alt="Wedding Logo" width={256} class="inline" />
       </div>
       <div class="mt-8">
-        <Button variant="primary">
-          CONFIRMAR ASISTENCIA
-        </Button>
+        <Button variant="primary"> CONFIRMAR ASISTENCIA </Button>
       </div>
     </div>
 
