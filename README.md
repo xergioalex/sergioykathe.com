@@ -1,1 +1,1 @@
-# Wedding Site.
+# Wedding Site
