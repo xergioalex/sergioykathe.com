@@ -1,6 +1,8 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import { getHomePermalink } from '~/utils/permalinks';
+import Image from '~/components/common/Image.astro';
+const weddingInvitation = '~/assets/images/wedding-invitation.gif';
 
 const title = `Página No Encontrada`;
 ---
@@ -22,13 +24,7 @@ const title = `Página No Encontrada`;
 
         <div class="flex flex-col items-center justify-center">
           <div class="relative mt-4 mb-8">
-            <img
-              src="/src/assets/images/wedding-invitation.gif"
-              alt="Wedding Logo"
-              width="200"
-              height="200"
-              class="inline"
-            />
+            <Image src={weddingInvitation} alt="Wedding Logo" width={200} class="inline" />
           </div>
         </div>
 
