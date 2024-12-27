@@ -114,7 +114,10 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         name: Step 6 - ⚙️ Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          # Install specific dependencies for CI (x64)
+          npm install --no-save @rollup/rollup-linux-x64-gnu@4.29.1 lightningcss-linux-x64-gnu@1.28.2
       - name: Step 7 - Build static files
         run: |
           npm run build:ghpages
