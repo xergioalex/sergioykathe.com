@@ -82,6 +82,7 @@ export default defineConfig({
     }),
   ],
 
+<<<<<<< HEAD
   image: {
     domains: ['cdn.pixabay.com'],
     service: {
@@ -89,6 +90,8 @@ export default defineConfig({
     },
   },
 
+=======
+>>>>>>> main
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
