@@ -1,6 +1,7 @@
 <script lang="ts">
   /// <reference types="@types/google.maps" />
   import { onMount } from 'svelte';
+  import MapPinIcon from '../icons/MapPinIcon.svelte';
 
   let isOpen = false;
   let mapElement: HTMLElement;
@@ -11,20 +12,21 @@
 
   const events = [
     {
-      title: 'Ceremonia Principal',
+      title: 'Ceremonia Principal (Iglesia San José)',
       location: 'Iglesia San José',
       coordinates: {
         lat: 4.80934,
         lng: -75.69164,
-        zoom: 17,
+        zoom: 18,
       },
     },
     {
-      title: 'Fiesta de Boda',
+      title: 'Fiesta de Boda (Finca San Francisco)',
       location: 'Finca San Francisco',
       coordinates: {
         lat: 4.83632,
         lng: -75.76349,
+        zoom: 15,
       },
     },
   ];
@@ -72,7 +74,7 @@
     if (mapElement && isOpen && window.google) {
       const map = new window.google.maps.Map(mapElement, {
         center: { lat: currentLocation.coordinates.lat, lng: currentLocation.coordinates.lng },
-        zoom: 18,
+        zoom: currentLocation.coordinates.zoom,
         mapTypeControl: false,
         fullscreenControl: false,
         streetViewControl: false,
@@ -81,6 +83,7 @@
       new window.google.maps.Marker({
         position: { lat: currentLocation.coordinates.lat, lng: currentLocation.coordinates.lng },
         map,
+        zoom: 18,
         title: currentLocation.title,
       });
 
@@ -146,7 +149,10 @@
   >
     <div class="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-hidden" role="document">
       <div class="p-4 border-b flex justify-between items-center">
-        <h3 id="modal-title" class="text-lg font-semibold">{currentLocation.title}</h3>
+        <h3 id="modal-title" class="text-lg font-semibold flex items-center gap-2">
+          <MapPinIcon />
+          {currentLocation.title}
+        </h3>
         <button class="text-gray-500 hover:text-gray-700" on:click={closeModal} aria-label="Cerrar mapa"> ✕ </button>
       </div>
       <div class="h-[400px]" bind:this={mapElement}></div>
