@@ -8,7 +8,7 @@
     { title: 'Segundos', amount: '0' },
   ];
 
-  const weddingDate = new Date('2025-03-22T00:00:00');
+  const weddingDate = new Date('2025-03-22T16:30:00-05:00');
   let interval: ReturnType<typeof setInterval>;
   let mounted = false;
 
@@ -44,15 +44,19 @@
 </script>
 
 <div class="countdown-container">
-  <div class="flex flex-wrap justify-center -m-4 text-center">
+  <div class="flex flex-wrap justify-center -mx-2 text-center">
     {#each dateItems as { amount, title }}
       <div
-        class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center md:border-r md:last:border-none dark:md:border-slate-500 intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade intersect-quarter"
+        class="w-1/4 px-2 mb-4 text-center md:border-r md:last:border-none dark:md:border-slate-500 intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade intersect-quarter"
       >
-        <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
+        <div
+          class="font-heading text-primary text-2xl sm:text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl"
+        >
           {amount || '0'}
         </div>
-        <div class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-100 lg:text-base">
+        <div
+          class="text-xs sm:text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-100 lg:text-base"
+        >
           {title}
         </div>
       </div>
