@@ -24,15 +24,16 @@ const metadata = {
     <Header
       links={[
         { text: 'Inicio', href: '#home' },
-        { text: 'About', href: '#about' },
-        { text: 'Resume', href: '#resume' },
+        { text: 'Eventos', href: '#events' },
+        { text: 'Countdown', href: '#countdown' },
         { text: 'Porfolio', href: '#porfolio' },
         { text: 'Blog', href: '#blog' },
         { text: 'Github', href: 'https://github.com/onwidget' },
       ]}
       actions={[
         {
-          text: 'Hire me',
+          text: 'Confirmar Asistencia',
+          variant: 'primary',
           href: '#',
         },
       ]}
@@ -46,20 +47,20 @@ const metadata = {
   <WeddingHero
     id="home"
     tagline="Invitación de Boda"
-    title="Únete a Nuestra Historia de Amor"
-    subtitle="Acompáñanos en un día lleno de amor y alegría mientras celebramos nuestra unión."
-    content=`<b>Acompañanos el 22 de Marzo del 2025</b>`
+    title="Únete a Nuestra Historia"
+    subtitle="Celebra con nosotros un día lleno de amor y felicidad mientras unimos nuestras vidas para siempre."
+    content=`<b>Acompáñanos el 22 de marzo de 2025</b>`
     actions={[
       { variant: 'primary', text: 'Confirmar Asistencia', href: '#', icon: 'tabler:square-rounded-arrow-right' },
       { text: 'Más Información', href: '#' },
     ]}
     image={{
       src: '~/assets/images/wedding-hero.png',
-      alt: 'Niños contando una historia. Demostración de página de aterrizaje de ventas de formato largo',
+      alt: 'Imagen principal de la página de la boda',
     }}
   />
 
-  <WeddingEvents title="CEREMONIA & FIESTA" subtitle="NUESTRA BODA" isDark={false} />
+  <WeddingEvents id="events" title="CEREMONIA & FIESTA" subtitle="NUESTRA BODA" isDark={false} />
 
   <WeddingCountdown title="Faltan" isDark={true} />
 
