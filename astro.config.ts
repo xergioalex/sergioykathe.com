@@ -24,7 +24,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
-  site: 'https://sergioykathe.com',
+  site: 'https://www.sergioykathe.com',
 
   build: {
     assets: 'assets',
