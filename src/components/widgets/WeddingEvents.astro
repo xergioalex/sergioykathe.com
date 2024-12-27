@@ -2,6 +2,7 @@
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import { Icon } from 'astro-icon/components';
+import MapModal from './MapModal.svelte';
 
 const weddingInvitation = '~/assets/images/wedding-invitation.gif';
 
@@ -14,6 +15,10 @@ const events = [
     location: 'Iglesia San José',
     description:
       'Únete a nosotros para celebrar nuestro amor y compromiso ante los ojos de Dios en un entorno sagrado y lleno de bendiciones.',
+    coordinates: {
+      lat: 4.6097100,  // Reemplaza con las coordenadas reales
+      lng: -74.0817500
+    }
   },
   {
     title: 'Fiesta de Boda',
@@ -21,6 +26,10 @@ const events = [
     location: 'Finca San Francisco',
     description:
       'Acompáñanos en una velada encantadora llena de melodías vibrantes y una alegría contagiosa para festejar nuestra unión eterna. ¡Será una noche inolvidable!',
+    coordinates: {
+      lat: 4.6097100,  // Reemplaza con las coordenadas reales
+      lng: -74.0817500
+    }
   },
 ];
 ---
@@ -48,10 +57,13 @@ const events = [
       <div class="text-lg md:text-xl font-medium my-4 whitespace-pre-line">{events[0].location}</div>
       <p class="text-muted mb-4">{events[0].description}</p>
       <div class="flex flex-col gap-2">
-        <a href="#" class="text-primary hover:underline inline-flex items-center justify-center gap-1">
+        <button
+          class="text-primary hover:underline inline-flex items-center justify-center gap-1"
+          onclick="window.openMap(0)"
+        >
           <Icon name="tabler:map-pin" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
           ABRIR MAPA
-        </a>
+        </button>
       </div>
     </div>
 
@@ -74,11 +86,36 @@ const events = [
       <div class="text-lg md:text-xl font-medium my-4 whitespace-pre-line">{events[1].location}</div>
       <p class="text-muted mb-4">{events[1].description}</p>
       <div class="flex flex-col gap-2">
-        <a href="#" class="text-primary hover:underline inline-flex items-center justify-center gap-1">
+        <button
+          class="text-primary hover:underline inline-flex items-center justify-center gap-1"
+          onclick="window.openMap(1)"
+        >
           <Icon name="tabler:map-pin" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
           ABRIR MAPA
-        </a>
+        </button>
       </div>
     </div>
   </div>
+
+  <MapModal client:load />
 </WidgetWrapper>
+
+<script>
+  // Declarar el tipo en window
+  declare global {
+    interface Window {
+      openMap: (index: number) => void;
+    }
+  }
+
+  // Asignar la función
+  window.openMap = (index: number): void => {
+    document.dispatchEvent(
+      new CustomEvent('openMap', {
+        detail: {
+          index: index
+        }
+      })
+    );
+  };
+</script>
