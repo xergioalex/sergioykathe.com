@@ -6,7 +6,7 @@ import WeddingHero from '~/components/widgets/WeddingHero.astro';
 import WeddingCountdown from '~/components/widgets/WeddingCountdown.astro';
 import WeddingEvents from '~/components/widgets/WeddingEvents.astro';
 import WeddingPhotoGallery from '~/components/widgets/WeddingPhotoGallery.astro';
-import DressCode from '~/components/widgets/DressCode.astro';
+import WeddingDressCode from '~/components/widgets/WeddingDressCode.astro';
 import WeddingTips from '~/components/widgets/WeddingTips.astro';
 import WeddingQuote from '~/components/widgets/WeddingQuote.astro';
 
@@ -20,12 +20,11 @@ const metadata = {
   <Fragment slot="header">
     <Header
       links={[
-        { text: 'Inicio', href: '#home' },
-        { text: 'Eventos', href: '#events' },
+        { text: 'Inicio', href: '#inicio' },
+        { text: 'Evento', href: '#evento' },
         { text: 'Tips', href: '#tips' },
-        { text: 'Vestimenta', href: '#dress-code' },
-        { text: 'Fotos', href: '#photos' },
-        { text: 'Github', href: 'https://github.com/onwidget' },
+        { text: 'Vestimenta', href: '#vestimenta' },
+        { text: 'Fotos', href: '#fotos' },
       ]}
       actions={[
         {
@@ -40,14 +39,14 @@ const metadata = {
   </Fragment>
 
   <WeddingHero
-    id="home"
+    id="inicio"
     tagline="Invitación de Boda"
     title="Únete a Nuestra Historia"
     subtitle="Celebra con nosotros un día lleno de amor y felicidad mientras unimos nuestras vidas para siempre."
     content=`<b>Acompáñanos el 22 de Marzo de 2025</b>`
     actions={[
       { variant: 'primary', text: 'Confirmar Asistencia', href: '#', icon: 'tabler:square-rounded-arrow-right' },
-      { text: 'Más Información', href: '#events' },
+      { text: 'Más Información', href: '#evento' },
     ]}
     image={{
       src: '~/assets/images/wedding-hero.png',
@@ -57,13 +56,43 @@ const metadata = {
 
   <WeddingQuote id="quote" isDark={false} />
 
-  <WeddingEvents id="events" title="CEREMONIA & FIESTA" subtitle="NUESTRA BODA" isDark={false} />
+  <WeddingEvents id="evento" title="CEREMONIA & FIESTA" subtitle="NUESTRA BODA" isDark={false} />
 
   <WeddingCountdown title="Te esperamos en" isDark={true} />
 
   <WeddingTips id="tips" isDark={false} />
 
-  <DressCode id="dress-code" isDark={false} />
+  <WeddingDressCode id="vestimenta" isDark={false} />
 
-  <WeddingPhotoGallery id="photos" isDark={false} />
+  <WeddingPhotoGallery id="fotos" isDark={false} />
 </Layout>
+
+<script>
+  // Función para manejar el scroll suave
+  function scrollToSection(hash: string) {
+    const element = document.querySelector(hash);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // Scroll al cargar la página si hay un hash en la URL
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash) {
+      // Pequeño delay para asegurar que todo el contenido esté cargado
+      setTimeout(() => {
+        scrollToSection(window.location.hash);
+      }, 100);
+    }
+  });
+
+  // Manejar clicks en los enlaces del menú
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      e.preventDefault();
+      const hash = (e.currentTarget as HTMLAnchorElement).getAttribute('href') || '';
+      window.history.pushState({}, '', hash);
+      scrollToSection(hash);
+    });
+  });
+</script>

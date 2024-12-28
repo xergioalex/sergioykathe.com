@@ -1,12 +1,7 @@
 ---
 import Layout from '~/layouts/Layout.astro';
-import Header from '~/components/widgets/Header.astro';
+import HeaderBackAction from '~/components/widgets/HeaderBackAction.astro';
 import Footer from '~/components/widgets/Footer.astro';
-
-export const headerData = {
-  links: [],
-  actions: [{ text: 'Volver al inicio', href: '/' }],
-};
 
 import { footerData } from '~/navigation';
 
@@ -14,14 +9,22 @@ import type { MetaData } from '~/types';
 
 export interface Props {
   metadata?: MetaData;
+  backAction?: string;
 }
 
-const { metadata } = Astro.props;
+const { metadata, backAction = '/' } = Astro.props;
+
+console.log('---- HERE ----', backAction);
+
+const headerData = {
+  links: [],
+  actions: [{ text: 'Volver', href: backAction }],
+};
 ---
 
 <Layout metadata={metadata}>
   <slot name="header">
-    <Header {...headerData} isSticky showToggleTheme />
+    <HeaderBackAction {...headerData} isSticky />
   </slot>
   <main>
     <slot />

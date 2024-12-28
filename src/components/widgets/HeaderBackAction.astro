@@ -1,0 +1,40 @@
+---
+import Button from '~/components/ui/Button.astro';
+import Logo from '~/components/Logo.astro';
+import { getHomePermalink } from '~/utils/permalinks';
+import type { CallToAction } from '~/types';
+
+interface Props {
+  actions?: Array<CallToAction>;
+  isSticky?: boolean;
+}
+
+const { actions = [], isSticky = false } = Astro.props;
+---
+
+<header
+  class:list={[
+    { sticky: isSticky, relative: !isSticky },
+    'top-0 z-40 w-full border-b border-gray-50/0 transition-all ease-in-out bg-white dark:bg-slate-900',
+  ]}
+  {...isSticky ? { 'data-aw-sticky-header': true } : {}}
+>
+  <div class="relative mx-auto w-full px-4 md:px-6 py-3">
+    <div class="flex justify-between items-center">
+      <a class="flex items-center" href={getHomePermalink()}>
+        <Logo />
+      </a>
+
+      {actions?.length && <Button {...actions[0]} class="py-2.5 px-6 font-semibold shadow-none text-sm" />}
+    </div>
+  </div>
+</header>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('[data-aw-sticky-header]');
+    if (header) {
+      header.classList.toggle('shadow-md', window.scrollY > 10);
+    }
+  });
+</script>

@@ -5,8 +5,7 @@ import Button from '~/components/ui/Button.astro';
 import { Icon } from 'astro-icon/components';
 
 const {
-  title = 'TIPS Y SUGERENCIAS',
-  subtitle = 'INFORMACIÓN IMPORTANTE',
+  title = 'INFORMACIÓN IMPORTANTE',
   id,
   isDark = false,
   classes = {},
@@ -15,8 +14,7 @@ const {
 
 const tipsInfo = {
   title: 'Notas Importantes',
-  description:
-    'Información útil para que disfrutes al máximo de nuestra celebración, desde cómo llegar hasta recomendaciones para el día del evento.',
+  description: 'Información útil para que disfrutes al máximo de nuestra celebración.',
   icon: 'tabler:bulb',
   link: '/tips-y-sugerencias',
 };
@@ -26,7 +24,6 @@ const tipsInfo = {
   <div class="text-center">
     <Headline
       title={title}
-      subtitle={subtitle}
       classes={{
         container: 'mb-12 md:mb-16',
         title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',

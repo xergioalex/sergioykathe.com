@@ -1,32 +1,23 @@
 ---
 title: 'Código de Vestimenta'
 layout: '~/layouts/WeddingMarkdownLayout.astro'
+backAction: '/#vestimenta'
 ---
 
-La vestimenta para ambos eventos es Formal - Cocktail. Te compartimos algunas sugerencias para que luzcas espectacular en este día tan especial.
+La vestimenta para ambos eventos es Formal. Te compartimos algunas sugerencias para que luzcas espectacular en este día tan especial.
 
 ## Para Caballeros
 
-- Traje formal (negro, azul marino, gris)
-- Camisa de vestir (preferiblemente blanca o tonos claros)
-- Corbata o pajarita (opcional para la fiesta)
-- Zapatos de vestir
-- Se sugieren colores sobrios para la ceremonia principal
+- Ropa formal
 
 ## Para Damas
 
-- Vestido cocktail o largo
-- Colores y estampados elegantes (evitar blanco y rojo)
-- Tacones o zapatos elegantes
-- Accesorios a elección
-- Para la ceremonia principal:
-  - Evitar escotes muy pronunciados
-  - Mantener los hombros cubiertos (pueden usar chal o estola)
+- Elegantes y formales, preferiblemente vestido largo
+- <b class="text-primary">Evitar a toda costa el color blanco</b>
 
 ### Consideraciones Generales
 
 - La ceremonia es en una iglesia, por favor mantener el respeto en la vestimenta
 - La fiesta se extenderá hasta la madrugada
 - Considerar llevar zapatos cómodos para bailar
-- La recepción es al aire libre, tener en cuenta el clima
 - Se sugiere traer un abrigo o chal para la noche
