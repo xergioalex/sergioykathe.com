@@ -10,9 +10,9 @@ const { title, subtitle, id, isDark = false, classes = {}, bg = await Astro.slot
 
 const events = [
   {
-    title: 'Ceremonia Principal',
+    title: 'Ceremonia',
     time: '4:30 pm',
-    location: 'Iglesia San José',
+    location: 'Iglesia Nuestra Señora del Carmen<br>(San José)',
     description:
       'Únete a nosotros para celebrar nuestro amor y compromiso en un entorno sagrado, lleno de bendiciones y alegría. Será un momento especial.',
     coordinates: {
@@ -21,7 +21,7 @@ const events = [
     },
   },
   {
-    title: 'Fiesta de Boda',
+    title: 'Fiesta',
     time: '7:30 pm',
     location: 'Finca San Francisco',
     description:
@@ -70,13 +70,12 @@ const createGoogleCalendarUrl = (event: (typeof events)[0]) => {
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mt-8">
-    <!-- Ceremonia -->
     <div class="text-center max-w-md mx-auto">
       <h3 class="text-2xl md:text-3xl font-script text-primary mb-4">{events[0].title}</h3>
       <div class="inline-block bg-white rounded-full px-6 py-2 shadow-md">
         <div class="text-xl md:text-2xl font-bold mb-0">{events[0].time}</div>
       </div>
-      <div class="text-lg md:text-xl font-medium my-4 whitespace-pre-line">{events[0].location}</div>
+      <div class="text-lg md:text-xl font-medium my-4 whitespace-pre-line" set:html={events[0].location} />
       <p class="text-muted mb-4">{events[0].description}</p>
       <div class="flex flex-col gap-2">
         <Button variant="primary" onclick="window.openMap(0)">

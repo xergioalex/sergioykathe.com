@@ -12,7 +12,7 @@
 
   const events = [
     {
-      title: 'Ceremonia Principal (Iglesia San José)',
+      title: 'Ceremonia - Iglesia Nuestra Señora del Carmen (San José)',
       location: 'Iglesia San José',
       coordinates: {
         lat: 4.80934,
@@ -21,7 +21,7 @@
       },
     },
     {
-      title: 'Fiesta de Boda (Finca San Francisco)',
+      title: 'Fiesta (Finca San Francisco)',
       location: 'Finca San Francisco',
       coordinates: {
         lat: 4.83632,
