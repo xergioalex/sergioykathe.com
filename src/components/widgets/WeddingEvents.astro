@@ -75,7 +75,7 @@ const createGoogleCalendarUrl = (event: (typeof events)[0]) => {
       <div class="inline-block bg-white rounded-full px-6 py-2 shadow-md">
         <div class="text-xl md:text-2xl font-bold mb-0">{events[0].time}</div>
       </div>
-      <div class="text-lg md:text-xl font-medium my-4 whitespace-pre-line" set:html={events[0].location}/>
+      <div class="text-lg md:text-xl font-medium my-4 whitespace-pre-line" set:html={events[0].location} />
       <p class="text-muted mb-4">{events[0].description}</p>
       <div class="flex flex-col gap-2">
         <Button variant="primary" onclick="window.openMap(0)">
