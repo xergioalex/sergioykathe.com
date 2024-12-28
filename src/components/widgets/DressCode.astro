@@ -1,0 +1,52 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Headline from '../ui/Headline.astro';
+import Button from '~/components/ui/Button.astro';
+import { Icon } from 'astro-icon/components';
+
+const {
+  title = 'CÓDIGO DE VESTIMENTA',
+  subtitle = 'ELEGANCIA Y ESTILO',
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+const dressCodeInfo = {
+  title: 'Formal - Cocktail',
+  description: 'Para hacer de este día algo especial, te sugerimos vestir elegante tanto para la ceremonia religiosa como para la celebración.',
+  icon: 'tabler:hanger',
+  link: '/dress-code',
+};
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="text-center">
+    <Headline
+      title={title}
+      subtitle={subtitle}
+      classes={{
+        container: 'mb-12 md:mb-16',
+        title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+        subtitle: 'text-xl text-primary dark:text-slate-400',
+      }}
+    />
+  </div>
+
+  <div class="max-w-3xl mx-auto">
+    <div class="bg-white dark:bg-slate-900 rounded-lg shadow-md p-8">
+      <div class="flex items-center justify-center mb-4">
+        <Icon name={dressCodeInfo.icon} class="w-12 h-12 text-primary" />
+      </div>
+      <h3 class="text-2xl font-script text-primary text-center mb-4">{dressCodeInfo.title}</h3>
+      <p class="text-muted dark:text-slate-400 text-center mb-6">{dressCodeInfo.description}</p>
+      <div class="text-center">
+        <Button variant="primary" href={dressCodeInfo.link}>
+          <Icon name="tabler:arrow-right" class="w-5 h-5 inline-block -mt-0.5 mr-2" />
+          Ver guía completa
+        </Button>
+      </div>
+    </div>
+  </div>
+</WidgetWrapper> 
