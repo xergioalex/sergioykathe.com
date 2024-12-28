@@ -25,11 +25,7 @@ const { actions = [], isSticky = false } = Astro.props;
         <Logo />
       </a>
 
-      {
-        actions?.length && (
-          <Button {...actions[0]} class="py-2.5 px-6 font-semibold shadow-none text-sm" />
-        )
-      }
+      {actions?.length && <Button {...actions[0]} class="py-2.5 px-6 font-semibold shadow-none text-sm" />}
     </div>
   </div>
 </header>

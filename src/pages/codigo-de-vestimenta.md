@@ -1,6 +1,7 @@
 ---
 title: 'Código de Vestimenta'
 layout: '~/layouts/WeddingMarkdownLayout.astro'
+backAction: '/#vestimenta'
 ---
 
 La vestimenta para ambos eventos es Formal. Te compartimos algunas sugerencias para que luzcas espectacular en este día tan especial.

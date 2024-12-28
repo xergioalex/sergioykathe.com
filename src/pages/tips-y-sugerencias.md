@@ -1,6 +1,7 @@
 ---
 title: 'Tips y Sugerencias'
 layout: '~/layouts/WeddingMarkdownLayout.astro'
+backAction: '/#tips'
 ---
 
 ## Llegada y Transporte
@@ -17,7 +18,7 @@ layout: '~/layouts/WeddingMarkdownLayout.astro'
 
 ## Consideraciones Especiales
 
-- La ceremonia y la fiesta comenzarán puntualmente y no queremos que te pierdas nada. ¡Así qué, por favor, llega a tiempo! <a href="/#eventos">Consulta la información del evento aquí</a>.
+- La ceremonia y la fiesta comenzarán puntualmente y no queremos que te pierdas nada. ¡Así qué, por favor, llega a tiempo! <a href="/#evento">Consulta la información del evento aquí</a>.
 - Para asegurarnos de que todos tengan su lugar en esta fiesta, te recordamos gentilmente que cada invitado tiene un pase asignado.
 - Queremos que disfrutes de esta fiesta al máximo, por eso decidimos que sea un evento solo para adultos.
 - Es importante que confirmes tu asistencia a más tardar el 28 de febrero de 2025.
