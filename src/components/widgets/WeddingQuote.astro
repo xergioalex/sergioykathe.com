@@ -1,0 +1,42 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import { Icon } from 'astro-icon/components';
+
+const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
+
+const quote = {
+  description:
+    'Con el corazón lleno de amor y alegría, queremos compartir con ustedes la noticia más especial de nuestras vidas: ¡Nos casamos! Desde que nos conocimos, hemos vivido momentos mágicos y aventuras que nos han hecho crecer como pareja. Nuestro amor sigue sorprendiéndonos y fortaleciéndonos cada día.',
+  text: 'El amor es paciente, es bondadoso. El amor no es envidioso ni jactancioso ni orgulloso. No se comporta con rudeza, no es egoísta, no se enoja fácilmente, no guarda rencor.',
+  verse: '1 Corintios 13:4-5',
+};
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="flex items-center justify-center gap-2 mb-10">
+      <div class="h-0.5 w-12 bg-primary"></div>
+      <Icon name="tabler:heart" class="w-6 h-6 text-primary" />
+      <div class="h-0.5 w-12 bg-primary"></div>
+    </div>
+
+    <p class="text-xl md:text-2xl font-medium italic text-gray-900 dark:text-white mb-4">
+      {quote.description}
+    </p>
+
+    <blockquote class="relative">
+      <p class="text-xl md:text-2xl font-script text-muted dark:text-slate-400 mb-6">
+        "{quote.text}"
+      </p>
+      <footer class="text-lg text-primary font-semibold">
+        {quote.verse}
+      </footer>
+    </blockquote>
+
+    <div class="flex items-center justify-center gap-2 mt-10">
+      <div class="h-0.5 w-12 bg-primary"></div>
+      <Icon name="tabler:heart" class="w-6 h-6 text-primary" />
+      <div class="h-0.5 w-12 bg-primary"></div>
+    </div>
+  </div>
+</WidgetWrapper>
