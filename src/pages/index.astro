@@ -13,6 +13,7 @@ import WeddingCountdown from '~/components/widgets/WeddingCountdown.astro';
 import WeddingEvents from '~/components/widgets/WeddingEvents.astro';
 import WeddingPhotoGallery from '~/components/widgets/WeddingPhotoGallery.astro';
 import DressCode from '~/components/widgets/DressCode.astro';
+import WeddingTips from '~/components/widgets/WeddingTips.astro';
 
 const metadata = {
   title: 'Sergio y Kathe - Invitación de Boda',
@@ -27,8 +28,8 @@ const metadata = {
         { text: 'Inicio', href: '#home' },
         { text: 'Eventos', href: '#events' },
         { text: 'Fotos', href: '#photos' },
-        { text: 'Porfolio', href: '#porfolio' },
-        { text: 'Blog', href: '#blog' },
+        { text: 'Tips', href: '#tips' },
+        { text: 'Vestimenta', href: '#dress-code' },
         { text: 'Github', href: 'https://github.com/onwidget' },
       ]}
       actions={[
@@ -64,6 +65,8 @@ const metadata = {
   <WeddingEvents id="events" title="CEREMONIA & FIESTA" subtitle="NUESTRA BODA" isDark={false} />
 
   <WeddingCountdown title="Te esperamos en" isDark={true} />
+
+  <WeddingTips id="tips" isDark={false} />
 
   <DressCode id="dress-code" isDark={false} />
 
