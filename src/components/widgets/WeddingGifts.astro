@@ -1,0 +1,42 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Headline from '../ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
+
+const {
+  title = 'REGALO DE BODAS',
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+const giftsInfo = {
+  title: 'Lluvia de Sobres',
+  description: 'Tu presencia es el mayor regalo que podemos recibir. Si deseas hacer un gesto especial, te invitamos a contribuir a nuestra luna de miel a través de la lluvia de sobres, habra una urna disponible para depositar tus regalos en la recepción de la fiesta.',
+  icon: 'tabler:gift',
+};
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="text-center">
+    <Headline
+      title={title}
+      classes={{
+        container: 'mb-12 md:mb-16',
+        title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+        subtitle: 'text-xl text-primary dark:text-slate-400',
+      }}
+    />
+  </div>
+
+  <div class="max-w-3xl mx-auto">
+    <div class="bg-white dark:bg-slate-900 rounded-lg shadow-md p-8">
+      <div class="flex items-center justify-center mb-4">
+        <Icon name={giftsInfo.icon} class="w-12 h-12 text-primary" />
+      </div>
+      <h3 class="text-2xl font-script text-primary text-center mb-4">{giftsInfo.title}</h3>
+      <p class="text-muted dark:text-slate-400 text-center mb-6">{giftsInfo.description}</p>
+    </div>
+  </div>
+</WidgetWrapper>
