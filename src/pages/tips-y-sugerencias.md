@@ -19,9 +19,9 @@ backAction: '/#tips'
 ## Consideraciones Especiales
 
 - La ceremonia y el protocolo comenzarán puntualmente y no queremos que te pierdas nada. ¡Así qué, por favor, llega a tiempo! <a href="/#evento">Consulta la información del evento aquí</a>.
-- Para asegurarnos de que todos tengan su lugar en esta fiesta, te recordamos gentilmente que cada invitado tiene un pase asignado.
+- Para asegurarnos de que todos tengan su lugar en esta fiesta, te recordamos gentilmente que cada invitado tiene una invitación con un número específico de entradas asignadas.
 - Queremos que disfrutes de esta fiesta al máximo, por eso decidimos que sea un evento solo para adultos.
 - Es importante que confirmes tu asistencia a más tardar el 28 de febrero de 2025.
-- La recepción incluye cena completa.
+- La recepción incluye cena.
 - Habrá música en vivo y DJ.
 - El evento terminará aproximadamente a las 3:00 AM.
