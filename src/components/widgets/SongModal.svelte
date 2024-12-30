@@ -44,16 +44,20 @@
 </script>
 
 {#if isOpen}
-  <div
+  <dialog
     bind:this={modalContainer}
-    class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+    class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 w-full h-full"
+    open
     on:click={handleBackdropClick}
     on:keydown={handleKeydown}
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modal-title"
   >
-    <div class="bg-white rounded-lg max-w-xl w-full max-h-[90vh] overflow-hidden dark:bg-slate-900" role="document">
+    <div
+      class="bg-white rounded-lg max-w-xl w-full max-h-[90vh] overflow-hidden dark:bg-slate-900"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      on:click|stopPropagation
+    >
       <div class="p-4 border-b flex justify-between items-center">
         <h3 id="modal-title" class="text-lg font-semibold flex items-center gap-2">
           <span class="text-primary">🎵</span>
@@ -118,5 +122,5 @@
         </form>
       </div>
     </div>
-  </div>
+  </dialog>
 {/if}
