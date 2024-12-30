@@ -22,7 +22,7 @@ const events = [
   },
   {
     title: 'Fiesta',
-    time: '7:30 pm',
+    time: '8:00 pm',
     location: 'Finca San Francisco',
     description:
       'Acompáñanos en una velada encantadora llena de melodías vibrantes y alegría contagiosa para festejar nuestra unión eterna. ¡Noche inolvidable!',
@@ -37,7 +37,7 @@ const createGoogleCalendarUrl = (event: (typeof events)[0]) => {
   const text = `Boda de Sergio y Kathe - ${event.title}`;
   const dates = event.title.includes('Ceremonia')
     ? '20250322T163000/20250322T183000' // 4:30 PM - 6:30 PM for the ceremony
-    : '20250322T193000/20250323T030000'; // 7:30 PM - 3:00 AM the next day
+    : '20250322T200000/20250323T030000'; // 8:00 PM - 3:00 AM the next day
 
   const params = new URLSearchParams({
     action: 'TEMPLATE',

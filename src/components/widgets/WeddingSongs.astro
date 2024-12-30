@@ -1,0 +1,64 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Headline from '../ui/Headline.astro';
+import Button from '~/components/ui/Button.astro';
+import { Icon } from 'astro-icon/components';
+import SongModal from './SongModal.svelte';
+
+const {
+  title = 'SUGERENCIAS MUSICALES',
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+const songsInfo = {
+  title: '¡Ayúdanos con la Música!',
+  description: 'Queremos que disfrutes y bailes toda la noche. Comparte con nosotros las canciones que no pueden faltar en nuestra fiesta.',
+  icon: 'tabler:music',
+};
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="text-center">
+    <Headline
+      title={title}
+      classes={{
+        container: 'mb-12 md:mb-16',
+        title: 'text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+        subtitle: 'text-xl text-primary dark:text-slate-400',
+      }}
+    />
+  </div>
+
+  <div class="max-w-3xl mx-auto">
+    <div class="bg-white dark:bg-slate-900 rounded-lg shadow-md p-8">
+      <div class="flex items-center justify-center mb-4">
+        <Icon name={songsInfo.icon} class="w-12 h-12 text-primary" />
+      </div>
+      <h3 class="text-2xl font-script text-primary text-center mb-4">{songsInfo.title}</h3>
+      <p class="text-muted dark:text-slate-400 text-center mb-6">{songsInfo.description}</p>
+      <div class="text-center">
+        <Button variant="primary" onclick="window.openSongModal()">
+          <Icon name="tabler:music" class="w-5 h-5 inline-block -mt-0.5 mr-2" />
+          Sugerir Canciones
+        </Button>
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>
+
+<SongModal client:load />
+
+<script>
+  declare global {
+    interface Window {
+      openSongModal: () => void;
+    }
+  }
+
+  window.openSongModal = (): void => {
+    document.dispatchEvent(new CustomEvent('openSongModal'));
+  };
+</script>
