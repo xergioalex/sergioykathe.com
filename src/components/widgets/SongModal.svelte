@@ -36,6 +36,8 @@
   });
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <dialog
   bind:this={dialog}
   class="hidden bg-transparent p-0 backdrop:bg-black backdrop:bg-opacity-50 [&[open]]:flex items-center justify-center w-full h-full fixed inset-0"
@@ -45,7 +47,7 @@
     role="dialog"
     aria-labelledby="modal-title"
     aria-modal="true"
-    class="bg-white rounded-lg w-full max-w-[600px] mx-4 max-h-[90vh] overflow-hidden dark:bg-slate-900"
+    class="bg-white rounded-lg w-full max-w-[600px] mx-0 sm:mx-4 max-h-[90vh] overflow-hidden dark:bg-slate-900"
   >
     <div class="p-4 border-b flex justify-between items-center">
       <h3 id="modal-title" class="text-lg font-semibold flex items-center gap-2">
