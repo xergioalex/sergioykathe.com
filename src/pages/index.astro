@@ -10,6 +10,7 @@ import WeddingDressCode from '~/components/widgets/WeddingDressCode.astro';
 import WeddingTips from '~/components/widgets/WeddingTips.astro';
 import WeddingQuote from '~/components/widgets/WeddingQuote.astro';
 import WeddingGifts from '~/components/widgets/WeddingGifts.astro';
+import WeddingSongs from '~/components/widgets/WeddingSongs.astro';
 
 const metadata = {
   title: 'Sergio y Kathe - Invitación de Boda',
@@ -67,7 +68,11 @@ const metadata = {
 
   <WeddingGifts id="regalos" isDark={false} />
 
+  <WeddingSongs id="musica" isDark={false} />
+
   <WeddingPhotoGallery id="fotos" isDark={false} />
+
+
 </Layout>
 
 <script>

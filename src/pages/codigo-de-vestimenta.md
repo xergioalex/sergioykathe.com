@@ -8,16 +8,17 @@ La vestimenta para ambos eventos es Formal. Te compartimos algunas sugerencias p
 
 ## Para Caballeros
 
-- Ropa formal
+- Ropa elegante y formal.
 
 ## Para Damas
 
-- Elegantes y formales, preferiblemente vestido largo
-- <b class="text-primary">Evitar a toda costa el color blanco</b>
+- Elegantes y formales, preferiblemente vestido largo.
+- Las damas de honor vestirán de color vinotinto, por lo que se solicita amablemente a las demás invitadas evitar usar este color.
+- <b class="text-primary">Evitar a toda costa el color blanco</b>.
 
 ### Consideraciones Generales
 
-- La ceremonia es en una iglesia, por favor mantener el respeto en la vestimenta
-- La fiesta se extenderá hasta la madrugada
-- Considerar llevar zapatos cómodos para bailar
-- Se sugiere traer un abrigo o chal para la noche
+- La ceremonia es en una iglesia, por favor mantener el respeto en la vestimenta.
+- La fiesta se extenderá hasta la madrugada.
+- Considerar llevar zapatos cómodos para bailar.
+- Se sugiere traer un abrigo o chal para la noche.
