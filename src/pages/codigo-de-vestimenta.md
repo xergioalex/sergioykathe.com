@@ -4,7 +4,7 @@ layout: '~/layouts/WeddingMarkdownLayout.astro'
 backAction: '/#vestimenta'
 ---
 
-La vestimenta para ambos eventos es formal. A continuación, te proporcionamos algunas recomendaciones que nos gustaría que siguieras.
+La vestimenta para ambos eventos es formal. A continuación, te proporcionamos algunas indicaciones que nos gustaría que siguieras.
 
 ## Para Caballeros
 
