@@ -103,6 +103,9 @@ export default [
           caughtErrors: 'none',
         },
       ],
+      'svelte/a11y-click-events-have-key-events': 'off',
+      'svelte/a11y-no-noninteractive-element-interactions': 'off',
+      'svelte/a11y-no-static-element-interactions': 'off',
     },
   },
 ];
