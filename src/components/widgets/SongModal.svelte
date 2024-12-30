@@ -17,12 +17,17 @@
     closeModal();
   }
 
+  function handleClick(event: MouseEvent) {
+    if (event.target === dialog) {
+      closeModal();
+    }
+  }
+
   onMount(() => {
     document.addEventListener('openSongModal', () => {
       dialog?.showModal();
     });
 
-    // Limpiar el event listener al desmontar
     return () => {
       document.removeEventListener('openSongModal', () => {
         dialog?.showModal();
@@ -34,6 +39,7 @@
 <dialog
   bind:this={dialog}
   class="hidden bg-transparent p-0 backdrop:bg-black backdrop:bg-opacity-50 [&[open]]:flex items-center justify-center w-full h-full fixed inset-0"
+  on:click={handleClick}
 >
   <div
     role="dialog"
