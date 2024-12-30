@@ -6,7 +6,6 @@ backAction: '/#tips'
 
 ## Llegada y Transporte
 
-- Se recomienda llegar 15-20 minutos antes de la ceremonia.
 - Habrá parqueadero disponible en ambas locaciones.
 - Considerar usar servicios de transporte compartido para la fiesta.
 
@@ -18,9 +17,9 @@ backAction: '/#tips'
 
 ## Consideraciones Especiales
 
-- La ceremonia y el protocolo comenzarán puntualmente y no queremos que te pierdas nada. ¡Así qué, por favor, llega a tiempo! <a href="/#evento">Consulta la información del evento aquí</a>.
-- Para asegurarnos de que todos tengan su lugar en esta fiesta, te recordamos gentilmente que cada invitado tiene una invitación con un número específico de entradas asignadas.
-- Queremos que disfrutes de esta fiesta al máximo, por eso decidimos que sea un evento solo para adultos.
+- Te recomendamos llegar 15-20 minutos antes ya que la ceremonia y el protocolo comenzarán puntualmente y no queremos que te pierdas nada. ¡Así qué, por favor, llega a tiempo! <a href="/#evento">Consulta la información del evento aquí</a>.
+- Para garantizar que todos puedan disfrutar de la fiesta, te recordamos amablemente que cada invitado debe respetar el número de entradas asignadas en su invitación.
+- Queremos que disfrutes de esta fiesta al máximo, por eso decidimos que sea un evento <b class="text-primary">solo para adultos</b>.
 - Es importante que confirmes tu asistencia a más tardar el 28 de febrero de 2025.
 - La recepción incluye cena.
 - Habrá música en vivo y DJ.
