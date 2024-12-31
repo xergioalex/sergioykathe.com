@@ -8,16 +8,25 @@
   let dialog: HTMLDialogElement;
   let isSuccess = false;
   let isLoading = false;
-  let attendance = invite.invitations;
-  let stayAttendance = invite.stayInvited ? invite.stayInvitations : 0;
+  let partyAttendance = invite.partyInvitations;
+  let stayAttendance = invite.stayInvitations;
+  let message = '';
+
+  $: if (partyAttendance === 0) {
+    stayAttendance = 0;
+  }
 
   // Configuración del formulario de Google
-  const FORM_URL = 'TU_URL_DE_GOOGLE_FORMS';
+  const FORM_URL =
+    'https://docs.google.com/forms/d/e/1FAIpQLSfPN3oQllE8Sc50IbpbxW4WkFsODtgeznrpPQ6xyGg1SftYdA/formResponse';
   const FORM_ENTRIES = {
-    name: 'entry.XXXXX',
-    inviteId: 'entry.XXXXX',
-    attendance: 'entry.XXXXX',
-    stayAttendance: 'entry.XXXXX',
+    inviteId: 'entry.23826224',
+    name: 'entry.1899043457',
+    partyInvitations: 'entry.427068344',
+    partyAttendance: 'entry.446464576',
+    stayInvitations: 'entry.424554911',
+    stayAttendance: 'entry.38093445',
+    message: 'entry.802664838',
   };
 
   function closeModal() {
@@ -32,11 +41,16 @@
 
     try {
       const formData = new FormData();
-      formData.append(FORM_ENTRIES.name, invite.name);
       formData.append(FORM_ENTRIES.inviteId, invite.invite);
-      formData.append(FORM_ENTRIES.attendance, attendance.toString());
-      if (invite.stayInvited) {
+      formData.append(FORM_ENTRIES.name, invite.name);
+      formData.append(FORM_ENTRIES.partyInvitations, invite.partyInvitations.toString());
+      formData.append(FORM_ENTRIES.partyAttendance, partyAttendance.toString());
+      formData.append(FORM_ENTRIES.stayInvitations, invite.stayInvitations.toString());
+      if (invite.stayInvitations > 0) {
         formData.append(FORM_ENTRIES.stayAttendance, stayAttendance.toString());
+      }
+      if (message.trim()) {
+        formData.append(FORM_ENTRIES.message, message);
       }
 
       await fetch(FORM_URL, {
@@ -69,60 +83,83 @@
   class="hidden bg-transparent p-0 backdrop:bg-black backdrop:bg-opacity-50 [&[open]]:flex items-center justify-center w-full h-full fixed inset-0"
   on:click={({ target }) => target === dialog && closeModal()}
 >
-  <div class="bg-white rounded-lg w-full max-w-[600px] mx-4 dark:bg-slate-900">
+  <div class="bg-white rounded-lg w-full max-w-[600px] mx-0 sm:mx-4 dark:bg-slate-900">
     <div class="p-4 border-b flex justify-between items-center">
-      <h3 class="text-lg font-semibold flex items-center gap-2">
+      <h3 class="text-base font-semibold flex items-center gap-2">
         <span class="text-primary">💌</span>
         Confirmar Asistencia
       </h3>
       <button class="text-gray-500" on:click={closeModal}>✕</button>
     </div>
-    <div class="p-6">
+    <div class="p-4">
       {#if !isSuccess}
-        <div class="space-y-6">
+        <div class="space-y-4">
           <div class="text-center">
-            <h4 class="text-xl font-semibold">¡Hola {invite.name}!</h4>
-            <p class="text-gray-600 dark:text-gray-400 mt-2">
-              Tienes {invite.invitations}
-              {invite.invitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
+            <h4 class="text-2xl font-semibold mb-3">¡Hola {invite.name}!</h4>
+            <p class="text-gray-600 dark:text-gray-400 mt-1 text-lg">
+              Nos encantaría que nos acompañes en este día tan especial
+              {#if invite.stayInvitations > 0}
+                <span class="block mt-2"> Además, tienes la opción de alojarte en la finca </span>
+              {/if}
             </p>
           </div>
-          <form class="space-y-8" on:submit={handleSubmit}>
+          <form class="space-y-6" on:submit={handleSubmit}>
             <div class="space-y-2">
-              <label for="attendance" class="block text-center text-lg text-gray-700 dark:text-gray-300">
-                ¿Cuántas personas asistirán?
+              <label for="partyAttendance" class="block text-center text-base text-gray-700 dark:text-gray-300">
+                ¿Cuántas personas confirmas que asistirán?
+                <span class="block text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  (De las {invite.partyInvitations}
+                  {invite.partyInvitations === 1 ? 'plaza reservada' : 'plazas reservadas'})
+                </span>
               </label>
               <select
-                id="attendance"
-                bind:value={attendance}
+                id="partyAttendance"
+                bind:value={partyAttendance}
                 required
-                class="mt-6 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-lg py-3"
+                class="mt-4 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-base py-2"
               >
-                {#each [...Array(invite.invitations + 1).keys()] as i}
+                {#each [...Array(invite.partyInvitations + 1).keys()] as i}
                   <option value={i}>{i} {i === 1 ? 'persona' : 'personas'}</option>
                 {/each}
               </select>
             </div>
 
-            {#if invite.stayInvited}
-              <div class="space-y-2 mt-8">
-                <label for="stayAttendance" class="block text-center text-lg text-gray-700 dark:text-gray-300">
-                  ¿Cuántas personas se quedarán en la finca?
+            {#if invite && invite.stayInvitations > 0 && partyAttendance > 0}
+              <div class="space-y-2 mt-6">
+                <label for="stayAttendance" class="block text-center text-base text-gray-700 dark:text-gray-300">
+                  ¿Cuántas personas se alojarán en la finca?
+                  <span class="block text-sm text-gray-500 dark:text-gray-400 mt-1">
+                    (Dispones de {invite.stayInvitations}
+                    {invite.stayInvitations === 1 ? 'plaza' : 'plazas'} para alojamiento)
+                  </span>
                 </label>
                 <select
                   id="stayAttendance"
                   bind:value={stayAttendance}
                   required
-                  class="mt-6 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-lg py-3"
+                  class="mt-4 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-base py-2"
                 >
-                  {#each [...Array(Math.min(attendance, invite.stayInvitations) + 1).keys()] as i}
+                  {#each [...Array(Math.min(partyAttendance, invite.stayInvitations) + 1).keys()] as i}
                     <option value={i}>{i} {i === 1 ? 'persona' : 'personas'}</option>
                   {/each}
                 </select>
               </div>
             {/if}
 
-            <div class="flex justify-center mt-10">
+            <div class="space-y-2 mt-6">
+              <label for="message" class="block text-center text-base text-gray-700 dark:text-gray-300">
+                ¿Quieres dejarles un mensaje a los novios? (opcional)
+              </label>
+              <textarea
+                id="message"
+                bind:value={message}
+                placeholder="Escribe tu mensaje aquí..."
+                class="mt-2 w-full px-4 py-2 rounded-md border-2 border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-base resize-none hover:border-primary transition-colors duration-200"
+                rows="3"
+              ></textarea>
+            </div>
+
+            <div class="flex justify-center mt-6">
               <button type="submit" disabled={isLoading} class="btn btn-primary">
                 {#if isLoading}
                   <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" viewBox="0 0 24 24">
@@ -144,13 +181,18 @@
           <span class="text-5xl">✨</span>
           <h4 class="text-xl font-semibold">¡Gracias por confirmar!</h4>
           <p class="text-gray-600 dark:text-gray-400">
-            Has confirmado la asistencia de {attendance}
-            {attendance === 1 ? 'persona' : 'personas'}
+            Has confirmado que {partyAttendance === 1 ? 'asistirá 1 persona' : `asistirán ${partyAttendance} personas`} a
+            la celebración
           </p>
-          {#if invite.stayInvited && stayAttendance > 0}
+          {#if invite && invite.stayInvitations > 0 && stayAttendance > 0}
             <p class="text-gray-600 dark:text-gray-400">
-              Y {stayAttendance}
-              {stayAttendance === 1 ? 'persona se quedará' : 'personas se quedarán'} en la finca
+              Y has reservado alojamiento para {stayAttendance === 1 ? '1 persona' : `${stayAttendance} personas`} en la
+              finca
+            </p>
+          {/if}
+          {#if message.trim()}
+            <p class="text-gray-600 dark:text-gray-400 mt-4 italic">
+              "{message}"
             </p>
           {/if}
           <button class="btn btn-primary mt-4" on:click={closeModal}> Cerrar </button>

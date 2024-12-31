@@ -34,13 +34,13 @@
       class="text-xl text-secondary mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
     >
       {@html invite
-        ? `Te esperamos el <b>22 de Marzo de 2025</b>. Tienes ${invite.invitations} ${
-            invite.invitations === 1 ? 'invitación' : 'invitaciones'
+        ? `Te esperamos el <b>22 de Marzo de 2025</b>. Tienes ${invite.partyInvitations} ${
+            invite.partyInvitations === 1 ? 'invitación' : 'invitaciones'
           } para acompañarnos.`
         : content}
     </p>
 
-    {#if invite?.stayInvited}
+    {#if invite && invite.stayInvitations > 0}
       <p
         class="text-xl text-primary mb-6 dark:text-primary/90 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
       >
