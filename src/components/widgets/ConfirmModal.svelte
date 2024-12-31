@@ -1,0 +1,137 @@
+<script lang="ts">
+  import { onMount, createEventDispatcher } from 'svelte';
+  import type { Invite } from '~/types';
+
+  export let invite: Invite;
+
+  const dispatch = createEventDispatcher();
+  let dialog: HTMLDialogElement;
+  let isSuccess = false;
+  let isLoading = false;
+  let attendance = invite.invitations;
+
+  // Configuración del formulario de Google
+  const FORM_URL = 'TU_URL_DE_GOOGLE_FORMS';
+  const FORM_ENTRIES = {
+    name: 'entry.XXXXX',
+    inviteId: 'entry.XXXXX',
+    attendance: 'entry.XXXXX',
+  };
+
+  function closeModal() {
+    isSuccess = false;
+    dialog?.close();
+    dispatch('close');
+  }
+
+  async function handleSubmit(event: Event) {
+    event.preventDefault();
+    isLoading = true;
+
+    try {
+      const formData = new FormData();
+      formData.append(FORM_ENTRIES.name, invite.name);
+      formData.append(FORM_ENTRIES.inviteId, invite.invite);
+      formData.append(FORM_ENTRIES.attendance, attendance.toString());
+
+      await fetch(FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        body: new URLSearchParams(formData as any),
+      });
+
+      isSuccess = true;
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+    } finally {
+      isLoading = false;
+    }
+  }
+
+  onMount(() => {
+    dialog?.showModal();
+  });
+</script>
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<dialog
+  bind:this={dialog}
+  class="hidden bg-transparent p-0 backdrop:bg-black backdrop:bg-opacity-50 [&[open]]:flex items-center justify-center w-full h-full fixed inset-0"
+  on:click={({ target }) => target === dialog && closeModal()}
+>
+  <div class="bg-white rounded-lg w-full max-w-[600px] mx-4 dark:bg-slate-900">
+    <div class="p-4 border-b flex justify-between items-center">
+      <h3 class="text-lg font-semibold flex items-center gap-2">
+        <span class="text-primary">💌</span>
+        Confirmar Asistencia
+      </h3>
+      <button class="text-gray-500" on:click={closeModal}>✕</button>
+    </div>
+    <div class="p-6">
+      {#if !isSuccess}
+        <div class="space-y-6">
+          <div class="text-center">
+            <h4 class="text-xl font-semibold">¡Hola {invite.name}!</h4>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">
+              Tienes {invite.invitations}
+              {invite.invitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
+            </p>
+          </div>
+          <form class="space-y-4" on:submit={handleSubmit}>
+            <div class="flex justify-center">
+              <button type="submit" disabled={isLoading} class="btn btn-primary">
+                {#if isLoading}
+                  <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    />
+                  </svg>
+                {/if}
+                {isLoading ? 'Enviando...' : 'Confirmar Asistencia'}
+              </button>
+            </div>
+          </form>
+        </div>
+      {:else}
+        <div class="text-center space-y-4">
+          <span class="text-5xl">✨</span>
+          <h4 class="text-xl font-semibold">¡Gracias por confirmar!</h4>
+          <p class="text-gray-600 dark:text-gray-400">
+            Has confirmado la asistencia de {attendance}
+            {attendance === 1 ? 'persona' : 'personas'}
+          </p>
+          <button class="btn btn-primary mt-4" on:click={closeModal}> Cerrar </button>
+        </div>
+      {/if}
+    </div>
+  </div>
+</dialog>
+
+<style>
+  dialog {
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  dialog:not([open]) {
+    display: none;
+  }
+
+  /* Cerrar el modal al hacer click en el backdrop */
+  dialog::backdrop {
+    cursor: pointer;
+  }
+</style>
