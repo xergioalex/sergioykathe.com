@@ -4,6 +4,7 @@
   import ConfirmModal from './ConfirmModal.svelte';
   import NoInviteModal from './NoInviteModal.svelte';
   import WeddingHeroContent from './WeddingHeroContent.svelte';
+  import { getInviteId } from '~/lib/invite';
 
   export let showFullInfo = false;
   export let title = '';
@@ -31,8 +32,7 @@
   async function init() {
     try {
       const invites = await loadInvites();
-      const params = new URLSearchParams(window.location.search);
-      const inviteId = params.get('invite');
+      const inviteId = getInviteId();
       invite = invites.find((inv) => inv.invite === inviteId);
     } catch (error) {
       console.error('Error initializing:', error);
