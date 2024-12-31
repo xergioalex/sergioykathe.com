@@ -143,11 +143,7 @@
             </textarea>
           </div>
           <div class="flex justify-center">
-            <button
-              type="submit"
-              disabled={isLoading}
-              class="btn btn-primary"
-            >
+            <button type="submit" disabled={isLoading} class="btn btn-primary">
               {#if isLoading}
                 <svg
                   class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
@@ -177,20 +173,8 @@
             <p class="text-gray-600 dark:text-gray-400">Tu canción ha sido agregada a nuestra lista de reproducción.</p>
           </div>
           <div class="flex gap-4 justify-center">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              on:click={resetForm}
-            >
-              Agregar otra canción
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              on:click={closeModal}
-            >
-              Cerrar
-            </button>
+            <button type="button" class="btn btn-secondary" on:click={resetForm}> Agregar otra canción </button>
+            <button type="button" class="btn btn-primary" on:click={closeModal}> Cerrar </button>
           </div>
         </div>
       {/if}
