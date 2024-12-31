@@ -17,7 +17,8 @@
   }
 
   // Configuración del formulario de Google
-  const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfPN3oQllE8Sc50IbpbxW4WkFsODtgeznrpPQ6xyGg1SftYdA/formResponse';
+  const FORM_URL =
+    'https://docs.google.com/forms/d/e/1FAIpQLSfPN3oQllE8Sc50IbpbxW4WkFsODtgeznrpPQ6xyGg1SftYdA/formResponse';
   const FORM_ENTRIES = {
     inviteId: 'entry.23826224',
     name: 'entry.1899043457',
@@ -98,9 +99,7 @@
             <p class="text-gray-600 dark:text-gray-400 mt-1 text-lg">
               Nos encantaría que nos acompañes en este día tan especial
               {#if invite.stayInvitations > 0}
-                <span class="block mt-2">
-                  Además, tienes la opción de alojarte en la finca
-                </span>
+                <span class="block mt-2"> Además, tienes la opción de alojarte en la finca </span>
               {/if}
             </p>
           </div>
@@ -109,7 +108,8 @@
               <label for="partyAttendance" class="block text-center text-base text-gray-700 dark:text-gray-300">
                 ¿Cuántas personas confirmas que asistirán?
                 <span class="block text-sm text-gray-500 dark:text-gray-400 mt-1">
-                  (De las {invite.partyInvitations} {invite.partyInvitations === 1 ? 'plaza reservada' : 'plazas reservadas'})
+                  (De las {invite.partyInvitations}
+                  {invite.partyInvitations === 1 ? 'plaza reservada' : 'plazas reservadas'})
                 </span>
               </label>
               <select
@@ -129,7 +129,8 @@
                 <label for="stayAttendance" class="block text-center text-base text-gray-700 dark:text-gray-300">
                   ¿Cuántas personas se alojarán en la finca?
                   <span class="block text-sm text-gray-500 dark:text-gray-400 mt-1">
-                    (Dispones de {invite.stayInvitations} {invite.stayInvitations === 1 ? 'plaza' : 'plazas'} para alojamiento)
+                    (Dispones de {invite.stayInvitations}
+                    {invite.stayInvitations === 1 ? 'plaza' : 'plazas'} para alojamiento)
                   </span>
                 </label>
                 <select
@@ -180,11 +181,13 @@
           <span class="text-5xl">✨</span>
           <h4 class="text-xl font-semibold">¡Gracias por confirmar!</h4>
           <p class="text-gray-600 dark:text-gray-400">
-            Has confirmado que {partyAttendance === 1 ? 'asistirá 1 persona' : `asistirán ${partyAttendance} personas`} a la celebración
+            Has confirmado que {partyAttendance === 1 ? 'asistirá 1 persona' : `asistirán ${partyAttendance} personas`} a
+            la celebración
           </p>
           {#if invite && invite.stayInvitations > 0 && stayAttendance > 0}
             <p class="text-gray-600 dark:text-gray-400">
-              Y has reservado alojamiento para {stayAttendance === 1 ? '1 persona' : `${stayAttendance} personas`} en la finca
+              Y has reservado alojamiento para {stayAttendance === 1 ? '1 persona' : `${stayAttendance} personas`} en la
+              finca
             </p>
           {/if}
           {#if message.trim()}
