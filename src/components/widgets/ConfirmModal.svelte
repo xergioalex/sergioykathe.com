@@ -8,16 +8,20 @@
   let dialog: HTMLDialogElement;
   let isSuccess = false;
   let isLoading = false;
-  let attendance = invite.invitations;
-  let stayAttendance = invite.stayInvited ? invite.stayInvitations : 0;
+  let partyAttendance = invite.partyInvitations;
+  let stayAttendance = invite.stayInvitations;
+  let message = '';
 
   // Configuración del formulario de Google
   const FORM_URL = 'TU_URL_DE_GOOGLE_FORMS';
   const FORM_ENTRIES = {
-    name: 'entry.XXXXX',
-    inviteId: 'entry.XXXXX',
-    attendance: 'entry.XXXXX',
-    stayAttendance: 'entry.XXXXX',
+    inviteId: 'entry.987654321',
+    name: 'entry.123456789',
+    partyInvitations: 'entry.456789123',
+    partyAttendance: 'entry.321654987',
+    stayInvitations: 'entry.159753468',
+    stayAttendance: 'entry.852963741',
+    message: 'entry.147258369',
   };
 
   function closeModal() {
@@ -32,11 +36,16 @@
 
     try {
       const formData = new FormData();
-      formData.append(FORM_ENTRIES.name, invite.name);
       formData.append(FORM_ENTRIES.inviteId, invite.invite);
-      formData.append(FORM_ENTRIES.attendance, attendance.toString());
-      if (invite.stayInvited) {
+      formData.append(FORM_ENTRIES.name, invite.name);
+      formData.append(FORM_ENTRIES.partyInvitations, invite.partyInvitations.toString());
+      formData.append(FORM_ENTRIES.partyAttendance, partyAttendance.toString());
+      formData.append(FORM_ENTRIES.stayInvitations, invite.stayInvitations.toString());
+      if (invite.stayInvitations > 0) {
         formData.append(FORM_ENTRIES.stayAttendance, stayAttendance.toString());
+      }
+      if (message.trim()) {
+        formData.append(FORM_ENTRIES.message, message);
       }
 
       await fetch(FORM_URL, {
@@ -83,28 +92,28 @@
           <div class="text-center">
             <h4 class="text-xl font-semibold">¡Hola {invite.name}!</h4>
             <p class="text-gray-600 dark:text-gray-400 mt-2">
-              Tienes {invite.invitations}
-              {invite.invitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
+              Tienes {invite.partyInvitations}
+              {invite.partyInvitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
             </p>
           </div>
           <form class="space-y-8" on:submit={handleSubmit}>
             <div class="space-y-2">
-              <label for="attendance" class="block text-center text-lg text-gray-700 dark:text-gray-300">
+              <label for="partyAttendance" class="block text-center text-lg text-gray-700 dark:text-gray-300">
                 ¿Cuántas personas asistirán?
               </label>
               <select
-                id="attendance"
-                bind:value={attendance}
+                id="partyAttendance"
+                bind:value={partyAttendance}
                 required
                 class="mt-6 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-lg py-3"
               >
-                {#each [...Array(invite.invitations + 1).keys()] as i}
+                {#each [...Array(invite.partyInvitations + 1).keys()] as i}
                   <option value={i}>{i} {i === 1 ? 'persona' : 'personas'}</option>
                 {/each}
               </select>
             </div>
 
-            {#if invite.stayInvited}
+            {#if invite && invite.stayInvitations > 0}
               <div class="space-y-2 mt-8">
                 <label for="stayAttendance" class="block text-center text-lg text-gray-700 dark:text-gray-300">
                   ¿Cuántas personas se quedarán en la finca?
@@ -115,12 +124,25 @@
                   required
                   class="mt-6 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-lg py-3"
                 >
-                  {#each [...Array(Math.min(attendance, invite.stayInvitations) + 1).keys()] as i}
+                  {#each [...Array(Math.min(partyAttendance, invite.stayInvitations) + 1).keys()] as i}
                     <option value={i}>{i} {i === 1 ? 'persona' : 'personas'}</option>
                   {/each}
                 </select>
               </div>
             {/if}
+
+            <div class="space-y-2 mt-8">
+              <label for="message" class="block text-center text-lg text-gray-700 dark:text-gray-300">
+                ¿Quieres dejarles un mensaje a los novios? (opcional)
+              </label>
+              <textarea
+                id="message"
+                bind:value={message}
+                placeholder="Escribe tu mensaje aquí..."
+                class="mt-2 w-full px-4 py-3 rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-lg"
+                rows="4"
+              ></textarea>
+            </div>
 
             <div class="flex justify-center mt-10">
               <button type="submit" disabled={isLoading} class="btn btn-primary">
@@ -144,13 +166,18 @@
           <span class="text-5xl">✨</span>
           <h4 class="text-xl font-semibold">¡Gracias por confirmar!</h4>
           <p class="text-gray-600 dark:text-gray-400">
-            Has confirmado la asistencia de {attendance}
-            {attendance === 1 ? 'persona' : 'personas'}
+            Has confirmado la asistencia de {partyAttendance}
+            {partyAttendance === 1 ? 'persona' : 'personas'}
           </p>
-          {#if invite.stayInvited && stayAttendance > 0}
+          {#if invite && invite.stayInvitations > 0 && stayAttendance > 0}
             <p class="text-gray-600 dark:text-gray-400">
               Y {stayAttendance}
               {stayAttendance === 1 ? 'persona se quedará' : 'personas se quedarán'} en la finca
+            </p>
+          {/if}
+          {#if message.trim()}
+            <p class="text-gray-600 dark:text-gray-400 mt-4 italic">
+              "{message}"
             </p>
           {/if}
           <button class="btn btn-primary mt-4" on:click={closeModal}> Cerrar </button>

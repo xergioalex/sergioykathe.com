@@ -66,10 +66,10 @@
       <div class="space-y-4 opacity-100">
         <h3 class="text-2xl font-semibold text-primary">¡Hola {invite.name}! 👋</h3>
         <p class="text-lg">
-          Tienes {invite.invitations}
-          {invite.invitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
+          Tienes {invite.partyInvitations}
+          {invite.partyInvitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
         </p>
-        {#if invite.stayInvited}
+        {#if invite.stayInvitations > 0}
           <p class="text-lg text-primary opacity-100">
             ¡Además estás invitado a quedarte en la finca! Tienes {invite.stayInvitations}
             {invite.stayInvitations === 1 ? 'plaza' : 'plazas'} disponibles para alojamiento.
