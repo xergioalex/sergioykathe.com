@@ -7,7 +7,8 @@
   let songNotes = '';
 
   // Configuración del formulario de Google
-  const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfBNmQYetQjkbnGOfwhD6QB8CxhRkXTGr7oa9Y8XgRRdBGe8Q/formResponse';
+  const FORM_URL =
+    'https://docs.google.com/forms/d/e/1FAIpQLSfBNmQYetQjkbnGOfwhD6QB8CxhRkXTGr7oa9Y8XgRRdBGe8Q/formResponse';
   const FORM_ENTRIES = {
     songName: 'entry.242037522',
     songArtist: 'entry.287920603',
@@ -30,12 +31,13 @@
       formData.append(FORM_ENTRIES.songArtist, songArtist);
       formData.append(FORM_ENTRIES.songNotes, songNotes);
 
-      const response = await fetch(FORM_URL, {
+      await fetch(FORM_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         body: new URLSearchParams(formData as any),
       });
 
