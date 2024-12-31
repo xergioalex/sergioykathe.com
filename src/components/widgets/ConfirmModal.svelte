@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount, createEventDispatcher } from 'svelte';
-  import type { Invite } from '~/types';
+  import type { Invite } from '~/types.d';
 
   export let invite: Invite;
 
@@ -9,6 +9,7 @@
   let isSuccess = false;
   let isLoading = false;
   let attendance = invite.invitations;
+  let stayAttendance = invite.stayInvited ? invite.stayInvitations : 0;
 
   // Configuración del formulario de Google
   const FORM_URL = 'TU_URL_DE_GOOGLE_FORMS';
@@ -16,6 +17,7 @@
     name: 'entry.XXXXX',
     inviteId: 'entry.XXXXX',
     attendance: 'entry.XXXXX',
+    stayAttendance: 'entry.XXXXX',
   };
 
   function closeModal() {
@@ -33,6 +35,9 @@
       formData.append(FORM_ENTRIES.name, invite.name);
       formData.append(FORM_ENTRIES.inviteId, invite.invite);
       formData.append(FORM_ENTRIES.attendance, attendance.toString());
+      if (invite.stayInvited) {
+        formData.append(FORM_ENTRIES.stayAttendance, stayAttendance.toString());
+      }
 
       await fetch(FORM_URL, {
         method: 'POST',
@@ -82,8 +87,42 @@
               {invite.invitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
             </p>
           </div>
-          <form class="space-y-4" on:submit={handleSubmit}>
-            <div class="flex justify-center">
+          <form class="space-y-8" on:submit={handleSubmit}>
+            <div class="space-y-2">
+              <label for="attendance" class="block text-center text-lg text-gray-700 dark:text-gray-300">
+                ¿Cuántas personas asistirán?
+              </label>
+              <select
+                id="attendance"
+                bind:value={attendance}
+                required
+                class="mt-6 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-lg py-3"
+              >
+                {#each [...Array(invite.invitations + 1).keys()] as i}
+                  <option value={i}>{i} {i === 1 ? 'persona' : 'personas'}</option>
+                {/each}
+              </select>
+            </div>
+
+            {#if invite.stayInvited}
+              <div class="space-y-2 mt-8">
+                <label for="stayAttendance" class="block text-center text-lg text-gray-700 dark:text-gray-300">
+                  ¿Cuántas personas se quedarán en la finca?
+                </label>
+                <select
+                  id="stayAttendance"
+                  bind:value={stayAttendance}
+                  required
+                  class="mt-6 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-lg py-3"
+                >
+                  {#each [...Array(Math.min(attendance, invite.stayInvitations) + 1).keys()] as i}
+                    <option value={i}>{i} {i === 1 ? 'persona' : 'personas'}</option>
+                  {/each}
+                </select>
+              </div>
+            {/if}
+
+            <div class="flex justify-center mt-10">
               <button type="submit" disabled={isLoading} class="btn btn-primary">
                 {#if isLoading}
                   <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" viewBox="0 0 24 24">
@@ -108,6 +147,12 @@
             Has confirmado la asistencia de {attendance}
             {attendance === 1 ? 'persona' : 'personas'}
           </p>
+          {#if invite.stayInvited && stayAttendance > 0}
+            <p class="text-gray-600 dark:text-gray-400">
+              Y {stayAttendance}
+              {stayAttendance === 1 ? 'persona se quedará' : 'personas se quedarán'} en la finca
+            </p>
+          {/if}
           <button class="btn btn-primary mt-4" on:click={closeModal}> Cerrar </button>
         </div>
       {/if}
