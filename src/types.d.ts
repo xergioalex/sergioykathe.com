@@ -294,7 +294,6 @@ export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
 export interface Invite {
   invite: string;
   name: string;
-  invitations: number;
-  stayInvited: boolean;
+  partyInvitations: number;
   stayInvitations: number;
 }
