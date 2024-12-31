@@ -1,6 +1,6 @@
 ---
 import Image from '~/components/common/Image.astro';
-import Button from '~/components/ui/Button.astro';
+import InviteHandler from './InviteHandler.svelte';
 
 import type { Hero as Props } from '~/types';
 
@@ -10,7 +10,6 @@ const {
   tagline,
 
   content = await Astro.slots.render('content'),
-  actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
 
   id,
@@ -62,21 +61,12 @@ const {
             )
           }
 
-          {
-            actions && (
-              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
-                {Array.isArray(actions) ? (
-                  actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
-                    </div>
-                  ))
-                ) : (
-                  <Fragment set:html={actions} />
-                )}
-              </div>
-            )
-          }
+          <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
+            <InviteHandler client:load />
+            <a href="#evento" class="btn w-full sm:w-auto">
+              Más Información
+            </a>
+          </div>
         </div>
       </div>
       <div class="basis-1/2">
