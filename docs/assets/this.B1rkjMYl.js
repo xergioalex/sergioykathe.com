@@ -1,1 +1,0 @@
-import{ag as t,af as b,ae as h,aj as k,_ as S}from"./template.Br768ZXS.js";function u(r,a){return r===a||r?.[S]===a}function d(r={},a,i,T){return t(()=>{var f,s;return b(()=>{f=s,s=[],h(()=>{r!==i(...s)&&(a(r,...s),f&&u(i(...f),r)&&a(null,...f))})}),()=>{k(()=>{s&&u(i(...s),r)&&a(null,...s)})}}),r}export{d as b};
