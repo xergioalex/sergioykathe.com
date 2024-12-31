@@ -4,7 +4,7 @@ import InviteHandler from './InviteHandler.svelte';
 const { id } = Astro.props;
 ---
 
-<section class="relative" {...id ? { id } : {}}>
+<section class="relative not-prose scroll-mt-[72px]" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div class="absolute inset-0 bg-primary opacity-10"></div>
   </div>
