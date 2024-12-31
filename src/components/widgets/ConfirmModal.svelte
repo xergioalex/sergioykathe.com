@@ -46,12 +46,8 @@
       formData.append(FORM_ENTRIES.partyInvitations, invite.partyInvitations.toString());
       formData.append(FORM_ENTRIES.partyAttendance, partyAttendance.toString());
       formData.append(FORM_ENTRIES.stayInvitations, invite.stayInvitations.toString());
-      if (invite.stayInvitations > 0) {
-        formData.append(FORM_ENTRIES.stayAttendance, stayAttendance.toString());
-      }
-      if (message.trim()) {
-        formData.append(FORM_ENTRIES.message, message);
-      }
+      formData.append(FORM_ENTRIES.stayAttendance, stayAttendance.toString());
+      formData.append(FORM_ENTRIES.message, message.trim());
 
       await fetch(FORM_URL, {
         method: 'POST',
