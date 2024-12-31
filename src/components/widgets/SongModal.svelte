@@ -5,6 +5,7 @@
   let songName = '';
   let songArtist = '';
   let songNotes = '';
+  let isSuccess = false;
 
   // Configuración del formulario de Google
   const FORM_URL =
@@ -16,14 +17,20 @@
   };
 
   function closeModal() {
+    isSuccess = false;
+    resetForm();
     dialog?.close();
+  }
+
+  function resetForm() {
+    isSuccess = false;
+    songName = '';
+    songArtist = '';
+    songNotes = '';
   }
 
   async function handleSubmit(event: Event) {
     event.preventDefault();
-
-    console.log('handleSubmit...');
-    console.log({ songName, songArtist, songNotes });
 
     try {
       const formData = new FormData();
@@ -41,13 +48,7 @@
         body: new URLSearchParams(formData as any),
       });
 
-      console.log('Formulario enviado exitosamente');
-      closeModal();
-
-      // Limpiar el formulario
-      songName = '';
-      songArtist = '';
-      songNotes = '';
+      isSuccess = true;
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
     }
@@ -61,6 +62,7 @@
 
   onMount(() => {
     document.addEventListener('openSongModal', () => {
+      resetForm();
       dialog?.showModal();
     });
 
@@ -95,53 +97,81 @@
       </button>
     </div>
     <div class="p-6">
-      <form class="space-y-4" on:submit={handleSubmit}>
-        <div>
-          <label for="songName" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            Nombre de la Canción
-          </label>
-          <input
-            type="text"
-            id="songName"
-            bind:value={songName}
-            required
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white"
-            placeholder="Ej: Amor Eterno"
-          />
+      {#if !isSuccess}
+        <form class="space-y-4" on:submit={handleSubmit}>
+          <div>
+            <label for="songName" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              Nombre de la Canción
+            </label>
+            <input
+              type="text"
+              id="songName"
+              bind:value={songName}
+              required
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white"
+              placeholder="Ej: Amor Eterno"
+            />
+          </div>
+          <div>
+            <label for="songArtist" class="block text-sm font-medium text-gray-700 dark:text-gray-300">songArtista</label>
+            <input
+              type="text"
+              id="songArtist"
+              bind:value={songArtist}
+              required
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white"
+              placeholder="Ej: Juan Gabriel"
+            />
+          </div>
+          <div>
+            <label for="songNotes" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              Notas adicionales o link
+            </label>
+            <textarea
+              id="songNotes"
+              bind:value={songNotes}
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white resize-none"
+              rows="3"
+              placeholder="Ej: Link de YouTube o algún comentario sobre la canción"
+            >
+            </textarea>
+          </div>
+          <div class="flex justify-end">
+            <button
+              type="submit"
+              class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-primary rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            >
+              Enviar Sugerencia
+            </button>
+          </div>
+        </form>
+      {:else}
+        <div class="text-center space-y-6">
+          <div class="space-y-2">
+            <span class="text-5xl">🎵</span>
+            <h4 class="text-xl font-semibold text-primary">¡Gracias por tu sugerencia!</h4>
+            <p class="text-gray-600 dark:text-gray-400">
+              Tu canción ha sido agregada a nuestra lista de reproducción.
+            </p>
+          </div>
+          <div class="flex gap-4 justify-center">
+            <button
+              type="button"
+              class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              on:click={resetForm}
+            >
+              Agregar otra canción
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              on:click={closeModal}
+            >
+              Cerrar
+            </button>
+          </div>
         </div>
-        <div>
-          <label for="songArtist" class="block text-sm font-medium text-gray-700 dark:text-gray-300">songArtista</label>
-          <input
-            type="text"
-            id="songArtist"
-            bind:value={songArtist}
-            required
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white"
-            placeholder="Ej: Juan Gabriel"
-          />
-        </div>
-        <div>
-          <label for="songNotes" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            Notas adicionales o link
-          </label>
-          <textarea
-            id="songNotes"
-            bind:value={songNotes}
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white resize-none"
-            rows="3"
-            placeholder="Ej: Link de YouTube o algún comentario sobre la canción"
-          >
-          </textarea>
-        </div>
-        <div class="flex justify-end">
-          <button
-            type="submit"
-            class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-primary rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-          >
-            Enviar Sugerencia
-          </button>
-        </div>
-      </form>
+      {/if}
     </div>
   </div>
 </dialog>
