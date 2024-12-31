@@ -54,16 +54,16 @@
 {#if heroMode}
   <WeddingHeroContent {invite} {title} {subtitle} {content} {tagline} />
 {:else if showFullInfo}
-  <div class="space-y-6">
+  <div class="space-y-6 opacity-100">
     {#if invite}
-      <div class="space-y-4">
+      <div class="space-y-4 opacity-100">
         <h3 class="text-2xl font-semibold text-primary">¡Hola {invite.name}! 👋</h3>
         <p class="text-lg">
           Tienes {invite.invitations}
           {invite.invitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
         </p>
         {#if invite.stayInvited}
-          <p class="text-lg text-primary">
+          <p class="text-lg text-primary opacity-100">
             ¡Además estás invitado a quedarte en la finca! Tienes {invite.stayInvitations}
             {invite.stayInvitations === 1 ? 'plaza' : 'plazas'} disponibles para alojamiento.
           </p>
