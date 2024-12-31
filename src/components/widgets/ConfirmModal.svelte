@@ -3,7 +3,7 @@
   import type { Invite } from '~/types';
 
   export let invite: Invite;
-  
+
   const dispatch = createEventDispatcher();
   let dialog: HTMLDialogElement;
   let isSuccess = false;
@@ -82,22 +82,7 @@
             </p>
           </div>
           <form class="space-y-4" on:submit={handleSubmit}>
-            <div>
-              <label for="attendance" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                ¿Cuántas personas asistirán?
-              </label>
-              <select
-                id="attendance"
-                bind:value={attendance}
-                required
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white"
-              >
-                {#each Array(invite.invitations + 1) as _, i}
-                  <option value={i}>{i}</option>
-                {/each}
-              </select>
-            </div>
-            <div class="flex justify-end">
+            <div class="flex justify-center">
               <button
                 type="submit"
                 disabled={isLoading}
@@ -153,4 +138,4 @@
   dialog::backdrop {
     cursor: pointer;
   }
-</style> 
+</style>
