@@ -82,8 +82,23 @@
               {invite.invitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
             </p>
           </div>
-          <form class="space-y-4" on:submit={handleSubmit}>
-            <div class="flex justify-center">
+          <form class="space-y-8" on:submit={handleSubmit}>
+            <div class="space-y-2">
+              <label for="attendance" class="block text-center text-lg text-gray-700 dark:text-gray-300">
+                ¿Cuántas personas asistirán?
+              </label>
+              <select
+                id="attendance"
+                bind:value={attendance}
+                required
+                class="mt-6 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-lg py-3"
+              >
+                {#each Array(invite.invitations + 1) as _, i}
+                  <option value={i}>{i} {i === 1 ? 'persona' : 'personas'}</option>
+                {/each}
+              </select>
+            </div>
+            <div class="flex justify-center mt-10">
               <button type="submit" disabled={isLoading} class="btn btn-primary">
                 {#if isLoading}
                   <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" viewBox="0 0 24 24">
