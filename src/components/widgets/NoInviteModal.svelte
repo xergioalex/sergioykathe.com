@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount, createEventDispatcher } from 'svelte';
-  
+
   const dispatch = createEventDispatcher();
   let dialog: HTMLDialogElement;
 
@@ -14,6 +14,8 @@
   });
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <dialog
   bind:this={dialog}
   class="hidden bg-transparent p-0 backdrop:bg-black backdrop:bg-opacity-50 [&[open]]:flex items-center justify-center w-full h-full fixed inset-0"
@@ -36,9 +38,7 @@
         <p class="text-gray-600 dark:text-gray-400">
           Si aún no cuentas con uno, por favor comunícate con Sergio o Katherine para solicitar una invitación.
         </p>
-        <button class="btn btn-primary mt-4" on:click={closeModal}>
-          Entendido
-        </button>
+        <button class="btn btn-primary mt-4" on:click={closeModal}> Entendido </button>
       </div>
     </div>
   </div>
@@ -62,4 +62,4 @@
   dialog::backdrop {
     cursor: pointer;
   }
-</style> 
+</style>

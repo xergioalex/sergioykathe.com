@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import type { Invite } from '~/types';
+  import type { Invite } from '~/types.d';
   import ConfirmModal from './ConfirmModal.svelte';
   import NoInviteModal from './NoInviteModal.svelte';
 
@@ -25,7 +25,7 @@
     console.log('--- params ---');
     console.log(params);
     const inviteId = params.get('invite');
-    invite = invites.find(inv => inv.invite === inviteId);
+    invite = invites.find((inv) => inv.invite === inviteId);
     console.log('--- invite ---');
     console.log(invite);
   }
@@ -43,11 +43,7 @@
   });
 </script>
 
-<button
-  type="button"
-  class="btn btn-primary w-full sm:w-auto"
-  on:click={handleConfirmClick}
->
+<button type="button" class="btn btn-primary w-full sm:w-auto" on:click={handleConfirmClick}>
   <span class="flex items-center justify-center">
     Confirmar Asistencia
     <span class="ml-2">→</span>
@@ -55,9 +51,9 @@
 </button>
 
 {#if showModal && invite}
-  <ConfirmModal {invite} on:close={() => showModal = false} />
+  <ConfirmModal {invite} on:close={() => (showModal = false)} />
 {/if}
 
 {#if showNoInviteModal}
-  <NoInviteModal on:close={() => showNoInviteModal = false} />
+  <NoInviteModal on:close={() => (showNoInviteModal = false)} />
 {/if}

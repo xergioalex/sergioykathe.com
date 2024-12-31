@@ -78,16 +78,13 @@
           <div class="text-center">
             <h4 class="text-xl font-semibold">¡Hola {invite.name}!</h4>
             <p class="text-gray-600 dark:text-gray-400 mt-2">
-              Tienes {invite.invitations} {invite.invitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
+              Tienes {invite.invitations}
+              {invite.invitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
             </p>
           </div>
           <form class="space-y-4" on:submit={handleSubmit}>
             <div class="flex justify-center">
-              <button
-                type="submit"
-                disabled={isLoading}
-                class="btn btn-primary"
-              >
+              <button type="submit" disabled={isLoading} class="btn btn-primary">
                 {#if isLoading}
                   <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
@@ -108,11 +105,10 @@
           <span class="text-5xl">✨</span>
           <h4 class="text-xl font-semibold">¡Gracias por confirmar!</h4>
           <p class="text-gray-600 dark:text-gray-400">
-            Has confirmado la asistencia de {attendance} {attendance === 1 ? 'persona' : 'personas'}
+            Has confirmado la asistencia de {attendance}
+            {attendance === 1 ? 'persona' : 'personas'}
           </p>
-          <button class="btn btn-primary mt-4" on:click={closeModal}>
-            Cerrar
-          </button>
+          <button class="btn btn-primary mt-4" on:click={closeModal}> Cerrar </button>
         </div>
       {/if}
     </div>
