@@ -12,16 +12,20 @@
   let stayAttendance = invite.stayInvitations;
   let message = '';
 
+  $: if (partyAttendance === 0) {
+    stayAttendance = 0;
+  }
+
   // Configuración del formulario de Google
-  const FORM_URL = 'TU_URL_DE_GOOGLE_FORMS';
+  const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfPN3oQllE8Sc50IbpbxW4WkFsODtgeznrpPQ6xyGg1SftYdA/formResponse';
   const FORM_ENTRIES = {
-    inviteId: 'entry.987654321',
-    name: 'entry.123456789',
-    partyInvitations: 'entry.456789123',
-    partyAttendance: 'entry.321654987',
-    stayInvitations: 'entry.159753468',
-    stayAttendance: 'entry.852963741',
-    message: 'entry.147258369',
+    inviteId: 'entry.23826224',
+    name: 'entry.1899043457',
+    partyInvitations: 'entry.427068344',
+    partyAttendance: 'entry.446464576',
+    stayInvitations: 'entry.424554911',
+    stayAttendance: 'entry.38093445',
+    message: 'entry.802664838',
   };
 
   function closeModal() {
@@ -113,7 +117,7 @@
               </select>
             </div>
 
-            {#if invite && invite.stayInvitations > 0}
+            {#if invite && invite.stayInvitations > 0 && partyAttendance > 0}
               <div class="space-y-2 mt-8">
                 <label for="stayAttendance" class="block text-center text-lg text-gray-700 dark:text-gray-300">
                   ¿Cuántas personas se quedarán en la finca?
