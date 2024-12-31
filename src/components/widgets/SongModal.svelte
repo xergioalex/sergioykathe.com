@@ -113,7 +113,9 @@
             />
           </div>
           <div>
-            <label for="songArtist" class="block text-sm font-medium text-gray-700 dark:text-gray-300">songArtista</label>
+            <label for="songArtist" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >songArtista</label
+            >
             <input
               type="text"
               id="songArtist"
@@ -150,9 +152,7 @@
           <div class="space-y-2">
             <span class="text-5xl">🎵</span>
             <h4 class="text-xl font-semibold text-primary">¡Gracias por tu sugerencia!</h4>
-            <p class="text-gray-600 dark:text-gray-400">
-              Tu canción ha sido agregada a nuestra lista de reproducción.
-            </p>
+            <p class="text-gray-600 dark:text-gray-400">Tu canción ha sido agregada a nuestra lista de reproducción.</p>
           </div>
           <div class="flex gap-4 justify-center">
             <button
