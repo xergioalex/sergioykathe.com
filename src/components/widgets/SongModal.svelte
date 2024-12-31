@@ -3,18 +3,52 @@
 
   let dialog: HTMLDialogElement;
   let songName = '';
-  let artist = '';
-  let genre = '';
+  let songArtist = '';
+  let songNotes = '';
+
+  // Configuración del formulario de Google
+  const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfBNmQYetQjkbnGOfwhD6QB8CxhRkXTGr7oa9Y8XgRRdBGe8Q/formResponse';
+  const FORM_ENTRIES = {
+    songName: 'entry.242037522',
+    songArtist: 'entry.287920603',
+    songNotes: 'entry.1265334069',
+  };
 
   function closeModal() {
     dialog?.close();
   }
 
-  function handleSubmit(event: Event) {
+  async function handleSubmit(event: Event) {
     event.preventDefault();
-    // Aquí manejaremos el envío del formulario
-    console.log({ songName, artist, genre });
-    closeModal();
+
+    console.log('handleSubmit...');
+    console.log({ songName, songArtist, songNotes });
+
+    try {
+      const formData = new FormData();
+      formData.append(FORM_ENTRIES.songName, songName);
+      formData.append(FORM_ENTRIES.songArtist, songArtist);
+      formData.append(FORM_ENTRIES.songNotes, songNotes);
+
+      const response = await fetch(FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData as any),
+      });
+
+      console.log('Formulario enviado exitosamente');
+      closeModal();
+
+      // Limpiar el formulario
+      songName = '';
+      songArtist = '';
+      songNotes = '';
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+    }
   }
 
   function handleClick(event: MouseEvent) {
@@ -74,33 +108,28 @@
           />
         </div>
         <div>
-          <label for="artist" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Artista</label>
+          <label for="songArtist" class="block text-sm font-medium text-gray-700 dark:text-gray-300">songArtista</label>
           <input
             type="text"
-            id="artist"
-            bind:value={artist}
+            id="songArtist"
+            bind:value={songArtist}
             required
             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white"
             placeholder="Ej: Juan Gabriel"
           />
         </div>
         <div>
-          <label for="genre" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Género</label>
-          <select
-            id="genre"
-            bind:value={genre}
-            required
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white"
+          <label for="songNotes" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Notas adicionales o link
+          </label>
+          <textarea
+            id="songNotes"
+            bind:value={songNotes}
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white resize-none"
+            rows="3"
+            placeholder="Ej: Link de YouTube o algún comentario sobre la canción"
           >
-            <option value="">Selecciona un género</option>
-            <option value="pop">Pop</option>
-            <option value="rock">Rock</option>
-            <option value="salsa">Salsa</option>
-            <option value="merengue">Merengue</option>
-            <option value="bachata">Bachata</option>
-            <option value="reggaeton">Reggaeton</option>
-            <option value="otro">Otro</option>
-          </select>
+          </textarea>
         </div>
         <div class="flex justify-end">
           <button
