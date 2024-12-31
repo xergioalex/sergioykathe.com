@@ -4,6 +4,7 @@
   import ConfirmModal from './ConfirmModal.svelte';
   import NoInviteModal from './NoInviteModal.svelte';
 
+  export let showFullInfo = false;
   let invite: Invite | undefined;
   let showModal = false;
   let showNoInviteModal = false;
@@ -43,12 +44,41 @@
   });
 </script>
 
-<button type="button" class="btn btn-primary w-full sm:w-auto" on:click={handleConfirmClick}>
-  <span class="flex items-center justify-center">
-    Confirmar Asistencia
-    <span class="ml-2">→</span>
-  </span>
-</button>
+{#if showFullInfo}
+  <div class="space-y-6">
+    {#if invite}
+      <div class="space-y-4">
+        <h3 class="text-2xl font-semibold text-primary">¡Hola {invite.name}! 👋</h3>
+        <p class="text-lg">
+          Tienes {invite.invitations} {invite.invitations === 1 ? 'invitación' : 'invitaciones'} para nuestro evento
+        </p>
+        <button type="button" class="btn btn-primary w-full sm:w-auto" on:click={handleConfirmClick}>
+          Confirmar mi Asistencia
+        </button>
+      </div>
+    {:else}
+      <div class="space-y-4">
+        <h3 class="text-2xl font-semibold text-primary">¿Tienes una invitación? 💌</h3>
+        <p class="text-lg">
+          Para confirmar tu asistencia, necesitas usar el enlace de invitación que te proporcionamos.
+        </p>
+        <p class="text-muted">
+          Si aún no tienes uno, contacta con nosotros para solicitar tu invitación.
+        </p>
+        <button type="button" class="btn btn-primary w-full sm:w-auto" on:click={handleConfirmClick}>
+          Verificar Invitación
+        </button>
+      </div>
+    {/if}
+  </div>
+{:else}
+  <button type="button" class="btn btn-primary w-full sm:w-auto" on:click={handleConfirmClick}>
+    <span class="flex items-center justify-center">
+      Confirmar Asistencia
+      <span class="ml-2">→</span>
+    </span>
+  </button>
+{/if}
 
 {#if showModal && invite}
   <ConfirmModal {invite} on:close={() => (showModal = false)} />
