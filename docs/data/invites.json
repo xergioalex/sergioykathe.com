@@ -3,15 +3,13 @@
     {
       "invite": "xxxx1",
       "name": "Laura",
-      "invitations": 3,
-      "stayInvited": true,
+      "partyInvitations": 3,
       "stayInvitations": 2
     },
     {
       "invite": "xxxx2",
-      "name": "Jorge y Maria",
-      "invitations": 2,
-      "stayInvited": false,
+      "name": "Laura",
+      "partyInvitations": 2,
       "stayInvitations": 0
     }
   ]
