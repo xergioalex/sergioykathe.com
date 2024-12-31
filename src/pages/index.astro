@@ -75,6 +75,8 @@ const metadata = {
 </Layout>
 
 <script>
+  import { ensureInviteInUrl } from '~/lib/invite';
+
   // Función para manejar el scroll suave
   function scrollToSection(hash: string) {
     const element = document.querySelector(hash);
@@ -85,6 +87,9 @@ const metadata = {
 
   // Scroll al cargar la página si hay un hash en la URL
   document.addEventListener('DOMContentLoaded', () => {
+    // Aseguramos que el invite esté en la URL si existe en localStorage
+    ensureInviteInUrl();
+
     if (window.location.hash) {
       // Pequeño delay para asegurar que todo el contenido esté cargado
       setTimeout(() => {
@@ -98,7 +103,9 @@ const metadata = {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
       const hash = (e.currentTarget as HTMLAnchorElement).getAttribute('href') || '';
-      window.history.pushState({}, '', hash);
+      // Mantenemos el parámetro invite al cambiar de sección
+      const params = new URLSearchParams(window.location.search);
+      window.history.pushState({}, '', `${hash}${params.toString() ? '?' + params.toString() : ''}`);
       scrollToSection(hash);
     });
   });
