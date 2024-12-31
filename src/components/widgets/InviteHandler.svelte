@@ -15,6 +15,7 @@
   let invite: Invite | undefined;
   let showModal = false;
   let showNoInviteModal = false;
+  let isLoading = true;
 
   async function loadInvites() {
     try {
@@ -28,14 +29,16 @@
   }
 
   async function init() {
-    const invites = await loadInvites();
-    const params = new URLSearchParams(window.location.search);
-    console.log('--- params ---');
-    console.log(params);
-    const inviteId = params.get('invite');
-    invite = invites.find((inv) => inv.invite === inviteId);
-    console.log('--- invite ---');
-    console.log(invite);
+    try {
+      const invites = await loadInvites();
+      const params = new URLSearchParams(window.location.search);
+      const inviteId = params.get('invite');
+      invite = invites.find((inv) => inv.invite === inviteId);
+    } catch (error) {
+      console.error('Error initializing:', error);
+    } finally {
+      isLoading = false;
+    }
   }
 
   function handleConfirmClick() {
@@ -51,7 +54,11 @@
   });
 </script>
 
-{#if heroMode}
+{#if isLoading}
+  <div class="flex justify-center items-center min-h-[200px]">
+    <div class="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full"></div>
+  </div>
+{:else if heroMode}
   <WeddingHeroContent {invite} {title} {subtitle} {content} {tagline} />
 {:else if showFullInfo}
   <div class="space-y-6 opacity-100">
