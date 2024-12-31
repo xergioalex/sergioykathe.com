@@ -1,0 +1,16 @@
+{
+  "invites": [
+    {
+      "invite": "xxxx1",
+      "name": "Laura",
+      "invitations": 3,
+      "message": "¡Nos encantaría que nos acompañes en este día tan especial!"
+    },
+    {
+      "invite": "xxxx2",
+      "name": "Jorge y Maria",
+      "invitations": 2,
+      "message": "¡Queremos compartir nuestra felicidad con ustedes!"
+    }
+  ]
+} 
