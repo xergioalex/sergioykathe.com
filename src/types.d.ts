@@ -295,4 +295,6 @@ export interface Invite {
   invite: string;
   name: string;
   invitations: number;
+  stayInvited: boolean;
+  stayInvitations: number;
 }
