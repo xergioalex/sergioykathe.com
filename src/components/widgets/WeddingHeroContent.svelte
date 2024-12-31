@@ -27,9 +27,7 @@
     <p
       class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
     >
-      {invite
-        ? 'Nos llena de alegría invitarte a ser parte de este momento tan especial en nuestras vidas.'
-        : subtitle}
+      {invite ? 'Nos llena de alegría invitarte a ser parte de este momento tan especial en nuestras vidas.' : subtitle}
     </p>
 
     <p
@@ -44,9 +42,10 @@
 
     {#if invite?.stayInvited}
       <p
-        class="text-xl text-primary mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
+        class="text-xl text-primary mb-6 dark:text-primary/90 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
       >
-        ¡Y además estás invitado a quedarte en la finca! Tienes {invite.stayInvitations} {invite.stayInvitations === 1 ? 'plaza' : 'plazas'} disponibles para alojamiento.
+        ¡Y además estás invitado a quedarte en la finca! Tienes {invite.stayInvitations}
+        {invite.stayInvitations === 1 ? 'plaza' : 'plazas'} disponibles para alojamiento.
       </p>
     {/if}
 
@@ -57,9 +56,7 @@
         Confirmar Asistencia
         <span class="ml-2">→</span>
       </a>
-      <a href="#evento" class="btn w-full sm:w-auto">
-        Más Información
-      </a>
+      <a href="#evento" class="btn w-full sm:w-auto"> Más Información </a>
     </div>
   </div>
 </div>
