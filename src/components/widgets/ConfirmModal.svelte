@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount, createEventDispatcher } from 'svelte';
-  import type { Invite } from '~/types';
+  import type { Invite } from '~/types.d';
 
   export let invite: Invite;
 
