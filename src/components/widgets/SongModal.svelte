@@ -142,11 +142,11 @@
             >
             </textarea>
           </div>
-          <div class="flex justify-end">
+          <div class="flex justify-center">
             <button
               type="submit"
               disabled={isLoading}
-              class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-primary rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              class="btn btn-primary"
             >
               {#if isLoading}
                 <svg
@@ -179,14 +179,14 @@
           <div class="flex gap-4 justify-center">
             <button
               type="button"
-              class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              class="btn btn-secondary"
               on:click={resetForm}
             >
               Agregar otra canción
             </button>
             <button
               type="button"
-              class="px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              class="btn btn-primary"
               on:click={closeModal}
             >
               Cerrar
