@@ -98,7 +98,7 @@
                 required
                 class="mt-6 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-lg py-3"
               >
-                {#each Array(invite.invitations + 1) as _, i}
+                {#each [...Array(invite.invitations + 1).keys()] as i}
                   <option value={i}>{i} {i === 1 ? 'persona' : 'personas'}</option>
                 {/each}
               </select>
@@ -115,7 +115,7 @@
                   required
                   class="mt-6 mx-auto block w-48 text-center rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary dark:bg-slate-800 dark:border-gray-700 dark:text-white text-lg py-3"
                 >
-                  {#each Array(Math.min(attendance, invite.stayInvitations) + 1) as _, i}
+                  {#each [...Array(Math.min(attendance, invite.stayInvitations) + 1).keys()] as i}
                     <option value={i}>{i} {i === 1 ? 'persona' : 'personas'}</option>
                   {/each}
                 </select>
@@ -149,7 +149,8 @@
           </p>
           {#if invite.stayInvited && stayAttendance > 0}
             <p class="text-gray-600 dark:text-gray-400">
-              Y {stayAttendance} {stayAttendance === 1 ? 'persona se quedará' : 'personas se quedarán'} en la finca
+              Y {stayAttendance}
+              {stayAttendance === 1 ? 'persona se quedará' : 'personas se quedarán'} en la finca
             </p>
           {/if}
           <button class="btn btn-primary mt-4" on:click={closeModal}> Cerrar </button>

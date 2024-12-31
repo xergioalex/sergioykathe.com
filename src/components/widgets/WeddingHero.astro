@@ -1,7 +1,6 @@
 ---
 import Image from '~/components/common/Image.astro';
 import InviteHandler from './InviteHandler.svelte';
-import WeddingHeroContent from './WeddingHeroContent.svelte';
 
 import type { Hero as Props } from '~/types';
 
@@ -27,14 +26,7 @@ const {
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-12 md:py-12 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
-      <InviteHandler
-        client:load
-        heroMode={true}
-        {title}
-        {subtitle}
-        {content}
-        {tagline}
-      />
+      <InviteHandler client:load heroMode={true} {title} {subtitle} {content} {tagline} />
       <div class="basis-1/2">
         {
           image && (
