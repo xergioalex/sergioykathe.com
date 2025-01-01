@@ -117,7 +117,7 @@ jobs:
         run: |
           npm install
           # Install specific dependencies for CI (x64)
-          npm install --no-save @rollup/rollup-linux-x64-gnu@4.29.1 lightningcss-linux-x64-gnu@1.28.2
+          npm install --no-save @rollup/rollup-linux-x64-gnu@4.29.1 lightningcss-linux-x64-gnu@1.28.2 @esbuild/linux-x64@0.24.2
       - name: Step 7 - Build static files
         run: |
           npm run build:ghpages
