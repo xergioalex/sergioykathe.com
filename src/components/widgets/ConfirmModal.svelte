@@ -83,7 +83,7 @@
     <div class="p-4 border-b flex justify-between items-center">
       <h3 class="text-base font-semibold flex items-center gap-2">
         <span class="text-primary">💌</span>
-        Confirmar Asistencia
+        Confirmar asistencia
       </h3>
       <button class="text-gray-500" on:click={closeModal}>✕</button>
     </div>
@@ -167,7 +167,7 @@
                     />
                   </svg>
                 {/if}
-                {isLoading ? 'Enviando...' : 'Confirmar Asistencia'}
+                {isLoading ? 'Enviando...' : 'Confirmar asistencia'}
               </button>
             </div>
           </form>

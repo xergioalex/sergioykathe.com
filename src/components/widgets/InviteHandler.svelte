@@ -87,7 +87,7 @@
         </p>
         <p class="text-muted">Si aún no tienes uno, contacta con nosotros para solicitar tu invitación.</p>
         <button type="button" class="btn btn-primary w-full sm:w-auto" on:click={handleConfirmClick}>
-          Verificar Invitación
+          Verificar invitación
         </button>
       </div>
     {/if}
@@ -95,7 +95,7 @@
 {:else}
   <button type="button" class="btn btn-primary w-full sm:w-auto" on:click={handleConfirmClick}>
     <span class="flex items-center justify-center">
-      Confirmar Asistencia
+      Confirmar asistencia
       <span class="ml-2">→</span>
     </span>
   </button>
