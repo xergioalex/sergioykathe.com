@@ -1,0 +1,16 @@
+{
+  "invites": [
+    {
+      "invite": "xxxx1",
+      "name": "Laura",
+      "partyInvitations": 3,
+      "stayInvitations": 2
+    },
+    {
+      "invite": "xxxx2",
+      "name": "Francy",
+      "partyInvitations": 2,
+      "stayInvitations": 0
+    }
+  ]
+}
