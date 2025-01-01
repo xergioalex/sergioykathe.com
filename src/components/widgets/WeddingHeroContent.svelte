@@ -34,7 +34,7 @@
       class="text-xl text-secondary mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
     >
       {@html invite
-        ? `<b>Fecha:</b> 22 de marzo de 2025<br><b>Número de personas:</b> ${invite.partyInvitations}`
+        ? `<b>Fecha:</b> 22 de marzo de 2025<br><b>Número de invitados:</b> ${invite.partyInvitations}`
         : content}
 
       {#if invite && invite.stayInvitations > 0}
