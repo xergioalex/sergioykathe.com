@@ -94,7 +94,7 @@
     <div class="p-4 border-b flex justify-between items-center">
       <h3 id="modal-title" class="text-lg font-semibold flex items-center gap-2">
         <span class="text-primary">🎵</span>
-        Sugerir Canciones
+        Sugerir canciones
       </h3>
       <button type="button" class="text-gray-500 hover:text-gray-700" on:click={closeModal} aria-label="Cerrar diálogo">
         ✕
