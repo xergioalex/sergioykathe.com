@@ -1,21 +1,21 @@
 ---
-title: 'Tips y Sugerencias'
+title: 'TIPS Y SUGERENCIAS'
 layout: '~/layouts/WeddingMarkdownLayout.astro'
 backAction: '/#tips'
 ---
 
-## Llegada y Transporte
+## Llegada y transporte
 
 - Habrá parqueadero disponible en ambas locaciones.
 - Considerar usar servicios de transporte compartido para la fiesta.
 
-## Durante la Celebración
+## Durante la celebración
 
 - La ceremonia será fotografiada profesionalmente.
 - No olvides que en este sitio encontrarás <a href="/#fotos">dos códigos QR</a> que te permitirán ayudarnos a capturar cada momento especial de la ceremonia y la fiesta.
 - Tendremos áreas designadas para fotos con los novios.
 
-## Consideraciones Especiales
+## Consideraciones especiales
 
 - Te recomendamos llegar 15-20 minutos antes, ya que la ceremonia y el protocolo comenzarán puntualmente y no queremos que te pierdas nada. ¡Así qué, por favor, llega a tiempo! <a href="/#evento">Consulta la información del evento aquí</a>.
 - Para garantizar que todos puedan disfrutar de la fiesta, te recordamos amablemente que cada invitado debe respetar el número de entradas asignadas en su invitación.
