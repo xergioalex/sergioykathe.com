@@ -38,7 +38,7 @@
         : content}
 
       {#if invite && invite.stayInvitations > 0}
-        <br><b>Cupos de alojamiento:</b> {invite.stayInvitations}
+        <br /><b>Cupos de alojamiento:</b> {invite.stayInvitations}
       {/if}
     </p>
 

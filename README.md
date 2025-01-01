@@ -25,21 +25,25 @@ Bienvenido al repositorio de nuestro sitio web de boda. Este proyecto está cons
 ## 🚀 Desarrollo Local
 
 1. Clona el repositorio:
+
 ```bash
 git clone https://github.com/tu-usuario/sergioykathe.com.git
 ```
 
 2. Instala las dependencias:
+
 ```bash
 npm install
 ```
 
 3. Crea un archivo `.env` basado en `.env.example` y configura tus variables de entorno:
+
 ```bash
 PUBLIC_GOOGLE_MAPS_API_KEY=tu_api_key
 ```
 
 4. Inicia el servidor de desarrollo:
+
 ```bash
 npm run dev
 ```
