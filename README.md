@@ -25,6 +25,7 @@ Bienvenido al repositorio de nuestro sitio web de boda. Este proyecto está cons
 ## 🚀 Desarrollo Local
 
 1. Clona el repositorio:
+
 ```
 npm run dev
 ```
