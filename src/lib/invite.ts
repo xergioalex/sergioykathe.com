@@ -1,28 +1,33 @@
 export function getInviteId(): string | null {
-  // Primero intentamos obtener el invite de la URL
+  // First, we check if there's an invite parameter in the URL
   const params = new URLSearchParams(window.location.search);
   const inviteId = params.get('invite');
 
   if (inviteId) {
-    // Si hay un invite en la URL, lo guardamos en localStorage
+    // If we find it in the URL, save it to localStorage
     localStorage.setItem('inviteId', inviteId);
     return inviteId;
   }
 
-  // Si no hay invite en la URL, intentamos obtenerlo del localStorage
-  return localStorage.getItem('inviteId');
+  // If not in URL, try to get it from localStorage
+  const storedInvite = localStorage.getItem('inviteId');
+  if (storedInvite) {
+    return storedInvite;
+  }
+
+  return null;
+}
+
+export function cleanInviteFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('invite')) {
+    params.delete('invite');
+    const newUrl = window.location.pathname + (params.toString() ? `?${params.toString()}` : '') + window.location.hash;
+    window.history.replaceState({}, '', newUrl);
+  }
 }
 
 export function ensureInviteInUrl() {
-  const inviteId = localStorage.getItem('inviteId');
-  if (!inviteId) return;
-
-  // Si ya existe el parámetro en la URL, no hacemos nada
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('invite') === inviteId) return;
-
-  // Agregamos o actualizamos el parámetro invite en la URL
-  params.set('invite', inviteId);
-  const newUrl = `${window.location.pathname}?${params.toString()}`;
-  window.history.replaceState({}, '', newUrl);
+  // Ya no necesitamos esta función
+  return;
 }

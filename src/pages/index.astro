@@ -75,9 +75,9 @@ const metadata = {
 </Layout>
 
 <script>
-  import { ensureInviteInUrl } from '~/lib/invite';
+  import { getInviteId, cleanInviteFromUrl } from '~/lib/invite';
 
-  // Función para manejar el scroll suave
+  // Function to handle smooth scrolling
   function scrollToSection(hash: string) {
     const element = document.querySelector(hash);
     if (element) {
@@ -85,25 +85,26 @@ const metadata = {
     }
   }
 
-  // Scroll al cargar la página si hay un hash en la URL
+  // Scroll when the page loads if there is a hash in the URL
   document.addEventListener('DOMContentLoaded', () => {
-    // Aseguramos que el invite esté en la URL si existe en localStorage
-    ensureInviteInUrl();
+    // Get and store the invite ID, then clean it from the URL
+    getInviteId();
+    cleanInviteFromUrl();
 
     if (window.location.hash) {
-      // Pequeño delay para asegurar que todo el contenido esté cargado
+      // Small delay to ensure all content is loaded
       setTimeout(() => {
         scrollToSection(window.location.hash);
       }, 100);
     }
   });
 
-  // Manejar clicks en los enlaces del menú
+  // Handle clicks on menu links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
       const hash = (e.currentTarget as HTMLAnchorElement).getAttribute('href') || '';
-      // Mantenemos el parámetro invite al cambiar de sección
+      // Keep the invite parameter when changing sections
       const params = new URLSearchParams(window.location.search);
       window.history.pushState({}, '', `${hash}${params.toString() ? '?' + params.toString() : ''}`);
       scrollToSection(hash);
