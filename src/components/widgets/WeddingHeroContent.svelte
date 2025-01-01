@@ -34,7 +34,7 @@
       class="text-xl text-secondary mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
     >
       {@html invite
-        ? `Te esperamos el <b>22 de Marzo de 2025</b>. Tienes ${invite.partyInvitations} ${
+        ? `Te esperamos el <b>22 de marzo de 2025</b>. Tienes ${invite.partyInvitations} ${
             invite.partyInvitations === 1 ? 'invitación' : 'invitaciones'
           } para acompañarnos.`
         : content}
@@ -53,10 +53,10 @@
       class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
     >
       <a href="#rsvp" class="btn btn-primary w-full sm:w-auto">
-        Confirmar Asistencia
+        Confirmar asistencia
         <span class="ml-2">→</span>
       </a>
-      <a href="#evento" class="btn w-full sm:w-auto"> Más Información </a>
+      <a href="#evento" class="btn w-full sm:w-auto"> Más información </a>
     </div>
   </div>
 </div>
