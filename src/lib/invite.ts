@@ -22,9 +22,7 @@ export function cleanInviteFromUrl() {
   const params = new URLSearchParams(window.location.search);
   if (params.has('invite')) {
     params.delete('invite');
-    const newUrl = window.location.pathname +
-      (params.toString() ? `?${params.toString()}` : '') +
-      window.location.hash;
+    const newUrl = window.location.pathname + (params.toString() ? `?${params.toString()}` : '') + window.location.hash;
     window.history.replaceState({}, '', newUrl);
   }
 }
