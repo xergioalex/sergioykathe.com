@@ -34,13 +34,13 @@
       "code": "MA4248GR",
       "name": "Mauricio",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 1
     },
     {
       "code": "EU5474GY",
       "name": "Eugenia y Edgar",
-      "partyInvitations": 4,
-      "stayInvitations": 0
+      "partyInvitations": 2,
+      "stayInvitations": 2
     },
     {
       "code": "MI9411VD",
@@ -52,7 +52,7 @@
       "code": "CL5628KR",
       "name": "Clara y Familia",
       "partyInvitations": 4,
-      "stayInvitations": 0
+      "stayInvitations": 4
     },
     {
       "code": "FA3147PF",
@@ -76,7 +76,7 @@
       "code": "FE4762QO",
       "name": "Fernando y Luz Dary",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 2
     },
     {
       "code": "AL0866CN",
@@ -355,193 +355,259 @@
       "stayInvitations": 0
     },
     {
-      "code": "FA2610KQ",
-      "name": "Familia Vanegas Useche y Gloria Vanegas",
+      "code": "FA2000GH",
+      "name": "Familia Vanegas Useche",
+      "partyInvitations": 3,
+      "stayInvitations": 1
+    },
+    {
+      "code": "G4789TL",
+      "name": "Gloria Vanegas",
+      "partyInvitations": 1,
+      "stayInvitations": 1
+    },
+    {
+      "code": "FA9571TU",
+      "name": "Familia Martinez Vanegas",
       "partyInvitations": 4,
       "stayInvitations": 4
     },
     {
-      "code": "FA9570SU",
-      "name": "Familia Martinez Vanegas",
-      "partyInvitations": 5,
-      "stayInvitations": 5
+      "code": "FA4650SD",
+      "name": "Familia Florez Vanegas",
+      "partyInvitations": 2,
+      "stayInvitations": 2
     },
     {
-      "code": "FA7391LV",
-      "name": "Familia Florez Vanegas y Angela Mora",
-      "partyInvitations": 3,
+      "code": "AN4720AT",
+      "name": "Angela Mora",
+      "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "FA5232KT",
+      "code": "FA5234MT",
       "name": "Familia Vanegas Arango",
       "partyInvitations": 5,
       "stayInvitations": 0
     },
     {
-      "code": "FA3055RW",
+      "code": "FA3053PW",
       "name": "Familia Vanegas Arias",
       "partyInvitations": 4,
       "stayInvitations": 0
     },
     {
-      "code": "FA0231FE",
+      "code": "FA0233HE",
       "name": "Familia Vanegas Lozano",
       "partyInvitations": 4,
       "stayInvitations": 0
     },
     {
-      "code": "FA5730MG",
+      "code": "FA5732OG",
       "name": "Familia López Zabaleta",
       "partyInvitations": 4,
-      "stayInvitations": 0
+      "stayInvitations": 4
     },
     {
-      "code": "MA1215VH",
+      "code": "MA1238SI",
       "name": "María Quintero, Katherine Valera\ny Karin Arredondo",
       "partyInvitations": 3,
       "stayInvitations": 0
     },
     {
-      "code": "HE0414IM",
+      "code": "HE0437FN",
       "name": "Hector Arango",
       "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "JA0021DE",
+      "code": "JA0019BE",
       "name": "Jaider Mendoza y Sra",
       "partyInvitations": 2,
       "stayInvitations": 0
     },
     {
-      "code": "MA1654CO",
-      "name": "Margarita y Luz Edi",
-      "partyInvitations": 2,
+      "code": "MA7688YH",
+      "name": "Margarita",
+      "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "CE9728AT",
-      "name": "Cesar Vanegas y Daniela Vanegas",
-      "partyInvitations": 2,
+      "code": "LU2504CM",
+      "name": "Luz Edi",
+      "partyInvitations": 1,
+      "stayInvitations": 1
+    },
+    {
+      "code": "CE0167NH",
+      "name": "Cesar Vanegas",
+      "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "MI2533VU",
+      "code": "DA3430SP",
+      "name": "Daniela Vanegas",
+      "partyInvitations": 1,
+      "stayInvitations": 1
+    },
+    {
+      "code": "MI2529RU",
       "name": "Miriam",
       "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "PA5279DL",
+      "code": "PA5283HL",
       "name": "Paulin y Antonio",
       "partyInvitations": 2,
       "stayInvitations": 0
     },
     {
-      "code": "JE2543HJ",
-      "name": "Jessica, Verónica, Daniela B., Daniela G., Marisol.",
-      "partyInvitations": 6,
+      "code": "JE5182EU",
+      "name": "Jessica",
+      "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "LA9510GT",
+      "code": "VE0991ZM",
+      "name": "Verónica",
+      "partyInvitations": 1,
+      "stayInvitations": 0
+    },
+    {
+      "code": "DA7907JO",
+      "name": "Daniela B.",
+      "partyInvitations": 1,
+      "stayInvitations": 0
+    },
+    {
+      "code": "DA6863LO",
+      "name": "Daniela G.",
+      "partyInvitations": 1,
+      "stayInvitations": 0
+    },
+    {
+      "code": "MA1934SS",
+      "name": "Marisol.",
+      "partyInvitations": 1,
+      "stayInvitations": 0
+    },
+    {
+      "code": "AN2219BH",
+      "name": "Anyell",
+      "partyInvitations": 1,
+      "stayInvitations": 0
+    },
+    {
+      "code": "LA9540KU",
       "name": "Laura y Daniel",
       "partyInvitations": 2,
       "stayInvitations": 0
     },
     {
-      "code": "ST2965JY",
+      "code": "ST2935FX",
       "name": "Stefania Villa",
       "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "ST1846WA",
+      "code": "ST1816SZ",
       "name": "Stephania Bernal",
       "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "JE9677VD",
-      "name": "Jeison y Manuel",
-      "partyInvitations": 2,
+      "code": "JE2748WM",
+      "name": "Jeison",
+      "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "FR9291NC",
+      "code": "GO0864AT",
+      "name": "Gordi",
+      "partyInvitations": 1,
+      "stayInvitations": 0
+    },
+    {
+      "code": "FR9260IB",
       "name": "Francy y Jorge",
       "partyInvitations": 2,
       "stayInvitations": 0
     },
     {
-      "code": "CH0514AR",
+      "code": "CH0545FS",
       "name": "Christopher",
       "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "VI6189DH",
-      "name": "Vivian",
+      "code": "VI8857LC",
+      "name": "Vivian y Amparo",
       "partyInvitations": 2,
       "stayInvitations": 0
     },
     {
-      "code": "LE8054YJ",
+      "code": "LE8085DK",
       "name": "Leidy",
       "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "MA8379ZL",
+      "code": "MA8410EM",
       "name": "Martha",
       "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "SA9080KC",
+      "code": "SA9049FB",
       "name": "Sammy",
       "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "AL7928KW",
-      "name": "Alejandra",
+      "code": "AL3934GQ",
+      "name": "Aleja",
       "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "OS9889LZ",
+      "code": "OS9858GY",
       "name": "Oscar",
       "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "HO0855BZ",
-      "name": "Honorio Vanegas",
+      "code": "HO7210KN",
+      "name": "Honorio y Aurora",
       "partyInvitations": 2,
       "stayInvitations": 0
     },
     {
-      "code": "ME9084EW",
-      "name": "Mery y Monica",
-      "partyInvitations": 3,
+      "code": "ME2769PL",
+      "name": "Mery",
+      "partyInvitations": 1,
       "stayInvitations": 0
     },
     {
-      "code": "WI7948KX",
+      "code": "MO3574IP",
+      "name": "Monica",
+      "partyInvitations": 1,
+      "stayInvitations": 0
+    },
+    {
+      "code": "WI1889TQ",
       "name": "Wilmar y Vanesa",
       "partyInvitations": 3,
       "stayInvitations": 0
     },
     {
-      "code": "JU5965RY",
+      "code": "JU9694EU",
       "name": "Juan Pablo y Alejandra",
       "partyInvitations": 2,
       "stayInvitations": 0
     },
     {
-      "code": "JO8145HU",
+      "code": "JO2766AI",
       "name": "Jorge y Tatiana",
       "partyInvitations": 2,
       "stayInvitations": 0
