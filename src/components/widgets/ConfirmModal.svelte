@@ -41,7 +41,7 @@
 
     try {
       const formData = new FormData();
-      formData.append(FORM_ENTRIES.inviteId, invite.invite);
+      formData.append(FORM_ENTRIES.inviteId, invite.code);
       formData.append(FORM_ENTRIES.name, invite.name);
       formData.append(FORM_ENTRIES.partyInvitations, invite.partyInvitations.toString());
       formData.append(FORM_ENTRIES.partyAttendance, partyAttendance.toString());
