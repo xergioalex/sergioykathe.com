@@ -21,10 +21,10 @@ try {
 
   // Convert numeric fields
   const invites = records.slice(1).map((record) => ({
-    code: record.code,
-    name: record.name,
-    partyInvitations: parseInt(record.partyInvitations),
-    stayInvitations: parseInt(record.stayInvitations),
+    code: record.code.trim(),
+    name: record.name.trim(),
+    partyInvitations: parseInt(record.partyInvitations.trim()),
+    stayInvitations: parseInt(record.stayInvitations.trim()),
   }));
 
   // Create the final object
