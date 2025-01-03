@@ -12,7 +12,7 @@ La vestimenta para ambos eventos es formal. A continuación, te proporcionamos a
 
 ## Para damas
 
-- Elegantes y formales, preferiblemente vestido largo.
+- Elegantes y formales.
 - Las damas de honor vestirán de color vinotinto, por lo que se solicita amablemente a las demás invitadas evitar usar este color.
 - <b class="text-primary">Evitar a toda costa el color blanco</b>.
 
