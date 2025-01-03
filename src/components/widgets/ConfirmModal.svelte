@@ -91,7 +91,7 @@
       {#if !isSuccess}
         <div class="space-y-4">
           <div class="text-center">
-            <h4 class="text-2xl font-semibold mb-3">¡Hola {invite.name}!</h4>
+            <h4 class="text-2xl font-semibold mb-3">¡Hola, {invite.name}!</h4>
             <p class="text-gray-600 dark:text-gray-400 mt-1 text-lg">
               Nos encantaría que nos acompañes en este día tan especial
               {#if invite.stayInvitations > 0}
