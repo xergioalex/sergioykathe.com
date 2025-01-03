@@ -33,7 +33,7 @@
     try {
       const invites = await loadInvites();
       const inviteId = getInviteId();
-      invite = invites.find((inv) => inv.invite === inviteId);
+      invite = invites.find((inv) => inv.code === inviteId);
     } catch (error) {
       console.error('Error initializing:', error);
     } finally {
