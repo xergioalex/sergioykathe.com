@@ -20,16 +20,16 @@ try {
   });
 
   // Convert numeric fields
-  const invites = records.map(record => ({
-    code: record.code.trim(),
-    name: record.name.trim(),
-    partyInvitations: parseInt(record.partyInvitations.trim()),
-    stayInvitations: parseInt(record.stayInvitations.trim())
+  const invites = records.slice(1).map((record) => ({
+    code: record.code,
+    name: record.name,
+    partyInvitations: parseInt(record.partyInvitations),
+    stayInvitations: parseInt(record.stayInvitations),
   }));
 
   // Create the final object
   const jsonContent = {
-    invites
+    invites,
   };
 
   // Ensure the directory exists
@@ -39,10 +39,7 @@ try {
   }
 
   // Write the JSON file
-  fs.writeFileSync(
-    jsonFilePath,
-    JSON.stringify(jsonContent, null, 2)
-  );
+  fs.writeFileSync(jsonFilePath, JSON.stringify(jsonContent, null, 2));
 
   console.log('✅ JSON file generated successfully');
 } catch (error) {
