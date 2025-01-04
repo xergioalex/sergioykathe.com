@@ -84,10 +84,12 @@
         {#if invite.partyInvitations === 0}
           <div class="space-y-4">
             <p class="text-lg">
-              Queremos compartir contigo la alegría de nuestro matrimonio y hacerte partícipe de este momento tan especial.
+              Queremos compartir contigo la alegría de nuestro matrimonio y hacerte partícipe de este momento tan
+              especial.
             </p>
             <p class="text-lg text-muted">
-              Sabemos que no podrás acompañarnos físicamente, pero tu cariño y buenos deseos estarán con nosotros en este día tan especial.
+              Sabemos que no podrás acompañarnos físicamente, pero tu cariño y buenos deseos estarán con nosotros en
+              este día tan especial.
             </p>
           </div>
         {:else}
