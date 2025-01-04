@@ -9,8 +9,8 @@ import CustomStyles from '~/components/CustomStyles.astro';
 import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
 import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
-import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
+import GoogleAnalytics from '~/components/common/GoogleAnalytics.astro';
 import Mixpanel from '~/components/common/Mixpanel.astro';
 
 // Comment the line below to disable View Transitions
@@ -35,7 +35,7 @@ const { language, textDirection } = I18N;
     <ApplyColorMode />
     <Metadata {...metadata} />
     <SiteVerification />
-    <Analytics />
+    <GoogleAnalytics />
     <Mixpanel />
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
@@ -47,3 +47,15 @@ const { language, textDirection } = I18N;
     <BasicScripts />
   </body>
 </html>
+
+<script>
+  import { analytics } from '~/lib/analytics';
+
+  // Track initial pageview
+  analytics.trackPageView();
+
+  // Track pageviews on navigation
+  document.addEventListener('astro:after-swap', () => {
+    analytics.trackPageView();
+  });
+</script>
