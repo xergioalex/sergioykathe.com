@@ -35,6 +35,17 @@
     dispatch('close');
   }
 
+  // Cargar estado previo si existe
+  onMount(() => {
+    const savedState = localStorage.getItem(`confirmation-${invite.code}`);
+    if (savedState) {
+      const state = JSON.parse(savedState);
+      partyAttendance = state.partyAttendance;
+      stayAttendance = state.stayInvitations;
+      message = state.message;
+    }
+  });
+
   async function handleSubmit(event: Event) {
     event.preventDefault();
     isLoading = true;
@@ -60,6 +71,23 @@
       });
 
       isSuccess = true;
+      // Guardar estado en localStorage
+      localStorage.setItem(
+        `confirmation-${invite.code}`,
+        JSON.stringify({
+          partyAttendance,
+          stayInvitations: stayAttendance,
+          message,
+          lastUpdate: new Date().toISOString()
+        })
+      );
+      // Emitir evento con el estado actualizado
+      dispatch('confirmationUpdate', {
+        partyAttendance,
+        stayInvitations: stayAttendance,
+        message,
+        lastUpdate: new Date().toISOString()
+      });
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
     } finally {
