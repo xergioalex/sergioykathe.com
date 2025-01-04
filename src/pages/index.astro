@@ -11,7 +11,7 @@ import WeddingTips from '~/components/widgets/WeddingTips.astro';
 import WeddingQuote from '~/components/widgets/WeddingQuote.astro';
 import WeddingGifts from '~/components/widgets/WeddingGifts.astro';
 import WeddingSongs from '~/components/widgets/WeddingSongs.astro';
-import WeddingRSVP from '~/components/widgets/WeddingRSVP.astro';
+import WeddingRSVP from '~/components/widgets/WeddingRSVP.svelte';
 
 const metadata = {
   title: 'Sergio y Kathe - Invitación de Boda',
@@ -71,7 +71,7 @@ const metadata = {
 
   <WeddingPhotoGallery id="fotos" isDark={false} />
 
-  <WeddingRSVP id="rsvp" isDark={false} />
+  <WeddingRSVP id="rsvp" client:load />
 </Layout>
 
 <script>
