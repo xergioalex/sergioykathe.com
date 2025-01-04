@@ -211,9 +211,12 @@
           </div>
           <h4 class="text-2xl font-script text-primary">¡Gracias por confirmar!</h4>
           <p class="text-gray-600 dark:text-gray-400">
-            {partyAttendance === 1 ?
-              'Nos alegra mucho saber que nos acompañarás en este día tan especial' :
-              `Nos alegra mucho saber que nos acompañarán ${partyAttendance} personas en este día tan especial`}
+            {partyAttendance === 0
+              ? 'Lamentamos que no puedas acompañarnos en este día tan especial'
+              : partyAttendance === 1
+                ? 'Nos alegra mucho saber que nos acompañarás en este día tan especial'
+                : `Nos alegra mucho saber que nos acompañarán ${partyAttendance} personas en este día tan especial`
+            }
           </p>
           {#if invite && invite.stayInvitations > 0 && stayAttendance > 0}
             <p class="text-gray-600 dark:text-gray-400">
