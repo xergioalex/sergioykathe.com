@@ -9,7 +9,7 @@ metadata:
   title:
     default: Invitación de Boda
     template: '%s — Invitación de Boda'
-  description: "Únete a nosotros para celebrar el amor, la alegría y la unión de Sergio y Katherine en su día especial. ¡No te lo pierdas!"
+  description: 'Únete a nosotros para celebrar el amor, la alegría y la unión de Sergio y Katherine en su día especial. ¡No te lo pierdas!'
   robots:
     index: true
     follow: true
