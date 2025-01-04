@@ -30,6 +30,9 @@ export const analytics = {
     if (isMixpanelAvailable()) {
       window.mixpanel.track(eventName, properties);
     }
+    if (isGtagAvailable()) {
+      window.gtag('event', eventName, properties);
+    }
   },
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
