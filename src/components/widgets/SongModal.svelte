@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { analytics } from '~/lib/analytics';
 
   let dialog: HTMLDialogElement;
   let songName = '';
@@ -50,9 +51,23 @@
         body: new URLSearchParams(formData as any),
       });
 
+      // Track successful song submission
+      analytics.capture('song_suggestion_submitted', {
+        song_name: songName,
+        artist: songArtist,
+        has_notes: Boolean(songNotes),
+      });
+
       isSuccess = true;
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
+
+      // Track failed submissions
+      analytics.capture('song_suggestion_failed', {
+        error: error.message,
+        song_name: songName,
+        artist: songArtist,
+      });
     } finally {
       isLoading = false;
     }
