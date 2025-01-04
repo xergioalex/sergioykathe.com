@@ -64,6 +64,7 @@ export default [
       'types.generated.d.ts',
       '.astro',
       'src/components/common/Mixpanel.astro',
+      'src/components/common/GoogleAnalytics.astro',
     ],
   },
   {

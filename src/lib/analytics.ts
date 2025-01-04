@@ -4,6 +4,8 @@ declare global {
     posthog: any;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     mixpanel: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    gtag: any;
   }
 }
 
@@ -13,6 +15,10 @@ const isPostHogAvailable = () => {
 
 const isMixpanelAvailable = () => {
   return typeof window !== 'undefined' && window.mixpanel && import.meta.env.PUBLIC_MIXPANEL_TOKEN;
+};
+
+const isGtagAvailable = () => {
+  return typeof window !== 'undefined' && window.gtag && import.meta.env.PUBLIC_GA_TRACKING_ID;
 };
 
 export const analytics = {
@@ -61,6 +67,12 @@ export const analytics = {
       window.mixpanel.track('pageview', {
         url: pageUrl,
         path: window.location.pathname,
+      });
+    }
+    if (isGtagAvailable()) {
+      window.gtag('event', 'page_view', {
+        page_location: pageUrl,
+        page_path: window.location.pathname,
       });
     }
   },
