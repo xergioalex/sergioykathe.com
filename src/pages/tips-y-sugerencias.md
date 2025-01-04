@@ -17,7 +17,7 @@ backAction: '/#tips'
 
 ## Consideraciones especiales
 
-- Te recomendamos llegar 15-20 minutos antes, ya que la ceremonia y el protocolo comenzarán puntualmente y no queremos que te pierdas nada. ¡Así qué, por favor, llega a tiempo! <a href="/#evento">Consulta la información del evento aquí</a>.
+- Te recomendamos llegar 15 o 20 minutos antes, ya que la ceremonia y el protocolo comenzarán puntualmente y no queremos que te pierdas nada. ¡Así qué, por favor, llega a tiempo! <a href="/#evento">Consulta la información del evento aquí</a>.
 - Para garantizar que todos puedan disfrutar de la fiesta, te recordamos amablemente que cada invitado debe respetar el número de entradas asignadas en su invitación.
 - Queremos que disfrutes de esta fiesta al máximo, por eso decidimos que sea un evento <b class="text-primary">sin niños</b>.
 - Es importante que confirmes tu asistencia a más tardar el 28 de febrero de 2025.
