@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, createEventDispatcher } from 'svelte';
   import type { Invite } from '~/types.d';
+  import { analytics } from '~/lib/analytics';
 
   export let invite: Invite;
 
@@ -65,6 +66,14 @@
       formData.append(FORM_ENTRIES.stayInvitations, invite.stayInvitations.toString());
       formData.append(FORM_ENTRIES.stayAttendance, stayAttendance.toString());
       formData.append(FORM_ENTRIES.message, message.trim());
+
+      // Registrar evento de analytics
+      analytics.capture('confirmation_submitted', {
+        inviteCode: invite.code,
+        partyAttendance,
+        stayAttendance,
+        hasMessage: message.trim().length > 0,
+      });
 
       await fetch(FORM_URL, {
         method: 'POST',
