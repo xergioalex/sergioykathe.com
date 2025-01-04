@@ -1,31 +1,25 @@
 site:
   name: S&K
-  site: 'https://astrowind.vercel.app'
+  site: 'https://www.sergioykathe.com'
   base: '/'
   trailingSlash: false
-
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Invitación de Boda
+    template: '%s — Invitación de Boda'
+  description: "Únete a nosotros para celebrar el amor, la alegría y la unión de Sergio y Katherine en su día especial. ¡No te lo pierdas!"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Invitación de Boda
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/seo.png'
         width: 1200
         height: 628
     type: website
-  twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
-    cardType: summary_large_image
 
 i18n:
   language: en
