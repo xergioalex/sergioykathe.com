@@ -17,6 +17,12 @@
   let showModal = false;
   let showNoInviteModal = false;
   let isLoading = true;
+  let confirmationState: {
+    partyAttendance: number;
+    stayInvitations: number;
+    message: string;
+    lastUpdate: string;
+  } | null = null;
 
   async function loadInvites() {
     try {
@@ -34,6 +40,12 @@
       const invites = await loadInvites();
       const inviteId = getInviteId();
       invite = invites.find((inv) => inv.code === inviteId);
+      if (invite) {
+        const savedState = localStorage.getItem(`confirmation-${invite.code}`);
+        if (savedState) {
+          confirmationState = JSON.parse(savedState);
+        }
+      }
     } catch (error) {
       console.error('Error initializing:', error);
     } finally {
@@ -47,6 +59,10 @@
     } else {
       showNoInviteModal = true;
     }
+  }
+
+  function handleConfirmationUpdate(event: CustomEvent) {
+    confirmationState = event.detail;
   }
 
   onMount(() => {
@@ -75,8 +91,22 @@
             {invite.stayInvitations === 1 ? 'plaza' : 'plazas'} disponibles para alojamiento.
           </p>
         {/if}
+        {#if confirmationState}
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+            <p class="text-green-700 dark:text-green-300">
+              Has confirmado {confirmationState.partyAttendance}
+              {confirmationState.partyAttendance === 1 ? 'asistente' : 'asistentes'}
+              {#if confirmationState.stayInvitations > 0}
+                y {confirmationState.stayInvitations} para alojamiento
+              {/if}
+            </p>
+            <p class="text-sm text-green-600 dark:text-green-400 mt-1">
+              Última actualización: {new Date(confirmationState.lastUpdate).toLocaleString()}
+            </p>
+          </div>
+        {/if}
         <button type="button" class="btn btn-primary w-full sm:w-auto" on:click={handleConfirmClick}>
-          Confirmar mi Asistencia
+          {confirmationState ? 'Actualizar Confirmación' : 'Confirmar mi Asistencia'}
         </button>
       </div>
     {:else}
@@ -102,7 +132,11 @@
 {/if}
 
 {#if showModal && invite}
-  <ConfirmModal {invite} on:close={() => (showModal = false)} />
+  <ConfirmModal
+    {invite}
+    on:close={() => (showModal = false)}
+    on:confirmationUpdate={handleConfirmationUpdate}
+  />
 {/if}
 
 {#if showNoInviteModal}
