@@ -47,3 +47,15 @@ const { language, textDirection } = I18N;
     <BasicScripts />
   </body>
 </html>
+
+<script>
+  import { analytics } from '~/lib/analytics';
+
+  // Track initial pageview
+  analytics.trackPageView();
+
+  // Track pageviews on navigation
+  document.addEventListener('astro:after-swap', () => {
+    analytics.trackPageView();
+  });
+</script>
