@@ -81,6 +81,8 @@ jobs:
       PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.PUBLIC_GOOGLE_MAPS_API_KEY }}
       # Google Analytics
       PUBLIC_GA_TRACKING_ID: ${{ secrets.PUBLIC_GA_TRACKING_ID }}
+      # Mixpanel
+      PUBLIC_MIXPANEL_TOKEN: ${{ secrets.PUBLIC_MIXPANEL_TOKEN }}
     steps:
       - name: Step 1 - ⚙️ Setup Actions
         uses: actions/checkout@v4
