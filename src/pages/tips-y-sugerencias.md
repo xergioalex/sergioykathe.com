@@ -23,4 +23,4 @@ backAction: '/#tips'
 - Es importante que confirmes tu asistencia a más tardar el 28 de febrero de 2025.
 - La recepción incluye cena.
 - Habrá música en vivo y DJ.
-- El evento terminará aproximadamente a las 3:00 AM.
+- El evento terminará aproximadamente a las 3:00 a.m.
