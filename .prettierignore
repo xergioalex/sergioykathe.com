@@ -3,3 +3,4 @@ node_modules
 .github
 .changeset
 src/components/common/Mixpanel.astro
+src/components/common/GoogleAnalytics.astro

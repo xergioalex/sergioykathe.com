@@ -1,0 +1,23 @@
+---
+const GA_TRACKING_ID = import.meta.env.PUBLIC_GA_TRACKING_ID;
+console.log(GA_TRACKING_ID);
+---
+
+<!-- Google tag (gtag.js) -->
+{GA_TRACKING_ID && (
+  <script
+    is:inline
+    src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+  ></script>
+
+  <script is:inline define:vars={{ GA_TRACKING_ID: import.meta.env.PUBLIC_GA_TRACKING_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      dataLayer.push(arguments);
+    };
+    window.gtag("js", new Date());
+
+    window.gtag("config", GA_TRACKING_ID);
+  </script>
+)}
