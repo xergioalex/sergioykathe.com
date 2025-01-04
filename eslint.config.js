@@ -57,14 +57,7 @@ export default [
     },
   },
   {
-    ignores: [
-      'dist',
-      'node_modules',
-      '.github',
-      'types.generated.d.ts',
-      '.astro',
-      'src/components/common/GoogleAnalytics.astro',
-    ],
+    ignores: ['dist', 'node_modules', '.github', 'types.generated.d.ts', '.astro'],
   },
   {
     files: ['**/*.svelte'],
