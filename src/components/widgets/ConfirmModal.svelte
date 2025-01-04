@@ -84,7 +84,7 @@
           partyAttendance,
           stayInvitations: stayAttendance,
           message,
-          lastUpdate: new Date().toISOString()
+          lastUpdate: new Date().toISOString(),
         })
       );
       // Emitir evento con el estado actualizado
@@ -92,7 +92,7 @@
         partyAttendance,
         stayInvitations: stayAttendance,
         message,
-        lastUpdate: new Date().toISOString()
+        lastUpdate: new Date().toISOString(),
       });
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
@@ -215,14 +215,13 @@
               ? 'Lamentamos que no puedas acompañarnos en este día tan especial'
               : partyAttendance === 1
                 ? 'Nos alegra mucho saber que nos acompañarás en este día tan especial'
-                : `Nos alegra mucho saber que nos acompañarán ${partyAttendance} personas en este día tan especial`
-            }
+                : `Nos alegra mucho saber que nos acompañarán ${partyAttendance} personas en este día tan especial`}
           </p>
           {#if invite && invite.stayInvitations > 0 && stayAttendance > 0}
             <p class="text-gray-600 dark:text-gray-400">
-              Además, {stayAttendance === 1 ?
-                'disfrutarás del alojamiento' :
-                `${stayAttendance} personas disfrutarán del alojamiento`} en la finca 🏡
+              Además, {stayAttendance === 1
+                ? 'disfrutarás del alojamiento'
+                : `${stayAttendance} personas disfrutarán del alojamiento`} en la finca 🏡
             </p>
           {/if}
           <div class="w-full h-px bg-gray-200 dark:bg-slate-800 my-4"></div>
@@ -230,9 +229,7 @@
             Si necesitas modificar tu confirmación más adelante, podrás hacerlo en cualquier momento
           </p>
           <button class="btn btn-primary mt-6" on:click={closeModal}>
-            <span class="flex items-center justify-center gap-2">
-              Aceptar
-            </span>
+            <span class="flex items-center justify-center gap-2"> Aceptar </span>
           </button>
         </div>
       {/if}

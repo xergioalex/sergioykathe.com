@@ -132,11 +132,7 @@
 {/if}
 
 {#if showModal && invite}
-  <ConfirmModal
-    {invite}
-    on:close={() => (showModal = false)}
-    on:confirmationUpdate={handleConfirmationUpdate}
-  />
+  <ConfirmModal {invite} on:close={() => (showModal = false)} on:confirmationUpdate={handleConfirmationUpdate} />
 {/if}
 
 {#if showNoInviteModal}
