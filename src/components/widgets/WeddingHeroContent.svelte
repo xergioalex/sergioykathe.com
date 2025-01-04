@@ -27,14 +27,20 @@
     <p
       class="text-xl text-muted mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
     >
-      {invite ? 'Nos llena de alegría invitarte a ser parte de este momento tan especial en nuestras vidas.' : subtitle}
+      {invite
+        ? invite.partyInvitations === 0
+          ? 'Queremos compartir contigo la alegría de nuestro matrimonio y hacerte partícipe de este momento tan especial.'
+          : 'Nos llena de alegría invitarte a ser parte de este momento tan especial en nuestras vidas.'
+        : subtitle}
     </p>
 
     <p
       class="text-xl text-secondary mb-6 dark:text-slate-300 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
     >
       {@html invite
-        ? `<b>Fecha:</b> 22 de marzo de 2025<br><b>Número de invitados:</b> ${invite.partyInvitations}`
+        ? invite.partyInvitations === 0
+          ? '<b>Fecha:</b> 22 de marzo de 2025'
+          : `<b>Fecha:</b> 22 de marzo de 2025<br><b>Número de invitados:</b> ${invite.partyInvitations}`
         : content}
 
       {#if invite && invite.stayInvitations > 0}
@@ -46,10 +52,10 @@
       class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
     >
       <a href="#rsvp" class="btn btn-primary w-full sm:w-auto">
-        Confirmar asistencia
+        {invite?.partyInvitations === 0 ? 'Ver detalles' : 'Confirmar asistencia'}
         <span class="ml-2">→</span>
       </a>
-      <a href="#evento" class="btn w-full sm:w-auto"> Más información </a>
+      <a href="#evento" class="btn w-full sm:w-auto">Más información</a>
     </div>
   </div>
 </div>
