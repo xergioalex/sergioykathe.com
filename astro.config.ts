@@ -30,7 +30,7 @@ export default defineConfig({
 
   build: {
     assets: 'assets',
-    assetsPrefix: '.',
+    assetsPrefix: '/',
   },
 
   server: {
