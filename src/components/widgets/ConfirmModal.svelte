@@ -35,6 +35,23 @@
     dispatch('close');
   }
 
+  // Cargar estado previo si existe
+  onMount(() => {
+    // Abrir el modal
+    dialog?.showModal();
+
+    // Limpiar el mensaje
+    message = '';
+
+    // Cargar estado previo si existe
+    const savedState = localStorage.getItem(`confirmation-${invite.code}`);
+    if (savedState) {
+      const state = JSON.parse(savedState);
+      partyAttendance = state.partyAttendance;
+      stayAttendance = state.stayInvitations;
+    }
+  });
+
   async function handleSubmit(event: Event) {
     event.preventDefault();
     isLoading = true;
@@ -60,16 +77,29 @@
       });
 
       isSuccess = true;
+      // Guardar estado en localStorage
+      localStorage.setItem(
+        `confirmation-${invite.code}`,
+        JSON.stringify({
+          partyAttendance,
+          stayInvitations: stayAttendance,
+          message,
+          lastUpdate: new Date().toISOString(),
+        })
+      );
+      // Emitir evento con el estado actualizado
+      dispatch('confirmationUpdate', {
+        partyAttendance,
+        stayInvitations: stayAttendance,
+        message,
+        lastUpdate: new Date().toISOString(),
+      });
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
     } finally {
       isLoading = false;
     }
   }
-
-  onMount(() => {
-    dialog?.showModal();
-  });
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -174,24 +204,33 @@
         </div>
       {:else}
         <div class="text-center space-y-4">
-          <span class="text-5xl">✨</span>
-          <h4 class="text-xl font-semibold">¡Gracias por confirmar!</h4>
+          <div class="flex justify-center items-center gap-2">
+            <span class="text-5xl">✨</span>
+            <span class="text-5xl">💝</span>
+            <span class="text-5xl">✨</span>
+          </div>
+          <h4 class="text-2xl font-script text-primary">¡Gracias por confirmar!</h4>
           <p class="text-gray-600 dark:text-gray-400">
-            Has confirmado que {partyAttendance === 1 ? 'asistirá 1 persona' : `asistirán ${partyAttendance} personas`} a
-            la celebración
+            {partyAttendance === 0
+              ? 'Lamentamos que no puedas acompañarnos en este día tan especial'
+              : partyAttendance === 1
+                ? 'Nos alegra mucho saber que nos acompañarás en este día tan especial'
+                : `Nos alegra mucho saber que nos acompañarán ${partyAttendance} personas en este día tan especial`}
           </p>
           {#if invite && invite.stayInvitations > 0 && stayAttendance > 0}
             <p class="text-gray-600 dark:text-gray-400">
-              Y has reservado alojamiento para {stayAttendance === 1 ? '1 persona' : `${stayAttendance} personas`} en la
-              finca
+              Además, {stayAttendance === 1
+                ? 'disfrutarás del alojamiento'
+                : `${stayAttendance} personas disfrutarán del alojamiento`} en la finca 🏡
             </p>
           {/if}
-          {#if message.trim()}
-            <p class="text-gray-600 dark:text-gray-400 mt-4 italic">
-              "{message}"
-            </p>
-          {/if}
-          <button class="btn btn-primary mt-4" on:click={closeModal}> Cerrar </button>
+          <div class="w-full h-px bg-gray-200 dark:bg-slate-800 my-4"></div>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            Si necesitas modificar tu confirmación más adelante, podrás hacerlo en cualquier momento
+          </p>
+          <button class="btn btn-primary mt-6" on:click={closeModal}>
+            <span class="flex items-center justify-center gap-2"> Aceptar </span>
+          </button>
         </div>
       {/if}
     </div>
