@@ -30,7 +30,9 @@
       {invite
         ? invite.partyInvitations === 0
           ? 'Queremos compartir contigo la alegría de nuestro matrimonio y hacerte partícipe de este momento tan especial aunque no puedas acompañarnos físicamente.'
-          : 'Nos llena de alegría invitarte a ser parte de este momento tan especial en nuestras vidas.'
+          : invite.isGroup
+            ? `Nos llena de alegría ${invite.genre === 'female' ? 'invitarlas' : 'invitarlos'} a ser parte de este momento tan especial en el que unimos nuestras vidas por siempre.`
+            : 'Nos llena de alegría invitarte a ser parte de este momento tan especial en el que unimos nuestras vidas por siempre.'
         : subtitle}
     </p>
 

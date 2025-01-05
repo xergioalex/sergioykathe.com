@@ -296,4 +296,6 @@ export interface Invite {
   name: string;
   partyInvitations: number;
   stayInvitations: number;
+  genre: string;
+  isGroup: boolean;
 }
