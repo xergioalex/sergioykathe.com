@@ -4,619 +4,817 @@
       "code": "test1",
       "name": "Test 1",
       "partyInvitations": 0,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "test2",
       "name": "Test 2",
       "partyInvitations": 3,
-      "stayInvitations": 2
+      "stayInvitations": 2,
+      "genre": "female",
+      "isGroup": false
     },
     {
       "code": "test3",
       "name": "Test 3",
       "partyInvitations": 3,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "FA8635BU",
       "name": "Familia Florez Galeano",
       "partyInvitations": 3,
-      "stayInvitations": 3
+      "stayInvitations": 3,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "JU1329PY",
       "name": "Julian",
       "partyInvitations": 1,
-      "stayInvitations": 1
+      "stayInvitations": 1,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "MA4248GR",
       "name": "Mauricio",
       "partyInvitations": 1,
-      "stayInvitations": 1
+      "stayInvitations": 1,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "EU5474GY",
       "name": "Eugenia y Edgar",
       "partyInvitations": 2,
-      "stayInvitations": 2
+      "stayInvitations": 2,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "MI9411VD",
       "name": "Miguel y Any",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "CL5628KR",
       "name": "Clara y Familia",
       "partyInvitations": 4,
-      "stayInvitations": 4
+      "stayInvitations": 4,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "FA3147PF",
       "name": "Familia Zapata Quebrada",
       "partyInvitations": 3,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "JA3557JF",
       "name": "Jackeline",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
       "code": "MA2282YR",
       "name": "Maira",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
       "code": "FE4762QO",
       "name": "Fernando y Luz Dary",
       "partyInvitations": 2,
-      "stayInvitations": 2
+      "stayInvitations": 2,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "AL0866CN",
       "name": "Alex",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "CL4697ZU",
       "name": "Claudia y Juan Carlos",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "RO0334GJ",
       "name": "Rodolfo y Angie",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "JE8629VH",
       "name": "Jenifer y Diego",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "JO9923HL",
       "name": "Jorge",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "SE7170KK",
       "name": "Sebastián",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "EM7875LK",
       "name": "Emma",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
       "code": "HE3855DY",
       "name": "Hector",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "DI5911TV",
       "name": "Diego",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "FL8795NW",
       "name": "Flor",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
       "code": "RO4487RZ",
       "name": "Rodrigo",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "AL3492YS",
       "name": "Albert",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "AL0899JO",
       "name": "Alex",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "AN7690CW",
-      "name": "Angela",
-      "partyInvitations": 1,
-      "stayInvitations": 0
+      "code": "MA9804GS",
+      "name": "Mauricio y Angela",
+      "partyInvitations": 2,
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
       "code": "CA9186GL",
       "name": "Carolina",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
       "code": "CA7064GE",
       "name": "Catalina",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "MA4831RJ",
-      "name": "Mauricio",
-      "partyInvitations": 1,
-      "stayInvitations": 0
-    },
-    {
-      "code": "JO3686WN",
+      "code": "JO3687XN",
       "name": "John",
       "partyInvitations": 0,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "JU1096GE",
+      "code": "JU1097HE",
       "name": "Juan",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
+    },
+    {
+      "code": "JO4473RQ",
+      "name": "Jonathan",
+      "partyInvitations": 0,
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
       "code": "JO4474SQ",
       "name": "Jonathan",
-      "partyInvitations": 0,
-      "stayInvitations": 0
-    },
-    {
-      "code": "JO4475TQ",
-      "name": "Jonathan",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "MA4836WJ",
+      "code": "MA4835VJ",
       "name": "Mauricio",
       "partyInvitations": 0,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "ME9048OH",
+      "code": "ME9049PH",
       "name": "Meredith",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "OS8629LH",
+      "code": "OS8628KH",
       "name": "Oscar",
       "partyInvitations": 0,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "SA3206QT",
+      "code": "SA3207RT",
       "name": "Santiago",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "SE3984KG",
+      "code": "SE3962OF",
       "name": "Sebastian",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "YI2478CE",
+      "code": "YI2477BE",
       "name": "Yisus",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "LA3677ZP",
+      "code": "LA3676YP",
       "name": "Laura",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "JU0700CH",
+      "code": "JU0701DH",
       "name": "Julian",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "SA3180QS",
+      "code": "SA3181RS",
       "name": "Santiago",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "JH5293RF",
+      "code": "JH5292QF",
       "name": "Jhonatan y Angie",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "NE1369RQ",
+      "code": "NE1370SQ",
       "name": "Nelson y Laura",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "SE4474CD",
+      "code": "SE4475DD",
       "name": "Sebastian y Angie",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "CA7775HW",
+      "code": "CA7776IX",
       "name": "Camilo",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "MI2826OF",
+      "code": "MI2827PF",
       "name": "Miguel",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "ST7654MH",
+      "code": "ST7632QH",
       "name": "Steven",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "SA8065PL",
+      "code": "SA8064OL",
       "name": "Santiago y Eliana",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "HE3762OV",
+      "code": "HE3763PV",
       "name": "Hector",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "ME9094EX",
+      "code": "ME9095FX",
       "name": "Melissa",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "AN2523TD",
+      "code": "AN2524UD",
       "name": "Andres y Dany",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "MA5721RX",
+      "code": "MA5720QX",
       "name": "Mauricio y Kelly",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "MA1827BE",
+      "code": "MA1826AE",
       "name": "Mancha",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "DE1232IQ",
+      "code": "DE1233JQ",
       "name": "Deisy",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "FE9772WZ",
-      "name": "Felipe Salazar",
+      "code": "FE3795RR",
+      "name": "Felipe",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "DA0323JB",
+      "code": "DA0322IB",
       "name": "Daniel",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "MI2773ND",
+      "code": "MI2795JE",
       "name": "Miguel",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "FA2000GH",
+      "code": "FA2001HH",
       "name": "Familia Vanegas Useche",
       "partyInvitations": 3,
-      "stayInvitations": 3
+      "stayInvitations": 3,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "G1420QY",
+      "code": "GL7909FA",
       "name": "Gloria",
       "partyInvitations": 1,
-      "stayInvitations": 1
+      "stayInvitations": 1,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "FA9571TU",
+      "code": "FA9570SU",
       "name": "Familia Martinez Vanegas",
       "partyInvitations": 4,
-      "stayInvitations": 4
+      "stayInvitations": 4,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "FA4650SD",
+      "code": "FA4651TD",
       "name": "Familia Florez Vanegas",
       "partyInvitations": 2,
-      "stayInvitations": 2
+      "stayInvitations": 2,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "AN4720AT",
+      "code": "AN4719ZT",
       "name": "Angela Mora",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "FA5234MT",
+      "code": "FA5233LT",
       "name": "Familia Vanegas Arango",
       "partyInvitations": 5,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "FA3053PW",
+      "code": "FA3054QW",
       "name": "Familia Vanegas Arias",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "EM1500WG",
+      "code": "EM5351VE",
       "name": "Emmanuel",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "FA0234IE",
+      "code": "FA0233HE",
       "name": "Familia Vanegas Lozano",
       "partyInvitations": 4,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "FA5754KG",
+      "code": "FA5732OG",
       "name": "Familia López Zabaleta",
       "partyInvitations": 4,
-      "stayInvitations": 4
+      "stayInvitations": 4,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "MA1239TI",
+      "code": "MA1238SI",
       "name": "María Quintero, Katherine Valera\ny Karin Arredondo",
       "partyInvitations": 3,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": true
     },
     {
-      "code": "HE0438GN",
+      "code": "HE0437FN",
       "name": "Hector Arango",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "JA0018AE",
+      "code": "JA0019BE",
       "name": "Jaider Mendoza y Sra",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "MA7687XH",
+      "code": "MA7688YH",
       "name": "Margarita",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "LU2503BM",
+      "code": "LU2504CM",
       "name": "Luz Edi",
       "partyInvitations": 1,
-      "stayInvitations": 1
+      "stayInvitations": 1,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "CE2607VH",
+      "code": "CE2608WI",
       "name": "Cesar",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "DA3608EO",
+      "code": "DA3609FO",
       "name": "Dani",
       "partyInvitations": 1,
-      "stayInvitations": 1
+      "stayInvitations": 1,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "MI2528QU",
+      "code": "MI2529RU",
       "name": "Miriam",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "PA5284IL",
+      "code": "PA5283HL",
       "name": "Paulin y Antonio",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "JE5204AV",
+      "code": "JE5182EU",
       "name": "Jessica",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "VE0990YM",
+      "code": "VE0991ZM",
       "name": "Verónica",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "DA7908KO",
+      "code": "DA7907JO",
       "name": "Daniela B.",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "DA6864MP",
+      "code": "DA6863LO",
       "name": "Daniela G.",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "MA0449NC",
+      "code": "MA0448MC",
       "name": "Marisol",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "AN2218AH",
+      "code": "AN2219BH",
       "name": "Anyell",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "LA9541LU",
+      "code": "LA9540KU",
       "name": "Laura y Daniel",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "TE9301HP",
+      "code": "TE9302IP",
       "name": "Tefa",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "TE1612OJ",
+      "code": "TE1613PJ",
       "name": "Tefi",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "JE2143JZ",
+      "code": "JE2142IZ",
       "name": "Jei",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "GO0886WU",
+      "code": "GO0864AT",
       "name": "Gordi",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "FR9259HB",
+      "code": "FR9260IB",
       "name": "Francy y Jorge",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "CH0546GS",
+      "code": "CH0545FS",
       "name": "Christopher",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "VI8856KC",
+      "code": "VI8857LC",
       "name": "Vivian y Amparo",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": true
     },
     {
-      "code": "LE8086EK",
+      "code": "LE8085DK",
       "name": "Leidy",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "MA8411FM",
+      "code": "MA8410EM",
       "name": "Martha",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "SA9048EB",
+      "code": "SA9049FB",
       "name": "Sammy",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "AL3935HQ",
+      "code": "AL3934GQ",
       "name": "Aleja",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "OS9857FY",
+      "code": "OS9858GY",
       "name": "Oscar",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
     },
     {
-      "code": "HO7209JN",
+      "code": "HO7210KN",
       "name": "Honorio y Aurora",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "ME1614QJ",
+      "code": "ME2769PL",
       "name": "Mery",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "MO3575JP",
+      "code": "MO3574IP",
       "name": "Monica",
       "partyInvitations": 1,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     },
     {
-      "code": "WI1888SQ",
+      "code": "WI1889TQ",
       "name": "Wilmar y Vanesa",
       "partyInvitations": 3,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "JU9695FU",
+      "code": "JU9694EU",
       "name": "Juan Pablo y Alejandra",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     },
     {
-      "code": "JO2767BI",
+      "code": "JO2766AI",
       "name": "Jorge y Tatiana",
       "partyInvitations": 2,
-      "stayInvitations": 0
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": true
     }
   ]
 }

@@ -19,12 +19,14 @@ try {
     skip_empty_lines: true,
   });
 
-  // Convert numeric fields
+  // Convert numeric fields and parse boolean values
   const invites = records.slice(1).map((record) => ({
     code: record.code.trim(),
     name: record.name.trim(),
     partyInvitations: parseInt(record.partyInvitations.trim()),
     stayInvitations: parseInt(record.stayInvitations.trim()),
+    genre: record.genre.trim(),
+    isGroup: record.isGroup.trim().toUpperCase() === 'TRUE',
   }));
 
   // Create the final object
