@@ -831,6 +831,14 @@
       "stayInvitations": 0,
       "genre": "female",
       "isGroup": false
+    },
+    {
+      "code": "JU3279NE",
+      "name": "Juli",
+      "partyInvitations": 1,
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     }
   ]
 }
