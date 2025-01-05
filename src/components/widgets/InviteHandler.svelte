@@ -101,8 +101,12 @@
         {#if invite.stayInvitations > 0}
           <p class="text-lg text-primary opacity-100">
             ¡Además {invite.isGroup
-              ? invite.genre === 'female' ? 'están invitadas' : 'están invitados'
-              : invite.genre === 'female' ? 'estás invitada' : 'estás invitado'}
+              ? invite.genre === 'female'
+                ? 'están invitadas'
+                : 'están invitados'
+              : invite.genre === 'female'
+                ? 'estás invitada'
+                : 'estás invitado'}
             a quedarte en la finca! Tienes {invite.stayInvitations}
             {invite.stayInvitations === 1 ? 'plaza disponible' : 'plazas disponibles'} para alojamiento.
           </p>
