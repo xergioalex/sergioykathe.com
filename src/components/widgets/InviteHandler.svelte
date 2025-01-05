@@ -101,7 +101,7 @@
         {#if invite.stayInvitations > 0}
           <p class="text-lg text-primary opacity-100">
             ¡Además estás invitado a quedarte en la finca! Tienes {invite.stayInvitations}
-            {invite.stayInvitations === 1 ? 'plaza' : 'plazas'} disponibles para alojamiento.
+            {invite.stayInvitations === 1 ? 'plaza disponible' : 'plazas disponibles'} para alojamiento.
           </p>
         {/if}
         {#if confirmationState}
