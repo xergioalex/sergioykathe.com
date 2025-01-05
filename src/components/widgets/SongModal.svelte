@@ -1,6 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { analytics } from '~/lib/analytics';
+  import type { Invite } from '~/types.d';
+  import { getInviteId } from '~/lib/invite';
 
   let dialog: HTMLDialogElement;
   let songName = '';
@@ -8,6 +10,7 @@
   let songNotes = '';
   let isSuccess = false;
   let isLoading = false;
+  let invite: Invite | undefined;
 
   // Configuración del formulario de Google
   const FORM_URL =
@@ -16,7 +19,30 @@
     songName: 'entry.242037522',
     songArtist: 'entry.287920603',
     songNotes: 'entry.1265334069',
+    inviteId: 'entry.734514235',
+    name: 'entry.1876986626',
   };
+
+  async function loadInvites() {
+    try {
+      const response = await fetch('/data/invites.json');
+      const data = await response.json();
+      return data.invites as Invite[];
+    } catch (error) {
+      console.error('Error loading invites:', error);
+      return [];
+    }
+  }
+
+  async function init() {
+    try {
+      const invites = await loadInvites();
+      const inviteId = getInviteId();
+      invite = invites.find((inv) => inv.code === inviteId);
+    } catch (error) {
+      console.error('Error initializing:', error);
+    }
+  }
 
   function closeModal() {
     isSuccess = false;
@@ -40,6 +66,11 @@
       formData.append(FORM_ENTRIES.songName, songName);
       formData.append(FORM_ENTRIES.songArtist, songArtist);
       formData.append(FORM_ENTRIES.songNotes, songNotes);
+
+      if (invite) {
+        formData.append(FORM_ENTRIES.inviteId, invite.code);
+        formData.append(FORM_ENTRIES.name, invite.name);
+      }
 
       await fetch(FORM_URL, {
         method: 'POST',
@@ -80,6 +111,7 @@
   }
 
   onMount(() => {
+    init();
     document.addEventListener('openSongModal', () => {
       resetForm();
       dialog?.showModal();
