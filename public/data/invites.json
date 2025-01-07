@@ -839,6 +839,22 @@
       "stayInvitations": 0,
       "genre": "female",
       "isGroup": false
+    },
+    {
+      "code": "DA7488EF",
+      "name": "Dani",
+      "partyInvitations": 0,
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
+    },
+    {
+      "code": "KE9434CW",
+      "name": "Kelly",
+      "partyInvitations": 0,
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     }
   ]
 }
