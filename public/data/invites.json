@@ -171,7 +171,7 @@
     {
       "code": "HE3854CY",
       "name": "Hector",
-      "partyInvitations": 1,
+      "partyInvitations": 2,
       "stayInvitations": 0,
       "genre": "male",
       "isGroup": false
@@ -337,8 +337,8 @@
       "isGroup": false
     },
     {
-      "code": "SA3180QS",
-      "name": "Santiago",
+      "code": "AN0551HT",
+      "name": "Andres",
       "partyInvitations": 1,
       "stayInvitations": 0,
       "genre": "male",
@@ -577,20 +577,12 @@
       "isGroup": true
     },
     {
-      "code": "MA7687XH",
-      "name": "Margarita",
-      "partyInvitations": 1,
+      "code": "MA1651ZO",
+      "name": "Margarita y Luz Edi",
+      "partyInvitations": 2,
       "stayInvitations": 0,
       "genre": "female",
-      "isGroup": false
-    },
-    {
-      "code": "LU2503BM",
-      "name": "Luz Edi",
-      "partyInvitations": 1,
-      "stayInvitations": 0,
-      "genre": "female",
-      "isGroup": false
+      "isGroup": true
     },
     {
       "code": "CE2607VH",
@@ -854,6 +846,22 @@
       "partyInvitations": 0,
       "stayInvitations": 0,
       "genre": "female",
+      "isGroup": false
+    },
+    {
+      "code": "JO3859NT",
+      "name": "Jose",
+      "partyInvitations": 1,
+      "stayInvitations": 0,
+      "genre": "male",
+      "isGroup": false
+    },
+    {
+      "code": "AL4753LZ",
+      "name": "Alejo",
+      "partyInvitations": 1,
+      "stayInvitations": 0,
+      "genre": "male",
       "isGroup": false
     }
   ]
