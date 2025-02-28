@@ -857,6 +857,14 @@
       "isGroup": false
     },
     {
+      "code": "ME4607HD",
+      "name": "Meri",
+      "partyInvitations": 1,
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
+    },
+    {
       "code": "AL4753LZ",
       "name": "Alejo",
       "partyInvitations": 1,
