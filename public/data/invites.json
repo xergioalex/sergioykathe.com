@@ -871,6 +871,14 @@
       "stayInvitations": 0,
       "genre": "male",
       "isGroup": false
+    },
+    {
+      "code": "AN0473JN",
+      "name": "Anita",
+      "partyInvitations": 1,
+      "stayInvitations": 0,
+      "genre": "female",
+      "isGroup": false
     }
   ]
 }
