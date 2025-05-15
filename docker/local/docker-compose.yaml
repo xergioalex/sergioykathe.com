@@ -9,8 +9,8 @@ services:
     volumes:
       - ../..:/app
     ports:
-      - '4444:4321'
-      - '9000:8969'
+      - '4445:4321'
+      - '9001:8969'
     env_file:
       - sergioykathe/.env
     command:
