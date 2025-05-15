@@ -1,4 +1,4 @@
-# 💑 Sergio & Kathe - Sitio Web de Boda.
+# 💑 Sergio & Kathe - Sitio Web de Boda
 
 ![Wedding Site Preview](public/assets/images/wedding-invitation.gif)
 
@@ -27,7 +27,7 @@ Bienvenido al repositorio de nuestro sitio web de boda. Este proyecto está cons
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/sergioykathe.com.git
+git clone git@github.com:xergioalex/sergioykathe.com.git
 ```
 
 2. Instala las dependencias:
@@ -66,8 +66,8 @@ Las invitaciones se manejan de forma segura a través de códigos únicos y est�
 
 ## 💕 Creado con amor por
 
-- [Sergio](https://github.com/tu-usuario)
-- [Katherine](https://github.com/su-usuario)
+- [Sergio](https://www.xergioalex.com/)
+- [Katherine](https://www.kathelopez.com/)
 
 ---
 
