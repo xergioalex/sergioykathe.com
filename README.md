@@ -1,4 +1,4 @@
-# 💑 Sergio & Kathe - Sitio Web de Boda
+# 💑 Sergio & Kathe - Sitio Web de Boda.
 
 ![Wedding Site Preview](public/assets/images/wedding-invitation.gif)
 
