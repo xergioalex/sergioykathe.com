@@ -18,7 +18,7 @@
     "ncu:check": "ncu",
     "ncu:upgrade": "ncu -u",
     "test": "echo 'Running tests...'",
-    "release": "npm version patch -m \"[🤖 SysPrompt] New release to v%s launched 🚀\"",
+    "release": "npm version patch -m \"[🤖 Sergio y Kathe] New release to v%s launched 🚀\"",
     "generate:invites": "node scripts/csv-to-json.js"
   },
   "dependencies": {
